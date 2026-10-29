@@ -12,8 +12,10 @@ of the current Evolut program is available. The
 [internal security review](docs/INTERNAL-SECURITY-REVIEW-20261029.md) records
 findings, limitations and 121 passing cases for the **previous deployed baseline**.
 The atomic-launch/dependency executable in this checkout was subsequently
-verified on mainnet after the owner-signed upgrade. Matching backend rollout is
-still pending. See [release status](docs/RELEASE-STATUS.md), the
+verified on mainnet after the owner-signed upgrade. The compatible backend is
+live, with release/quote checks and launch admission verified on 29 October 2026.
+These checks sent no financial transaction and do not prove a paid launch or
+nonzero fee payout. See [release status](docs/RELEASE-STATUS.md), the
 [remediation addendum](docs/REMEDIATION-ADDENDUM.md), and
 [candidate validation](docs/ATOMIC-LAUNCH-CANDIDATE.md). Historical test results
 remain identified by the binary and account capture used at test time.
@@ -106,7 +108,7 @@ harness; this repository alone reproduces the 27 adapter cases, not all 121.
 | [Submission](docs/JUPITER-SUBMISSION.md) | Prepared form text; not submitted |
 | [Internal review](docs/INTERNAL-SECURITY-REVIEW-20261029.md) | Findings, scope, test evidence and open dependencies |
 | [Remediation addendum](docs/REMEDIATION-ADDENDUM.md) | Classic fee clarification, subsequent changes and their tests |
-| [Release status](docs/RELEASE-STATUS.md) | Verified mainnet executable and remaining rollout work |
+| [Release status](docs/RELEASE-STATUS.md) | Verified mainnet executable, compatible backend and verification limits |
 | [Source rights](docs/SOURCE-RIGHTS.md) | Traced provenance and remaining permission question |
 
 `Swap::Placeholder` intentionally marks the routing seam awaiting Jupiter's

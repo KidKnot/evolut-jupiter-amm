@@ -1,6 +1,6 @@
 # Internal review remediation addendum — 29 October 2026
 
-Internal, AI-assisted work. Not an independent audit or certification. This addendum records remediation tested locally before upgrade. The owner-signed upgrade was subsequently verified against the same executable; see [release status](RELEASE-STATUS.md) and [upgrade verification](../evidence/mainnet-upgrade-verification-20261029.json). Matching backend rollout remains pending. These later status updates do not relabel the historical tests or account captures.
+Internal, AI-assisted work. Not an independent audit or certification. This addendum records remediation tested locally before upgrade. The owner-signed upgrade was subsequently verified against the same executable; see [release status](RELEASE-STATUS.md) and [upgrade verification](../evidence/mainnet-upgrade-verification-20261029.json). The compatible backend is now live, with separate release/quote and admission checks in [application verification](../evidence/application-rollout-verification-20261029.json). These later status updates do not relabel the historical tests or account captures.
 
 ## Distinct reviewed releases
 
@@ -9,7 +9,7 @@ Internal, AI-assisted work. Not an independent audit or certification. This adde
 | Program | `EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ` | Same program ID |
 | Executable bytes | 1,207,880 | 1,142,312 |
 | SHA-256 | `885d9c887801162ea921ad9426e109bd87348f40ced68ed74fe7b4b8960103b6` | `e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441` |
-| Application release | Historical running release | Prepared commit `9f4c6212146f0bf98c35057a5b2dfc7213d1cc30`; rollout pending |
+| Application release | Historical running release | Originally tested commit `9f4c6212146f0bf98c35057a5b2dfc7213d1cc30`; subsequent live compatible release `0324f9cc4356f9b1e8e2a368a06526a7f7fa1675` verified separately |
 
 The original report describes the baseline and remains preserved. Its 121 cases are not relabeled as tests of the candidate.
 
@@ -19,7 +19,7 @@ The original A-01 finding was conditional on whether on-chain fee enforcement wa
 
 The upgraded program transfers exactly 15,000,000 lamports to the canonical treasury inside every new mainnet pool initialization, including using old configs. Missing or substituted recipients fail. Failure of creation or a later initial buy in the same transaction rolls back the platform transfer. Existing pools, trading/claim ABI and devnet fee behavior are unchanged. Only error 6058 is appended to the IDL.
 
-The prepared matching backend preserves historical signed receipts and prevents stale fee-free Classic approvals from silently gaining a charge. Its compatibility path uses operator-funded credit for previously paid split-treasury Evolving jobs completed after upgrade, avoiding a second customer charge. New Evolving jobs still require a separate upfront funding transaction for AI/creation. It is not escrow or an automatic-refund mechanism. Deployment and live verification of this backend remain separate outstanding work.
+The matching backend preserves historical signed receipts and prevents stale fee-free Classic approvals from silently gaining a charge. Its compatibility path uses operator-funded credit for previously paid split-treasury Evolving jobs completed after upgrade, avoiding a second customer charge. New Evolving jobs still require a separate upfront funding transaction for AI/creation. It is not escrow or an automatic-refund mechanism. The compatible release is now deployed and its release/quote checks passed. No paid launch or financial transaction was submitted by those checks; fee-claim account reads and unsigned simulations used zero sampled balances, so they do not prove a nonzero payout.
 
 Compatible dependencies were updated, including the same exact `ruint 1.20.0` in execution and quoting. Candidate build uses official Anza platform-tools v1.58 with explicit SBPF v0. Two builds produced the same hash. Maintenance and feature/reachability-qualified advisory matches remain documented; no blanket advisory suppression or clean-bill-of-health claim is made.
 

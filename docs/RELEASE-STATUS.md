@@ -33,8 +33,19 @@ interfaces remain unchanged. The [remediation addendum](REMEDIATION-ADDENDUM.md)
 explains the change and corrects the earlier review's interpretation of Classic
 launches, which were free at the historical baseline.
 
-The matching application rollout is being verified separately. This repository
-does not assert that the website/backend rollout has passed acceptance.
+The compatible application release `0324f9cc4356f9b1e8e2a368a06526a7f7fa1675`
+is live. The final API check matched all 440 deployed file hashes and all four
+service roles were healthy with matching release artifacts. Acceptance checks
+at 14:52:41 UTC covered Classic/Evolving with both 1%/2% configurations, the
+85 SOL graduation threshold, the 50% creator share, 15,000,000-lamport launch
+quotes, API/worker capabilities and a buffer of 20 available mint addresses.
+At 14:55:56 UTC, public launches, paid jobs and atomic launch fees were verified
+enabled. See [application rollout verification](../evidence/application-rollout-verification-20261029.json).
+
+Curve-fee account reads and unsigned Raydium LP/creator-claim simulations also
+passed. All sampled claim balances were zero: these checks do **not** verify a
+nonzero payout. No financial transaction or paid launch was submitted by this
+verification, and it is not a claim of a new live graduation test.
 
 The recorded account snapshots and local test logs retain their original dates
 and identities. They have not been relabeled as new live account captures or

@@ -1,6 +1,6 @@
 # Atomic launch and patched dependency candidate
 
-Prepared 29 October 2026. The tests below were performed on a **local candidate**. A subsequent finalized mainnet check matched its exact executable hash and length after the owner-signed upgrade; see [release status](RELEASE-STATUS.md) and [upgrade verification](../evidence/mainnet-upgrade-verification-20261029.json). Matching backend rollout remains pending. The earlier internal review remains historical baseline evidence and is not relabeled as a review of this changed binary.
+Prepared 29 October 2026. The tests below were performed on a **local candidate**. A subsequent finalized mainnet check matched its exact executable hash and length after the owner-signed upgrade; see [release status](RELEASE-STATUS.md) and [upgrade verification](../evidence/mainnet-upgrade-verification-20261029.json). The compatible backend is now live; its separate release/quote and admission checks are recorded in [application verification](../evidence/application-rollout-verification-20261029.json). The earlier internal review remains historical baseline evidence and is not relabeled as a review of this changed binary.
 
 This candidate adds an atomic 0.015 SOL treasury fee to Classic and Evolving initialization. It also updates compatible dependency versions, including the same exact patched `ruint 1.20.0` in SBF and adapter. Trading fee percentages, existing pool account layouts and quote semantics are unchanged by these edits. Launch-transaction enforcement is tested in the separate contract VM suite, not inferred from swap parity.
 
@@ -27,4 +27,4 @@ See [dependency remediation](DEPENDENCY-REMEDIATION.md) for versions, five targe
 
 ## Still separate
 
-The owner-signed upgrade was verified separately after these local adapter tests; the matching application rollout is still pending. Source-rights and Jupiter routing/audit-acceptance questions remain as documented. No new live pool capture, trade, claim, graduation or external submission is established by these tests. The [remediation addendum](REMEDIATION-ADDENDUM.md) also corrects the historical Classic-fee interpretation.
+The owner-signed upgrade and compatible application rollout were verified separately after these local adapter tests. Source-rights and Jupiter routing/audit-acceptance questions remain as documented. No new live pool capture, trade, claim, graduation or external submission is established by these tests. The later backend checks sent no financial transaction and do not prove a paid launch or nonzero payout. The [remediation addendum](REMEDIATION-ADDENDUM.md) also corrects the historical Classic-fee interpretation.

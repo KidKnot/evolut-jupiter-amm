@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-29T14:55:56.494Z",
+  "scope": "deployed-application-readiness-and-read-only-acceptance",
+  "apiWorkerCommit": "0324f9cc4356f9b1e8e2a368a06526a7f7fa1675",
+  "indexerWebsiteCommit": "9f4c6212146f0bf98c35057a5b2dfc7213d1cc30",
+  "backendArtifactSha256": "fb79e471564042582dbc58e1493d8d7085efa5878dca485976f37143b2f577a9",
+  "backendArtifactFilesVerified": 440,
+  "roles": [
+    {
+      "role": "worker",
+      "healthy": true
+    },
+    {
+      "role": "api",
+      "healthy": true
+    },
+    {
+      "role": "website",
+      "healthy": true
+    },
+    {
+      "role": "indexer",
+      "healthy": true
+    }
+  ],
+  "publicActionsEnabled": true,
+  "evolvingPaymentsEnabled": true,
+  "atomicLaunchFeeEnabled": true,
+  "workerCapabilityMatchesApi": true,
+  "quotesCheckedAt": "2026-10-29T14:52:41.339Z",
+  "launchFeeQuotes": [
+    {
+      "mode": "evolving",
+      "tier": "1pct",
+      "platformFeeLamports": "15000000"
+    },
+    {
+      "mode": "evolving",
+      "tier": "2pct",
+      "platformFeeLamports": "15000000"
+    },
+    {
+      "mode": "classic",
+      "tier": "1pct",
+      "platformFeeLamports": "15000000"
+    },
+    {
+      "mode": "classic",
+      "tier": "2pct",
+      "platformFeeLamports": "15000000"
+    }
+  ],
+  "claimChecks": [
+    {
+      "target": "curve",
+      "verification": "live-account-read",
+      "baseRaw": "0",
+      "quoteRaw": "0"
+    },
+    {
+      "target": "raydium_cpmm",
+      "verification": "unsigned-simulation",
+      "baseRaw": "0",
+      "quoteRaw": "0"
+    },
+    {
+      "target": "raydium_creator",
+      "verification": "unsigned-simulation",
+      "baseRaw": "0",
+      "quoteRaw": "0"
+    }
+  ],
+  "financialTransactionsSubmittedByChecks": 0,
+  "limitations": [
+    "Claim samples had zero balances; no positive payout was claimed or proven by these checks.",
+    "No live paid launch, trade or graduation was submitted during this acceptance.",
+    "This application check is separate from the adapter tests and Jupiter approval."
+  ],
+  "profiles": [
+    {
+      "mode": "evolving",
+      "tier": "1pct",
+      "address": "8HnddjgrXR45BzP1fgo3oLUc5xjP1JRkxF9DR8Wmr2uR",
+      "graduationLamports": "85000000000",
+      "revenueLamports": "800000000",
+      "curveFeeNumerator": "10000000",
+      "creatorSharePercent": 50,
+      "feeAccountsAndPermissionVerified": true
+    },
+    {
+      "mode": "evolving",
+      "tier": "2pct",
+      "address": "DtuGZfbhKivNpowa15dBeGF2jRWKUx37L9apFqLz4Z5a",
+      "graduationLamports": "85000000000",
+      "revenueLamports": "800000000",
+      "curveFeeNumerator": "20000000",
+      "creatorSharePercent": 50,
+      "feeAccountsAndPermissionVerified": true
+    },
+    {
+      "mode": "classic",
+      "tier": "1pct",
+      "address": "FxEFJfTWdptZdNFyP9epc66rhFtXjtV6nf4Yn1wMqQw7",
+      "graduationLamports": "85000000000",
+      "revenueLamports": "800000000",
+      "curveFeeNumerator": "10000000",
+      "creatorSharePercent": 50,
+      "feeAccountsAndPermissionVerified": true
+    },
+    {
+      "mode": "classic",
+      "tier": "2pct",
+      "address": "HFCAXuDGmKuorVoeQaYsrq9WApVbojhkQbY4KRs8uANb",
+      "graduationLamports": "85000000000",
+      "revenueLamports": "800000000",
+      "curveFeeNumerator": "20000000",
+      "creatorSharePercent": 50,
+      "feeAccountsAndPermissionVerified": true
+    }
+  ]
+}

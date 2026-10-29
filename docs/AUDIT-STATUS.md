@@ -7,7 +7,9 @@ That historical report covers the previous `885d9c88…` executable. The
 [remediation addendum](REMEDIATION-ADDENDUM.md) corrects the Classic-fee
 interpretation and records subsequent fee/dependency changes and their tests.
 The new `e9e70bae…` executable was separately matched on mainnet after upgrade;
-see [release status](RELEASE-STATUS.md). Backend rollout remains pending.
+see [release status](RELEASE-STATUS.md). The compatible backend is live, with
+separate release/quote and admission checks. These sent no financial transaction
+and do not establish a paid launch or nonzero fee payout.
 The review has open findings and limitations. Evolut has **no independent external
 contract audit**; this report must not be described as one.
 

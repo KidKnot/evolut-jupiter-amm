@@ -5,8 +5,8 @@ claim that all acceptance requirements are complete. No fake repository link,
 independent audit, funding, endorsement or naming safeguards are claimed.
 
 **Release update:** the owner-signed mainnet upgrade has been verified against
-the atomic-launch/dependency executable in this checkout. Matching backend
-rollout remains pending. See [release status](RELEASE-STATUS.md),
+the atomic-launch/dependency executable in this checkout. The compatible backend
+is live and its release/quote and admission checks passed. See [release status](RELEASE-STATUS.md),
 [candidate validation](ATOMIC-LAUNCH-CANDIDATE.md) and the
 [remediation addendum](REMEDIATION-ADDENDUM.md). The SDK is now public at
 https://github.com/KidKnot/evolut-jupiter-amm and its links work without a login.
@@ -46,7 +46,7 @@ We completed an internal, AI-assisted source review and adversarial testing of a
 
 Your guide asks for "Your security audit" without specifying an external auditor. Would this transparently labeled internal report be acceptable for integration review? If not, please tell us the additional scope/evidence or external review you require.
 
-The addendum corrects the original Classic-fee interpretation: Classic launches were free at baseline, so there was no existing Classic charge to bypass. The owner subsequently approved a 0.015 SOL fee for both Classic and Evolving. The upgraded program now transfers that fee to the canonical treasury within new-pool initialization. Compatible dependencies were also updated, including matched patched integer arithmetic in execution and quoting. The remediation has separate host, actual-SBF, application and adapter test evidence. The owner-signed upgrade was verified against the tested executable; matching backend rollout is still pending. Evolving's upfront AI/creation funding remains a separate transaction and is not an automatic-refund escrow.
+The addendum corrects the original Classic-fee interpretation: Classic launches were free at baseline, so there was no existing Classic charge to bypass. The owner subsequently approved a 0.015 SOL fee for both Classic and Evolving. The upgraded program now transfers that fee to the canonical treasury within new-pool initialization. Compatible dependencies were also updated, including matched patched integer arithmetic in execution and quoting. The remediation has separate host, actual-SBF, application and adapter test evidence. The owner-signed upgrade was verified against the tested executable, and the compatible backend is now live with release/quote and admission checks passed. Those checks sent no financial transaction and do not prove a paid launch or nonzero fee payout. Evolving's upfront AI/creation funding remains a separate transaction and is not an automatic-refund escrow.
 
 The public [SDK repository](https://github.com/KidKnot/evolut-jupiter-amm) includes the adapter, source hashes, public account fixtures and reproducible tests. We disclose unresolved inherited-source terms in [source rights](https://github.com/KidKnot/evolut-jupiter-amm/blob/main/docs/SOURCE-RIGHTS.md); we do not claim a granted permissive license or present an upstream audit as an audit of our modifications. Please let us know what source-license terms your team requires to operate and maintain this integration.
 
@@ -86,8 +86,9 @@ and [source rights](SOURCE-RIGHTS.md). The executable SHA-256 is
 `e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441`.
 The latter hash and 1,142,312-byte length were matched to the upgraded program
 in [separate finalized live verification](../evidence/mainnet-upgrade-verification-20261029.json).
-The historical fixture/test records are unchanged; this check does not establish
-a new live pool capture or completed backend rollout.
+The historical fixture/test records are unchanged; this program check does not
+establish a new live pool capture. The compatible backend was subsequently
+verified separately; see [application rollout verification](../evidence/application-rollout-verification-20261029.json).
 The standalone package reproduces the 27 adapter tests; broader contract VM
 tests use the separately retained operations harness. Exact suite evidence is
 in `evidence/internal-review/AUDIT-EVIDENCE.json`.

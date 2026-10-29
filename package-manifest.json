@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7825,
-      "sha256": "226e7460d7c5c4785b9a5142ad8215a0f28c3a763e9198615ffe32d80c6661b0"
+      "bytes": 8004,
+      "sha256": "9632fd958ffc930b4ca4786560684cf35802fdb8c9c146d09fee0ab43a25ba05"
     },
     {
       "path": "capture-mainnet.mjs",
@@ -43,13 +43,13 @@
     },
     {
       "path": "docs/ATOMIC-LAUNCH-CANDIDATE.md",
-      "bytes": 4075,
-      "sha256": "18afe503da547e786ce4619681dc342f7b9cef38e90267dfe0c76b920c7bcbfb"
+      "bytes": 4311,
+      "sha256": "a90fc0d3d8fd2a346290a29458b4cf39612bcfff6d9d73702d0ec58753e12fac"
     },
     {
       "path": "docs/AUDIT-STATUS.md",
-      "bytes": 2842,
-      "sha256": "4ea8c518b7b2840565dc7525dd91ea8ffa119721022897777377a8fc1e35868c"
+      "bytes": 2985,
+      "sha256": "531841db31674dd7c5ef8f135861de06d70afb3c1ac8f71f9a30a38c79858b49"
     },
     {
       "path": "docs/DEPENDENCY-REMEDIATION.md",
@@ -73,8 +73,8 @@
     },
     {
       "path": "docs/JUPITER-SUBMISSION.md",
-      "bytes": 8854,
-      "sha256": "54cd08bc50375e224f2ad945fe0b8f8e4928584af1fbb4725f7fc04d152fd8ac"
+      "bytes": 9175,
+      "sha256": "29ce2bd18a33fc848eef472d401cdba3f2427d3021c420cf59e0dadd7afe9894"
     },
     {
       "path": "docs/LIVE-POOLS.md",
@@ -88,13 +88,13 @@
     },
     {
       "path": "docs/RELEASE-STATUS.md",
-      "bytes": 2625,
-      "sha256": "c668405e6a8f39bae7f20d0935d8a57c5db2db94e43480fda037c29d2d178f5a"
+      "bytes": 3435,
+      "sha256": "34cc916a2f2cd55a48b8050dfc11edda6c08b67794b54cecb177881b98e42c95"
     },
     {
       "path": "docs/REMEDIATION-ADDENDUM.md",
-      "bytes": 4184,
-      "sha256": "e9a707ac0b0ad09ee01b43363a90a72370f62a943880e39212f524735aea6b93"
+      "bytes": 4580,
+      "sha256": "14912d4dd92c5b984203f5810cdb09686dfb23a886d6c6a94f36af3e7e519f4b"
     },
     {
       "path": "docs/SOURCE-RIGHTS.md",
@@ -120,6 +120,11 @@
       "path": "docs/internal-review/math-adapter.md",
       "bytes": 13977,
       "sha256": "1717946a72045a9f2531da4ade77b215a63a931000a5e9e210541c7c43501ea5"
+    },
+    {
+      "path": "evidence/application-rollout-verification-20261029.json",
+      "bytes": 3481,
+      "sha256": "1a59e6f71ba3da994f447ffb29622b5b15c33d0e57c66e8622113c0123013070"
     },
     {
       "path": "evidence/atomic-launch/baseline-validation.json",
