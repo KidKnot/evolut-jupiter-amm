@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8004,
-      "sha256": "9632fd958ffc930b4ca4786560684cf35802fdb8c9c146d09fee0ab43a25ba05"
+      "bytes": 2333,
+      "sha256": "a235a29a480d9fe9fd9bfe4fde274db098ae977b7d0d5620dbc041325a431815"
     },
     {
       "path": "capture-mainnet.mjs",
@@ -70,11 +70,6 @@
       "path": "docs/INTERNAL-SECURITY-REVIEW-20261029.md",
       "bytes": 11712,
       "sha256": "2dec8e3ed5f45ca01b0e41d3deb64cb03d765b1421e57adae26607ce5675beba"
-    },
-    {
-      "path": "docs/JUPITER-SUBMISSION.md",
-      "bytes": 9175,
-      "sha256": "29ce2bd18a33fc848eef472d401cdba3f2427d3021c420cf59e0dadd7afe9894"
     },
     {
       "path": "docs/LIVE-POOLS.md",
