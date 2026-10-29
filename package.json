@@ -1,0 +1,13 @@
+{
+  "name": "evolut-jupiter-amm-tools",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Optional read-only fixture tooling; the adapter and tests are Rust",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "verify": "node scripts/verify-package.mjs",
+    "capture": "node capture-mainnet.mjs"
+  },
+  "devDependencies": { "@solana/web3.js": "1.98.4" }
+}

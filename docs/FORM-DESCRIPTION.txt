@@ -1,0 +1,43 @@
+Hi Jupiter team,
+
+We would like a technical review for integrating Evolut's pre-graduation bonding-curve markets into Jupiter Metis. Evolut is a Solana launch platform with Classic and Evolving coins. This request concerns routing; token verification is separate.
+
+Features and AMM design
+
+Our curve derives from Meteora's Dynamic Bonding Curve code, with Evolut fee, authority and graduation changes, under mainnet program EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ.
+
+New production launches select 1% or 2% curve trading fees, split 50/50 between creator and Evolut with integer rounding, and graduate at 85 SOL. Historical pools retain their original settings. Graduation creates an official Raydium CPMM pool and permanently locks the LP issued during graduation through Burn & Earn, preserving fee rights. Graduated markets use Raydium's routing integration; our adapter excludes completed curves.
+
+Evolving coins retain their mint while names/artwork/story can develop at milestones. In the reviewed operational-PDA metadata path, the worker's rename instruction preserves the symbol. Classic creator-controlled metadata and treasury-controlled legacy metadata have broader authority, so we do not claim every platform token has a protocol-enforced immutable ticker. Program and external-program upgrade authorities remain trusted.
+
+Adapter and testing
+
+We implemented Jupiter's Amm interface for full-consumption ExactIn buys/sells between legacy SPL tokens and WSOL, using contract integer math and cached account updates with no networking in the adapter. Its 27 offline tests pass. Jupiter's official kit compares six buys against the deployed binary and an untouched 2%/85 SOL snapshot, including the exact remaining threshold. Supplemental tests cover sells, fees, slippage rollback, account validation, repeated round trips and boundary amounts. The 1% and two-segment test states are synthetic. ExactOut, partial fills, Token-2022, referrals and variable fees are unsupported. Jupiter's final routing variant and CPI/multi-hop validation remain to be completed with your team.
+
+Internal security review
+
+We completed an internal, AI-assisted source review and adversarial testing of authorities, launches, swaps, claims, graduation and the adapter, with 121 passing cases across five suites. This is not an independent external audit or certification. The report records open issues, including direct Classic initialization without the website service fee, metadata-authority distinctions, external graduation dependencies and dependency advisories; no unauthorized withdrawal exploit was established in the reviewed paths. Backend payment binding and cloud infrastructure are outside this report's scope.
+
+Your guide asks for "Your security audit" without specifying an external auditor. Would this transparently labeled internal report be acceptable for integration review? If not, please tell us the additional scope/evidence or external review you require.
+
+The adapter, report, source hashes and fixtures are prepared in a separate local repository. We are clarifying inherited-source distribution terms before providing a repository your team can access and fork. We are not claiming a granted permissive license or sending an upstream audit as an audit of our modifications.
+
+Representative mainnet examples and traction
+
+- Active curve: https://solscan.io/account/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7
+- Launched token, Mighty Great Dogwifhat (MGDW): https://solscan.io/token/Bro3jkhij9KzV4ExSaBAmiWxDsqBbsSAxTMEXWosEvoL
+- Graduated example, The First Buyer (TDB): https://solscan.io/account/6TcPBmpVTJVaqPh2RsPKgXnmwbMToanH46YxqjvCfFCc
+
+At finalized slot 462874125 on 29 October 2026, there were three existing program markets: one active production curve and two graduated historical 0.5 SOL test markets. Both graduated pools held 100% of their currently issued LP in the official locker. These are early testing examples, not organic-traction or live 85 SOL graduation claims. Team/backer details can be provided separately; no backing or endorsement is claimed.
+
+Links and contact
+
+- Current temporary mainnet site: https://website-production-2062.up.railway.app/
+- X: https://x.com/evolutdotfun
+- Email: info@evolut.fun
+- Program: https://solscan.io/account/EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ
+
+Please advise whether technical review can begin with this evidence and what remains for routing integration and audit acceptance.
+
+Thank you,
+Evolut

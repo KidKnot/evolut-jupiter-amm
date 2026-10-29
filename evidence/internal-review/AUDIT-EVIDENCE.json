@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-29",
+  "reviewKind": "internal AI-assisted security review; not independent external audit",
+  "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "binarySha256": "885d9c887801162ea921ad9426e109bd87348f40ced68ed74fe7b4b8960103b6",
+  "baselineAdapterCommit": "3e8e5082af9dff53d2e1b7792d8348c9d0d04e62",
+  "totalPassed": 121,
+  "totalFailed": 0,
+  "suites": [
+    {
+      "name": "contract-mainnet-rust",
+      "passed": 38,
+      "failed": 0,
+      "skipped": 0,
+      "log": "contract-rust-tests.log"
+    },
+    {
+      "name": "existing-mainnet-sbf-regression",
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "log": "mainnet-vm-tests.log"
+    },
+    {
+      "name": "new-authority-sbf",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "result": "authorities-adversarial-results.json"
+    },
+    {
+      "name": "new-graduation-sbf",
+      "passed": 23,
+      "failed": 0,
+      "skipped": 0,
+      "result": "graduation-adversarial-results.json"
+    },
+    {
+      "name": "adapter",
+      "passed": 27,
+      "failed": 0,
+      "skipped": 0,
+      "log": "adapter-full-tests.log"
+    }
+  ],
+  "newAdapterCases": {
+    "sbfSwaps": 113,
+    "quoteBoundaryProbes": 288,
+    "feeVectors": 28
+  },
+  "dependencyCheck": {
+    "registryVersions": 704,
+    "packageVersionMatches": 22,
+    "advisoryIdentifiers": 21,
+    "notExploitCount": true
+  },
+  "vendorSourceUnchanged": true,
+  "runtimeAndLockfilesUnchanged": true,
+  "networkTransactionsSubmitted": 0,
+  "externalSubmission": false,
+  "published": false,
+  "openItems": [
+    "Classic direct-launch fee enforcement policy",
+    "Metadata authority disclosure",
+    "External graduation-policy monitoring/recovery",
+    "Dependency remediation",
+    "Jupiter final CPI integration",
+    "Backend payment-binding audit outside contract scope",
+    "Source-sharing terms",
+    "Jupiter internal-audit acceptance"
+  ],
+  "testSourceHashes": {
+    "contract-mainnet-fee-routes.test.ts": "c38d06ccb62195eadc3b5b726f6388c9ea15815275b880a353e583cd40148ca0",
+    "contract-audit-graduation.test.ts": "c4e19a2f17bd3ea50e16352aa4a4cddd7cd377ccc53a4003bee108f41ad2dbe0",
+    "authorities-launch.test.ts": "0d36143ceb7d5e5474fbadb67d1986a4407dcddb0de2e74e84e5eb836a65b1bc",
+    "authorities-fixture-helper.ts": "d7218459664f5b7a2be0f6d4ecbc010ab8e1a7ebfb30d5f161e4a8729904f3e3",
+    "authorities-curve-idl-codec.ts": "5b21ff50775a99afaa9e55a75fbe45045b620566e0d47477c49a001e2d65dab5"
+  },
+  "adapterSecurityTestSha256": "bde020277350cc4bfc0cf1fe56765f325e9088e799f0d7738f0a449312792c46",
+  "limits": [
+    "Finite tests and manual source review, not formal proof or exhaustive fuzzing",
+    "No complete backend/cloud audit",
+    "No fresh live capture during offline audit; same-day finalized fixture reused",
+    "Broader contract VM harness is separate from standalone adapter repository",
+    "Source hash linkage is release evidence, not independent reproducible-build attestation"
+  ]
+}

@@ -1,0 +1,13 @@
+   Compiling evolut-dependency-security-regressions v0.1.0 (C:\extrc\AsolanProject\output\atomic-launch-dependency-tests-20261029)
+    Finished `release` profile [optimized] target(s) in 0.71s
+     Running tests\advisories.rs (target\release\deps\advisories-dc29674d3815b0c7.exe)
+
+running 5 tests
+test block_buffer_010_cursor_survives_advisory_panic_trigger ... ok
+test block_buffer_09_separate_cursor_survives_callback_panic ... ok
+test patched_reciprocal_rejects_non_normalized_divisor_in_release_too ... ok
+test block_buffer_010_generator_panic_does_not_corrupt_cursor ... ok
+test patched_shifts_report_discarded_limbs_and_oversized_shifts ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

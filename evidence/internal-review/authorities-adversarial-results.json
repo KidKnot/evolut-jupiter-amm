@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-29",
+  "kind": "structured observation of internal reviewer successful TAP run; not raw TAP",
+  "command": "EVOLUT_VM_NETWORK=mainnet node --import tsx --test authorities-launch.test.ts",
+  "platform": "existing WSL Ubuntu Node/LiteSVM",
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "exitCode": 0,
+  "durationMs": 10817.805016,
+  "testSourceSha256": "0d36143ceb7d5e5474fbadb67d1986a4407dcddb0de2e74e84e5eb836a65b1bc",
+  "fixtureHelperSha256": "d7218459664f5b7a2be0f6d4ecbc010ab8e1a7ebfb30d5f161e4a8729904f3e3",
+  "report": "docs/internal-review/authorities-launch.md"
+}

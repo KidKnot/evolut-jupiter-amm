@@ -1,0 +1,39 @@
+[package]
+name = "evolut-jupiter-amm"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.90"
+publish = false
+description = "Offline Jupiter quote adapter for the reviewed Evolut atomic-launch candidate"
+
+[workspace]
+exclude = ["vendor/evolut-curve"]
+
+[dependencies]
+jupiter-amm-interface = { git = "https://github.com/jup-ag/jupiter-amm-interface", rev = "70f56e0495b7c818e4c38e37b2007656892ca2a1" }
+dynamic-bonding-curve = { path = "vendor/evolut-curve/programs/dynamic-bonding-curve", features = ["mainnet", "no-entrypoint"] }
+anchor-lang = "0.31"
+bytemuck = "1.20"
+# The candidate SBF uses exactly this patched arithmetic implementation.
+ruint = "=1.20.0"
+rust_decimal = "1.36"
+solana-account = { version = "4", features = ["serde"] }
+solana-pubkey = { version = "4", features = ["curve25519"] }
+solana-instruction = "3.1"
+
+[dev-dependencies]
+jupiter-amm-test-kit = { git = "https://github.com/jup-ag/jupiter-amm-interface", rev = "70f56e0495b7c818e4c38e37b2007656892ca2a1", default-features = false }
+litesvm = "0.14"
+solana-clock = "=3.1.1"
+solana-last-restart-slot = "=3.1.0"
+solana-slot-history = "=3.1.0"
+solana-keypair = "3"
+solana-signer = "3"
+solana-transaction = { version = "4", features = ["wincode"] }
+solana-compute-budget-interface = "3"
+bincode = "1.3"
+serde_json = "1"
+sha2 = "0.10"
+
+[profile.release]
+overflow-checks = true

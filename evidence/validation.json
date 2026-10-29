@@ -1,0 +1,48 @@
+{
+  "preparedAtUtc": "2026-10-29T13:28:56.177724+00:00",
+  "status": "local-atomic-launch-candidate-tested-not-deployed-or-published",
+  "independentAudit": "none; internal testing only",
+  "sourcePermission": "unresolved; unchanged by local remediation",
+  "rust": "rustc 1.94.1 stable",
+  "platform": "Windows x64 MSVC",
+  "testCommand": "node run-cargo.mjs test --locked --offline --all-targets --jobs 2",
+  "runs": [
+    {
+      "name": "patched-adapter-captured-baseline-sbf",
+      "binary": "evidence/atomic-launch/captured-baseline-885d9c88.so",
+      "binaryBytes": 1207880,
+      "binarySha256": "885d9c887801162ea921ad9426e109bd87348f40ced68ed74fe7b4b8960103b6",
+      "log": "evidence/atomic-launch/patched-dependencies-baseline-sbf-tests.log",
+      "logSha256": "7740242763577d25cf47435523cc8f52e41886f19a68bc8c51a3618773b184c6",
+      "passed": 27,
+      "failed": 0
+    },
+    {
+      "name": "patched-adapter-local-candidate-sbf",
+      "binary": "tests/fixtures/evolut.so",
+      "binaryBytes": 1142312,
+      "binarySha256": "e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441",
+      "log": "evidence/atomic-launch/candidate-sbf-tests.log",
+      "logSha256": "cd3793e96e15a2787173f447f84b8f1ea665bfec53c58cfd2db78012e8af2086",
+      "passed": 27,
+      "failed": 0
+    }
+  ],
+  "formatCommand": "node run-cargo.mjs fmt --package evolut-jupiter-amm -- --check",
+  "formatting": "passed; vendored source not reformatted",
+  "accountSnapshotSha256": "b70462f0a9f4d54a866f78ca63d99b5caeb944fe8d7a1e611b24612b8b8b77fe",
+  "accountSnapshotChanged": false,
+  "adapterLockfileSha256": "35dd161a39bd756f01f240b49d13bab6578b011ec2a5535742ffb768644938ce",
+  "vendoredContractLockfileSha256": "6876dcda628c6a7879e579a2ce6860baa1897ca4785a225d879966d293425dab",
+  "dependencyReview": "docs/DEPENDENCY-REMEDIATION.md",
+  "historicalValidation": "evidence/atomic-launch/baseline-validation.json",
+  "limitations": [
+    "No live upgrade or mainnet transactions",
+    "Candidate bytecode is locally built, not a fresh mainnet capture",
+    "1% and two-segment execution states are synthetic",
+    "Final Jupiter CPI/multi-hop integration unverified",
+    "Source-sharing permission and external audit acceptance remain unresolved",
+    "Maintenance and non-applicable/feature-dependent advisory matches remain recorded"
+  ],
+  "transactionsSubmitted": 0
+}

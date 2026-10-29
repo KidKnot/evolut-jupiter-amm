@@ -1,0 +1,913 @@
+{
+  "checkedAtUtc": "2026-10-29T13:20:22.370618+00:00",
+  "source": "OSV public advisory API; transitive lockfile inventory, not reachability proof",
+  "lockfileSha256": {
+    "candidate-contract": "6876dcda628c6a7879e579a2ce6860baa1897ca4785a225d879966d293425dab",
+    "candidate-jupiter-adapter-and-tests": "35dd161a39bd756f01f240b49d13bab6578b011ec2a5535742ffb768644938ce"
+  },
+  "uniqueRegistryPackageVersions": 733,
+  "findings": [
+    {
+      "name": "bincode",
+      "version": "1.3.3",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2025-0141",
+          "modified": "2026-01-16T11:07:28.867553Z"
+        }
+      ]
+    },
+    {
+      "name": "block-buffer",
+      "version": "0.9.0",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-qwgh-2vcv-g2f7",
+          "modified": "2026-08-19T19:30:06.686866Z"
+        }
+      ]
+    },
+    {
+      "name": "block-buffer",
+      "version": "0.10.4",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-qwgh-2vcv-g2f7",
+          "modified": "2026-08-19T19:30:06.686866Z"
+        }
+      ]
+    },
+    {
+      "name": "borsh",
+      "version": "0.10.4",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-fjx5-qpf4-xjf2",
+          "modified": "2024-09-23T16:34:09Z"
+        }
+      ]
+    },
+    {
+      "name": "derivative",
+      "version": "2.2.0",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2024-0388",
+          "modified": "2024-11-10T13:34:40Z"
+        }
+      ]
+    },
+    {
+      "name": "libsecp256k1",
+      "version": "0.6.0",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2025-0161",
+          "modified": "2026-04-14T11:30:08.962845Z"
+        }
+      ]
+    },
+    {
+      "name": "paste",
+      "version": "1.0.15",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2024-0436",
+          "modified": "2026-01-27T22:03:15.694766Z"
+        }
+      ]
+    },
+    {
+      "name": "rand",
+      "version": "0.7.3",
+      "scopes": [
+        "candidate-contract",
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "GHSA-cq8v-f236-94qc",
+          "modified": "2026-09-10T03:50:43.958966Z"
+        },
+        {
+          "id": "RUSTSEC-2026-0097",
+          "modified": "2026-07-17T16:00:04.554426Z"
+        }
+      ]
+    },
+    {
+      "name": "ansi_term",
+      "version": "0.12.1",
+      "scopes": [
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2021-0139",
+          "modified": "2023-09-06T22:52:31Z"
+        }
+      ]
+    },
+    {
+      "name": "crypto-bigint",
+      "version": "0.5.5",
+      "scopes": [
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2026-0387",
+          "modified": "2026-10-24T03:45:02.365137Z"
+        }
+      ]
+    },
+    {
+      "name": "libsecp256k1",
+      "version": "0.7.2",
+      "scopes": [
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2025-0161",
+          "modified": "2026-04-14T11:30:08.962845Z"
+        }
+      ]
+    },
+    {
+      "name": "rkyv",
+      "version": "0.7.46",
+      "scopes": [
+        "candidate-jupiter-adapter-and-tests"
+      ],
+      "advisories": [
+        {
+          "id": "RUSTSEC-2026-0235",
+          "modified": "2026-08-04T09:30:04.382146Z"
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "GHSA-cq8v-f236-94qc": {
+      "id": "GHSA-cq8v-f236-94qc",
+      "summary": "Rand is unsound with a custom logger using rand::rng()",
+      "details": "It has been reported (by @lopopolo) that the `rand` library is [unsound](https://rust-lang.github.io/unsafe-code-guidelines/glossary.html#soundness-of-code--of-a-library) (i.e. that safe code using the public API can cause Undefined Behaviour) when all the following conditions are met:\n\n- The `log` and `thread_rng` features are enabled\n- A [custom logger](https://docs.rs/log/latest/log/#implementing-a-logger) is defined\n- The custom logger accesses `rand::rng()` (previously `rand::thread_rng()`) and calls any `TryRng` (previously `RngCore`) methods on `ThreadRng`\n- The `ThreadRng` (attempts to) reseed while called from the custom logger (this happens every 64 kB of generated data)\n- Trace-level logging is enabled or warn-level logging is enabled and the random source (the `getrandom` crate) is unable to provide a new seed\n\n`TryRng` (previously `RngCore`) methods for `ThreadRng` use `unsafe` code to cast `*mut BlockRng<ReseedingCore>` to `&mut BlockRng<ReseedingCore>`. When all the above conditions are met this results in an aliased mutable reference, violating the Stacked Borrows rules. Miri is able to detect this violation in sample code. Since construction of [aliased mutable references is Undefined Behaviour](https://doc.rust-lang.org/stable/nomicon/references.html), the behaviour of optimized builds is hard to predict.",
+      "aliases": [
+        "RUSTSEC-2026-0097"
+      ],
+      "modified": "2026-09-10T03:50:43.958966498Z",
+      "published": "2026-04-14T01:03:36Z",
+      "database_specific": {
+        "github_reviewed_at": "2026-04-14T01:03:36Z",
+        "nvd_published_at": null,
+        "cwe_ids": [
+          "CWE-20"
+        ],
+        "severity": "LOW",
+        "github_reviewed": true
+      },
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/rust-random/rand/pull/1763"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/rust-random/rand"
+        },
+        {
+          "type": "WEB",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2026-0097.html"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "rand",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/rand"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.9.0"
+                },
+                {
+                  "fixed": "0.9.3"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/04/GHSA-cq8v-f236-94qc/GHSA-cq8v-f236-94qc.json"
+          }
+        },
+        {
+          "package": {
+            "name": "rand",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/rand"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.10.0"
+                },
+                {
+                  "fixed": "0.10.1"
+                }
+              ]
+            }
+          ],
+          "versions": [
+            "0.10.0"
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/04/GHSA-cq8v-f236-94qc/GHSA-cq8v-f236-94qc.json"
+          }
+        },
+        {
+          "package": {
+            "name": "rand",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/rand"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.7.0"
+                },
+                {
+                  "fixed": "0.8.6"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/04/GHSA-cq8v-f236-94qc/GHSA-cq8v-f236-94qc.json"
+          }
+        }
+      ],
+      "schema_version": "1.9.0"
+    },
+    "GHSA-fjx5-qpf4-xjf2": {
+      "id": "GHSA-fjx5-qpf4-xjf2",
+      "summary": "Parsing borsh messages with ZST which are not-copy/clone is unsound",
+      "details": "Affected versions of borsh cause undefined behavior when zero-sized-types (ZST) are parsed and the Copy/Clone traits are not implemented/derived. For instance if 1000 instances of a ZST are deserialized, and the ZST is not copy (this can be achieved through a singleton), then accessing/writing to deserialized data will cause a segmentation fault.\n\nThere is currently no way for borsh to read data without also providing a Rust type. Therefore, if you are not using ZST for serialization, then you are not affected by this issue. \n",
+      "aliases": [
+        "RUSTSEC-2023-0033"
+      ],
+      "modified": "2024-09-23T16:34:09Z",
+      "published": "2023-04-17T16:32:26Z",
+      "database_specific": {
+        "cwe_ids": [],
+        "severity": "MODERATE",
+        "github_reviewed": true,
+        "github_reviewed_at": "2023-04-17T16:32:26Z",
+        "nvd_published_at": null
+      },
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/near/borsh-rs/issues/19"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/near/borsh-rs"
+        },
+        {
+          "type": "WEB",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2023-0033.html"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "borsh",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/borsh"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "1.0.0-alpha.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "last_known_affected_version_range": "<= 0.10.3",
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/04/GHSA-fjx5-qpf4-xjf2/GHSA-fjx5-qpf4-xjf2.json"
+          }
+        }
+      ],
+      "schema_version": "1.9.0"
+    },
+    "GHSA-qwgh-2vcv-g2f7": {
+      "id": "GHSA-qwgh-2vcv-g2f7",
+      "summary": "block_buffer: panic corrupts inline buffer position",
+      "details": "### Summary\n\nA caught panic may leave the cursor position of `EagerBuffer` or `ReadBuffer` in a corrupted state; this in turn allows out-of-bounds reads/writes.\n\n### Details & PoC\n\nThe following two tests fail miri:\n\n```rust\n#[cfg(miri)]\n#[test]\nfn eager_digest_blocks_panic_corrupts_inline_position() {\n    // `EagerBuffer` stores its cursor in the last byte of the internal block.\n    // When `digest_blocks` completes a previously partial block, it overwrites\n    // that byte with input data before invoking the caller-provided `compress`\n    // callback. If the callback panics, safe code can catch the panic and keep\n    // using the buffer while its cursor byte no longer satisfies the internal\n    // `pos < block_size` invariant. Under Miri this `get_pos` call reaches the\n    // `unreachable_unchecked` used for the assumed-valid cursor.\n    let mut buf = EagerBuffer::<U4>::new(&[1, 2]);\n\n    let _ = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {\n        buf.digest_blocks(&[3, 0xff], |_| panic!(\"simulated compression failure\"));\n    }));\n\n    let _ = buf.get_pos();\n}\n\n#[cfg(miri)]\n#[test]\nfn read_buffer_generator_panic_corrupts_inline_position() {\n    // `ReadBuffer` stores its cursor in `buffer[0]`, but `write_block` gives\n    // `gen_block` mutable access to the whole internal block before restoring\n    // `buffer[0]` to a valid cursor. If `gen_block` writes an arbitrary first\n    // byte and panics, safe code can catch the panic and later observe an\n    // invalid cursor. Under Miri this `get_pos` call reaches the\n    // `unreachable_unchecked` used for the assumed-valid cursor.\n    let mut buf = ReadBuffer::<U4>::default();\n\n    let _ = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {\n        buf.write_block(\n            1,\n            |block| {\n                block[0] = 0xff;\n                panic!(\"simulated block generation failure\");\n            },\n            |_| {},\n        );\n    }));\n\n    let _ = buf.get_pos();\n}\n```\n\nThey fail on an `unreachable_unchecked!()` under the invariant for the `pos` to always be within bounds of the block.\n\n### Impact\n\nWhile the byte that overwrites `pos` may come from untrusted input and is therefore attacker-controlled, this still relies on the surrounding code catching the panic and carrying on, which should be uncommon in practice.\n\nFor this to be exploitable, the attacker also needs a way to trigger a panic here; I have not investigated how feasible that is.\n\n### Credits\n\nThe issue was discovered by GPT-5.5",
+      "modified": "2026-08-19T19:30:06.686866977Z",
+      "published": "2026-08-19T19:15:34Z",
+      "database_specific": {
+        "github_reviewed_at": "2026-08-19T19:15:34Z",
+        "nvd_published_at": null,
+        "cwe_ids": [
+          "CWE-119"
+        ],
+        "severity": "MODERATE",
+        "github_reviewed": true
+      },
+      "references": [
+        {
+          "type": "WEB",
+          "url": "https://github.com/RustCrypto/utils/security/advisories/GHSA-qwgh-2vcv-g2f7"
+        },
+        {
+          "type": "PACKAGE",
+          "url": "https://github.com/RustCrypto/utils"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/RustCrypto/utils/releases/tag/block-buffer-v0.12.1"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "block_buffer",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/block_buffer"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0"
+                },
+                {
+                  "fixed": "0.12.1"
+                }
+              ]
+            }
+          ],
+          "database_specific": {
+            "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/08/GHSA-qwgh-2vcv-g2f7/GHSA-qwgh-2vcv-g2f7.json"
+          }
+        }
+      ],
+      "schema_version": "1.9.0",
+      "severity": [
+        {
+          "type": "CVSS_V4",
+          "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N"
+        }
+      ]
+    },
+    "RUSTSEC-2021-0139": {
+      "id": "RUSTSEC-2021-0139",
+      "summary": "ansi_term is Unmaintained",
+      "details": "The maintainer has advised that this crate is deprecated and will not receive any maintenance.\n\nThe crate does not seem to have much dependencies and may or may not be ok to use as-is.\n\nLast release seems to have been three years ago.\n\n## Possible Alternative(s)\n\n The below list has not been vetted in any way and may or may not contain alternatives;\n\n - [ansiterm](https://crates.io/crates/ansiterm)\n - [anstyle](https://github.com/epage/anstyle)\n - [console](https://crates.io/crates/console)\n - [nu-ansi-term](https://crates.io/crates/nu-ansi-term)\n - [owo-colors](https://crates.io/crates/owo-colors)\n - [stylish](https://crates.io/crates/stylish)\n - [yansi](https://crates.io/crates/yansi)\n\n## Dependency Specific Migration(s)\n\n - [structopt, clap2](https://github.com/clap-rs/clap/discussions/4172)",
+      "modified": "2023-09-06T22:52:31Z",
+      "published": "2021-08-18T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/ansi_term"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2021-0139.html"
+        },
+        {
+          "type": "REPORT",
+          "url": "https://github.com/ogham/rust-ansi-term/issues/72"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "ansi_term",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/ansi_term"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.0.0-0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affected_functions": null,
+            "affects": {
+              "arch": [],
+              "functions": [],
+              "os": []
+            }
+          },
+          "database_specific": {
+            "cvss": null,
+            "informational": "unmaintained",
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2021-0139.json",
+            "categories": []
+          }
+        }
+      ],
+      "schema_version": "1.7.3"
+    },
+    "RUSTSEC-2024-0388": {
+      "id": "RUSTSEC-2024-0388",
+      "summary": "`derivative` is unmaintained; consider using an alternative",
+      "details": "The [`derivative`](https://crates.io/crates/derivative) crate is no longer maintained.\nConsider using any alternative, for instance:\n- [derive_more](https://crates.io/crates/derive_more)\n- [derive-where](https://crates.io/crates/derive-where)\n- [educe](https://crates.io/crates/educe)",
+      "modified": "2024-11-10T13:34:40Z",
+      "published": "2024-06-26T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/derivative"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2024-0388.html"
+        },
+        {
+          "type": "REPORT",
+          "url": "https://github.com/mcarton/rust-derivative/issues/117"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "derivative",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/derivative"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.0.0-0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affected_functions": null,
+            "affects": {
+              "arch": [],
+              "functions": [],
+              "os": []
+            }
+          },
+          "database_specific": {
+            "categories": [],
+            "cvss": null,
+            "informational": "unmaintained",
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2024-0388.json"
+          }
+        }
+      ],
+      "schema_version": "1.7.3"
+    },
+    "RUSTSEC-2024-0436": {
+      "id": "RUSTSEC-2024-0436",
+      "summary": "paste - no longer maintained",
+      "details": "The creator of the crate `paste` has stated in the [`README.md`](https://github.com/dtolnay/paste/blob/master/README.md) \nthat this project is not longer maintained as well as archived the repository\n\n## Possible Alternative(s)\n\n- [`pastey`]: a fork of paste and is aimed to be a drop-in replacement with additional features for paste crate\n- [`with_builtin_macros`]: crate providing a [superset of `paste`'s functionality including general `macro_rules!` eager expansions](https://docs.rs/with_builtin_macros/0.1.0/with_builtin_macros/macro.with_eager_expansions.html)  and `concat!`/`concat_idents!` macros\n\n[`pastey`]: https://crates.io/crates/pastey\n[`with_builtin_macros`]: https://crates.io/crates/with_builtin_macros",
+      "modified": "2026-01-27T22:03:15.694766Z",
+      "published": "2024-10-07T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/paste"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2024-0436.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/dtolnay/paste"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "paste",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/paste"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.0.0-0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affected_functions": null,
+            "affects": {
+              "arch": [],
+              "functions": [],
+              "os": []
+            }
+          },
+          "database_specific": {
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2024-0436.json",
+            "categories": [],
+            "cvss": null,
+            "informational": "unmaintained"
+          }
+        }
+      ],
+      "schema_version": "1.7.3"
+    },
+    "RUSTSEC-2025-0141": {
+      "id": "RUSTSEC-2025-0141",
+      "summary": "Bincode is unmaintained",
+      "details": "Due to a doxxing and harassment incident, the bincode team has taken the decision to cease development permanently.\n\nThe team considers version 1.3.3 a complete version of bincode that is not in need of any updates.\n\n## Alternatives to consider\n\n* [wincode](https://crates.io/crates/wincode)\n* [postcard](https://crates.io/crates/postcard)\n* [bitcode](https://crates.io/crates/bitcode)\n* [rkyv](https://crates.io/crates/rkyv)",
+      "modified": "2026-01-16T11:07:28.867553Z",
+      "published": "2025-12-16T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/bincode"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2025-0141.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://git.sr.ht/~stygianentity/bincode/tree/v3.0/item/README.md"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "bincode",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/bincode"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.0.0-0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affected_functions": null,
+            "affects": {
+              "os": [],
+              "arch": [],
+              "functions": []
+            }
+          },
+          "database_specific": {
+            "categories": [],
+            "cvss": null,
+            "informational": "unmaintained",
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2025-0141.json"
+          }
+        }
+      ],
+      "schema_version": "1.7.3"
+    },
+    "RUSTSEC-2025-0161": {
+      "id": "RUSTSEC-2025-0161",
+      "summary": "libsecp256k1 is unmaintained",
+      "details": "The maintainers recommend using [k256](https://crates.io/crates/k256) instead.",
+      "modified": "2026-04-14T11:30:08.962845Z",
+      "published": "2025-01-14T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/libsecp256k1"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2025-0161.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/paritytech/libsecp256k1/pull/159"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "libsecp256k1",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/libsecp256k1"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.0.0-0"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affected_functions": null,
+            "affects": {
+              "arch": [],
+              "functions": [],
+              "os": []
+            }
+          },
+          "database_specific": {
+            "categories": [],
+            "cvss": null,
+            "informational": "unmaintained",
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2025-0161.json"
+          }
+        }
+      ],
+      "schema_version": "1.7.5"
+    },
+    "RUSTSEC-2026-0097": {
+      "id": "RUSTSEC-2026-0097",
+      "summary": "Rand is unsound with a custom logger using `rand::rng()`",
+      "details": "It has been reported (by [@lopopolo](https://github.com/lopopolo)) that the `rand` library is [unsound](https://rust-lang.github.io/unsafe-code-guidelines/glossary.html#soundness-of-code--of-a-library) (i.e. that safe code using the public API can cause Undefined Behaviour) when all the following conditions are met:\n\n- The `log` and `thread_rng` features are enabled\n- A [custom logger](https://docs.rs/log/latest/log/#implementing-a-logger) is defined\n- The custom logger accesses `rand::rng()` (previously `rand::thread_rng()`) and calls any `TryRng` (previously `RngCore`) methods on `ThreadRng`\n- The `ThreadRng` (attempts to) reseed while called from the custom logger (this happens every 64 kB of generated data)\n- Trace-level logging is enabled or warn-level logging is enabled and the random source (the `getrandom` crate) is unable to provide a new seed\n\n`TryRng` (previously `RngCore`) methods for `ThreadRng` use `unsafe` code to cast `*mut BlockRng<ReseedingCore>` to `&mut BlockRng<ReseedingCore>`. When all the above conditions are met this results in an aliased mutable reference, violating the Stacked Borrows rules. Miri is able to detect this violation in sample code. Since construction of [aliased mutable references is Undefined Behaviour](https://doc.rust-lang.org/stable/nomicon/references.html), the behaviour of optimized builds is hard to predict.",
+      "aliases": [
+        "GHSA-cq8v-f236-94qc"
+      ],
+      "modified": "2026-07-17T16:00:04.554426493Z",
+      "published": "2026-04-09T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/rand"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2026-0097.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/rust-random/rand/pull/1763"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "rand",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/rand"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.7.0"
+                },
+                {
+                  "fixed": "0.8.6"
+                },
+                {
+                  "introduced": "0.9.0"
+                },
+                {
+                  "fixed": "0.9.3"
+                },
+                {
+                  "introduced": "0.10.0"
+                },
+                {
+                  "fixed": "0.10.1"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affects": {
+              "arch": [],
+              "os": [],
+              "functions": [
+                "rand::rng",
+                "rand::thread_rng"
+              ]
+            },
+            "affected_functions": null
+          },
+          "database_specific": {
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2026-0097.json",
+            "categories": [],
+            "cvss": null,
+            "informational": "unsound"
+          }
+        }
+      ],
+      "schema_version": "1.7.5"
+    },
+    "RUSTSEC-2026-0235": {
+      "id": "RUSTSEC-2026-0235",
+      "summary": "Insufficient archive validation can cause out-of-bounds reads in archives containing Rc/Arc",
+      "details": "Shared pointer validation keyed already-validated pointees by their address and\ntype, but did not include pointer metadata. For unsized pointees, an archive\ncould therefore contain multiple `Rc`, `Arc`, or weak pointers that shared a\ndata address but used different metadata, such as different slice lengths.\n\nOnce the first pointer had been validated, later pointers to the same address\nskipped pointee validation. The safe checked `rkyv::access` API could\nconsequently return a slice with a forged length, allowing safe indexing to\nread out of bounds. The same validation bypass was reachable through checked\ndeserialization with `rkyv::from_bytes`.\n\nVersion 0.8.17 includes pointer metadata in shared pointer validation and\nrejects conflicting metadata. The 0.7 series is also affected but is no\nlonger supported by upstream. Users who process untrusted archives should upgrade\nto 0.8.17 or later.",
+      "modified": "2026-08-04T09:30:04.382146100Z",
+      "published": "2026-05-13T12:00:00Z",
+      "database_specific": {
+        "license": "CC0-1.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/rkyv"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2026-0235.html"
+        },
+        {
+          "type": "REPORT",
+          "url": "https://github.com/rkyv/rkyv/issues/670"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/rkyv/rkyv/commit/3c9d07fbff5949261bef38d00ab160b129bd9d3a"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "rkyv",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/rkyv"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.7.0-pre.2"
+                },
+                {
+                  "fixed": "0.8.17"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affected_functions": null,
+            "affects": {
+              "arch": [],
+              "os": [],
+              "functions": []
+            }
+          },
+          "database_specific": {
+            "categories": [
+              "memory-exposure"
+            ],
+            "cvss": null,
+            "informational": null,
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2026-0235.json"
+          }
+        }
+      ],
+      "schema_version": "1.8.0"
+    },
+    "RUSTSEC-2026-0387": {
+      "id": "RUSTSEC-2026-0387",
+      "summary": "Multiple timing variability issues in operations intended to be constant-time",
+      "details": "## Summary\n\nSeveral operations intended to be constant-time could execute secret-dependent\nbranches, depending on the compiler and target CPU. These include subtraction,\nzero counting, division, and Montgomery multiplication.\n\nAdditionally, `UintRef` equality could terminate at the first unequal limb,\nand `BoxedMontyForm::invert` branched on whether an inverse exists.\n\n## Impact\n\nApplications using affected operations on secret integers may leak information\nthrough timing or microarchitectural side channels. This includes information\nabout intermediate arithmetic values, matching limbs, and invertibility.\n\nSuch leakage could potentially enable recovery of cryptographic secrets.\nPractical exploitability depends on the downstream algorithm, compiler, target\nCPU, and an attacker's ability to observe the side channel.\n\n## Resolution\n\nUpgrade to v0.7.6, which removes the identified branches, updates `ctutils` to\ninclude its constant-time fixes, and adds BINSEC-based regression checks using\n`cargo checkct` for arithmetic on multiple targets.",
+      "modified": "2026-10-24T03:45:02.365137418Z",
+      "published": "2026-10-23T12:00:00Z",
+      "database_specific": {
+        "license": "CC-BY-4.0"
+      },
+      "references": [
+        {
+          "type": "PACKAGE",
+          "url": "https://crates.io/crates/crypto-bigint"
+        },
+        {
+          "type": "ADVISORY",
+          "url": "https://rustsec.org/advisories/RUSTSEC-2026-0387.html"
+        },
+        {
+          "type": "WEB",
+          "url": "https://github.com/RustCrypto/crypto-bigint/pull/1365"
+        }
+      ],
+      "affected": [
+        {
+          "package": {
+            "name": "crypto-bigint",
+            "ecosystem": "crates.io",
+            "purl": "pkg:cargo/crypto-bigint"
+          },
+          "ranges": [
+            {
+              "type": "SEMVER",
+              "events": [
+                {
+                  "introduced": "0.0.0-0"
+                },
+                {
+                  "fixed": "0.7.6"
+                }
+              ]
+            }
+          ],
+          "ecosystem_specific": {
+            "affects": {
+              "arch": [],
+              "os": [],
+              "functions": []
+            },
+            "affected_functions": null
+          },
+          "database_specific": {
+            "categories": [
+              "crypto-failure"
+            ],
+            "cvss": null,
+            "informational": null,
+            "source": "https://github.com/rustsec/advisory-db/blob/osv/crates/RUSTSEC-2026-0387.json"
+          }
+        }
+      ],
+      "schema_version": "1.9.0"
+    }
+  },
+  "limitations": [
+    "Includes build/test and target-specific crates; actual feature reachability needs separate review.",
+    "Git/path dependencies and npm packages not covered.",
+    "No source code, credentials or private endpoints transmitted."
+  ]
+}

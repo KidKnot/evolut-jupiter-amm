@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-29T14:35:14.250Z",
+  "scope": "read-only-finalized-program-and-upgrade-signature-verification",
+  "network": "mainnet-beta",
+  "commitment": "finalized",
+  "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "programData": "8yQweA8Y2u7EcfAorAhsZxhk9TdQszLLjmJYrM2A8AW4",
+  "deploymentSlot": 462914292,
+  "checkedSlot": 462916600,
+  "upgradeAuthority": "Ddu3yPxCZpfgc3h3cKTkbpv2W7WyNhc8eDf7gGZd6whY",
+  "executableBytes": 1142312,
+  "executableSha256": "e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441",
+  "zeroAllocationPaddingBytes": 65592,
+  "bytecodeVerified": true,
+  "upgradeSignature": "33Li3HT6YHgvdsiZk6ABvjfnQJPDw3TPKUh5qhaAQhA6rpow5cC9CG1BAbxH8g7BnPSCSg1CP5b2X75tfiUpCix8",
+  "upgradeSignatureFinalized": true,
+  "localProgramFixture": "tests/fixtures/evolut.so",
+  "statement": "The finalized executable matches the locally tested fixture. Historical account captures and test logs remain unchanged. This check does not establish backend rollout, Jupiter integration approval or an independent audit.",
+  "transactionsSubmittedByThisCheck": 0
+}

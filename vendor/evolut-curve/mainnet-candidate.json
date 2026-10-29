@@ -1,0 +1,151 @@
+{
+  "status": "program-deployed-verified-application-and-live-acceptance-pending",
+  "purpose": "Owner decision record, not a provisioning input or deployment authorization",
+  "network": "mainnet-beta",
+  "bondingCurveFeeBps": 100,
+  "bondingCurveCreatorShareBps": 5000,
+  "confirmedLaunchEconomics": {
+    "productionGraduationThresholdLamports": 85000000000,
+    "tokenSupply": "1000000000",
+    "tokenDecimals": 6,
+    "tokenSupplyBaseUnits": "1000000000000000",
+    "netPlatformLaunchFeeLamports": 15000000,
+    "netPlatformGraduationFeeLamports": 800000000,
+    "graduationSetupCostCapLamports": 250000000,
+    "graduationFeeFunding": "Deduct from raised threshold, alongside actual setup costs. Credit fixed revenue as treasury-only claimable WSOL; do not reimburse the worker or split this fixed revenue with the creator.",
+    "testPlatformGraduationFeeLamports": 0,
+    "launchCostPolicy": "0.015 SOL net to Evolut, plus separately quoted actual setup/network costs; implementation and expense caps pending",
+    "initialPricePolicy": "Derive from a simulated curve consistent with confirmed supply and graduation threshold; no arbitrary USD peg",
+    "status": "owner-decisions-recorded-not-provisioned"
+  },
+  "confirmedDefaults": {
+    "teamReservedTokens": "0",
+    "vesting": "none",
+    "supplyPurpose": "curve sales and graduation liquidity only",
+    "additionalMintingAfterLaunch": false,
+    "unusedGraduationTokens": "Owner approved burning all unused issued inventory at graduation; no treasury allocation. Initial supply is 1 billion, not a permanent minimum supply.",
+    "mainnetPostMigrationSupplyFloorBaseUnits": "0",
+    "metadataUpdates": "intended artwork/metadata evolution only",
+    "creatorFeeRightsOnFeeKeyTransfer": "follow existing FeeKey ownership semantics: the current NFT owner claims the corresponding unclaimed and future income; no separate original-creator entitlement",
+    "walletAddresses": "Owner confirmed all four public identities and custody; mirrored in server/src/config/mainnet-identities.json. This record is not deployed authority or proof of wallet control.",
+    "graduationSetupCap": "Owner approved 250000000 lamports (0.25 SOL) on 2026-10-22 for both graduation profiles. Reimburse actual setup costs only, separately from fixed platform revenue; recheck current rents and creation fees before provisioning."
+  },
+  "offlineCurveStudy": {
+    "status": "local-economics-and-mainnet-sbf-cpi-tested-not-release-approved",
+    "implementation": "programs/dynamic-bonding-curve/tests/mainnet_candidate_economics.rs",
+    "design": "Single liquidity band; approximately 80% sold on curve and 20% reserved before setup costs; final price approximately 16 times initial price",
+    "floatingPointUsage": "Display of SOL prices only. Config parameters and swap/conservation assertions use the actual contract integer math.",
+    "production": {
+      "thresholdLamports": "85000000000",
+      "sqrtStartPrice": "95072342830801367",
+      "bandEndSqrtPrice": "380289371323205470",
+      "liquidity": "101410499019521456456372574694557",
+      "initialSolPerTokenApprox": "0.00000002656250",
+      "terminalSolPerTokenApprox": "0.00000042500000",
+      "graduationSolLiquidityLamports": "84008730080",
+      "graduationTokenLiquidityBaseUnits": "197667600188236",
+      "burnedUnusedBaseUnits": "2332399811816",
+      "postGraduationSupplyBaseUnits": "997667600188184",
+      "treasuryClaimableLeftoverBaseUnits": "0"
+    },
+    "test": {
+      "thresholdLamports": "500000000",
+      "sqrtStartPrice": "7291715835891896",
+      "bandEndSqrtPrice": "29166863343567586",
+      "liquidity": "7777830224951353292954522965452",
+      "initialSolPerTokenApprox": "0.00000000015625",
+      "terminalSolPerTokenApprox": "0.00000000250000",
+      "graduationSolLiquidityLamports": "308730080",
+      "graduationTokenLiquidityBaseUnits": "123492032000000",
+      "burnedUnusedBaseUnits": "76507968000048",
+      "postGraduationSupplyBaseUnits": "923492031999952",
+      "treasuryClaimableLeftoverBaseUnits": "0"
+    },
+    "assumptions": [
+      "Observed standard config #2 setup cost of 191269920 lamports, not a live quote or approved cap",
+      "100 bounded simulated purchases; one-lamport terminal quote surplus is tracked separately from graduation funds",
+      "No reserved/team tokens or vesting; new mainnet policies use a zero minimum-supply floor and burn unused ledger inventory, not fees or unsolicited vault donations",
+      "Mint starts at 1 billion; owner approved the graduation burn. Actual final supply depends on swap rounding and actual setup costs",
+      "Mainnet launch revenue remains a separate payment; zero legacy on-chain pool_creation_fee avoids double billing",
+      "Production now deducts 800000000 lamports from raised SOL at graduation; the separate 0.5 SOL test deducts zero. Config version 2 stores the fixed charge in reserved bytes without changing account length; version 1 stays fee-free."
+    ],
+    "checksPassed": [
+      "2026-10-22: 36 mainnet Rust tests: 26 unit, 4 burn, 3 graduation-revenue, 3 candidate economics/policy",
+      "2026-10-22: 34 default/devnet Rust tests: 25 unit, 4 burn, 3 graduation-revenue, 2 candidate economics",
+      "39 targeted backend/worker/migration regression tests and 70 expanded launch/indexer/UI-policy tests (overlapping suites)",
+      "8 fee-admission tests including fresh #13 permission checks and both mainnet tiers remaining blocked pending release approval",
+      "Backend and frontend TypeScript no-emit typechecks",
+      "Fresh mainnet SBF build through repeatable offline Ubuntu wrapper; unchanged hash across rebuild",
+      "2026-10-22: 22 offline mainnet LiteSVM tests executing actual Evolut and hash-pinned Raydium programs: both tiers, thresholds, mint orders, exact API/browser quotes versus executed trades, LP/creator claims, dual FeeKey packet/compute limits, NFT transfer, external collection, share overrides, invalid permission/rate, admin separation and atomic rollback",
+      "2026-10-22: 94 targeted fee/browser/claim/display/indexer/migration regressions and 4 wallet persistence/signature regressions passed; matching backend/frontend typechecks passed"
+    ],
+    "sbfBuild": "2026-10-22: mainnet-feature SBF built offline with Ubuntu. 1207904 bytes; sha256 2fce058ef05c9b3e1ef70f4553b94c0733e51988db9a6a0769c68406b48d5615. Separate mainnet IDL generated. Bound to confirmed mainnet treasury/admin and vanity program ID.",
+    "notProven": "Offline tests use synthetic config #13, permission and share fixtures with real captured external binaries. They do not establish live permission/rates, wallet control, deployed browser/API acceptance or mainnet deployment. Some known-public-identity setup signatures are explicitly simulated. Economics figures above retain the older #2 setup-cost assumption, not live quotes."
+  },
+  "requestedMainnetTest": {
+    "graduationThresholdLamports": 500000000,
+    "separateImmutableConfigFromProduction": true,
+    "status": "offline-economics-and-cpi-tested-pending-live-acceptance-and-release-approval",
+    "note": "A functional real-money test, not an 85 SOL economic rehearsal. Never reuse this config for public production launches.",
+    "standardConfig2SetupEstimate": {
+      "observedSlot": 458883349,
+      "raydiumCreationFeeLamports": 150000000,
+      "freshGraduationAccountRentLamports": 41269920,
+      "totalReimbursableSetupLamports": 191269920,
+      "remainingSolSideLiquidityLamports": 308730080,
+      "excludes": "Program deployment, token launch costs, worker funding/ATA and transaction fees; config 13 creator-fee integration may require additional accounts"
+    }
+  },
+  "graduationOptions": [
+    {
+      "configIndex": 13,
+      "configAddress": "9UQpPzgjju8DhHGcdnGDuXck4VGnHzGhRxT2NmEr6aS8",
+      "raydiumBaseFeeBps": 3,
+      "creatorFeeEnabled": true,
+      "creatorFeeBps": 97,
+      "totalInputFeeBps": 100,
+      "status": "local-contract-and-app-integration-tested-release-closed",
+      "pending": [
+        "Recheck permission and current fee/share rates at release; permission was verified on 2026-10-20, finalized slot 459235883",
+        "Live acceptance of tested permissioned initialization, per-pool collection and current FeeKey-owner 50/50 net entitlement",
+        "Matching app deployment and wallet/browser acceptance; public launch and wallet admission remain deliberately closed"
+      ]
+    },
+    {
+      "configIndex": 2,
+      "configAddress": "2fGXL8uhqxJ4tpgtosHZXT4zcQap6j62z3bMDxdkMvy5",
+      "raydiumBaseFeeBps": 200,
+      "creatorFeeEnabled": false,
+      "creatorFeeBps": 0,
+      "totalInputFeeBps": 200,
+      "status": "owner-selected-exact-2pct-local-contract-cpi-tested",
+      "collection": "Standard initialization, creator fee disabled. Collect locked LP earnings through existing FeeKeys; creator/platform each hold half the locked LP, modulo integer dust. Not a 2.05% tier."
+    }
+  ],
+  "raydiumObservedRates": {
+    "observedDate": "2026-10-19",
+    "denominator": 1000000,
+    "protocolShareOfBaseFee": 120000,
+    "fundShareOfBaseFee": 40000,
+    "defaultShareOfCreatorFee": 50000,
+    "warning": "External mutable configuration; recheck chain and creator-specific overrides before activation. These are shares of fee buckets, not percentages of trade value."
+  },
+  "ownerDecisionsRequired": {
+    "mainnetProgramId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+    "treasuryPublicKey": "ASemhYRLkceP777SAfYVShjdjt481bKw7xUJuaj8u7a4",
+    "treasuryWalletType": "hardware",
+    "adminPublicKeyAndWalletType": { "publicKey": "5HF4Vno1pAdY8UdPMqrpAGtziNUX6kFTCH1qMokDPsBP", "walletType": "regular" },
+    "upgradeAuthorityPublicKeyAndWalletType": { "publicKey": "Ddu3yPxCZpfgc3h3cKTkbpv2W7WyNhc8eDf7gGZd6whY", "walletType": "regular" },
+    "restrictedWorkerPublicKey": "7WaaVC79omvWTXcV1HPTZ1ihQhLGtB6qVAV3DHoG7bRz",
+    "curveAllocationAndCalculatedPriceReview": null,
+    "graduationSetupCostCapLamports": 250000000
+  },
+  "releaseBlockers": [
+    "Mainnet treasury/admin binding is locally implemented and VM-tested; wallet-control verification and final curve review remain pending; graduation setup cap is owner-approved at 0.25 SOL",
+    "All new mainnet launch and wallet admission remains disabled pending a separately reviewed activation change; local contract/app integration tests do not open admission",
+    "Backend/browser readers, quotes, claim preparation, receipts, graduation indexing and fee UI are locally integrated; deployed launch provisioning and real-wallet acceptance are still required",
+    "Actual SPL burn, graduation, swap, both fee-claim paths and rollback pass offline SBF tests; review final artifact and perform separately authorized live acceptance before activation",
+    "Recheck live Raydium programs, permission and mutable rates; per-pool creator PDAs do not inherit a custom share override granted to the global pool authority",
+    "Validate the deployed UI's active-phase fee and WSOL labels; fixed graduation revenue remains separate from setup costs"
+  ]
+}

@@ -1,0 +1,82 @@
+warning: use of deprecated module `anchor_lang::solana_program::system_instruction`: Use `solana_system_interface` crate instead
+ --> vendor\evolut-curve\programs\dynamic-bonding-curve\src\instructions\migration\flash_rent.rs:3:39
+  |
+3 |     solana_program::{program::invoke, system_instruction},
+  |                                       ^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated module `anchor_lang::solana_program::system_instruction`: Use `solana_system_interface` crate instead
+  --> vendor\evolut-curve\programs\dynamic-bonding-curve\src\instructions\migration\graduate.rs:11:39
+   |
+11 |     solana_program::{program::invoke, system_instruction},
+   |                                       ^^^^^^^^^^^^^^^^^^
+
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+  --> vendor\evolut-curve\programs\dynamic-bonding-curve\src\lib.rs:34:1
+   |
+34 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: this warning originates in the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: `dynamic-bonding-curve` (lib) generated 3 warnings
+   Compiling evolut-jupiter-amm v0.1.0 (C:\extrc\AsolanProject\output\atomic-launch-jupiter-20261029)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.58s
+     Running unittests src\lib.rs (target\debug\deps\evolut_jupiter_amm-096a5088e22d85ce.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\execution.rs (target\debug\deps\execution-187c00f60b452fe6.exe)
+
+running 4 tests
+test above_85_sol_threshold_rejects_partial_fill_in_quote_and_native_execution ... ok
+test captured_mainnet_two_percent_buy_then_sell_matches_quote_and_fee_ledgers ... ok
+test synthetic_fee_only_one_percent_variant_buy_then_sell_matches_quote_and_fee_ledgers ... ok
+test buy_and_sell_slippage_rejections_preserve_all_pool_and_token_accounts ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests\parity.rs (target\debug\deps\parity-b41d98802ab53611.exe)
+
+running 2 tests
+test pinned_local_candidate_program_bytecode ... ok
+test official_kit_mainnet_85sol_2pct_exact_input_buys ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+
+     Running tests\security_invariants.rs (target\debug\deps\security_invariants-1dd7f7f5569a5638.exe)
+
+running 4 tests
+test fee_ceiling_and_half_split_conserve_every_lamport_at_integer_extremes ... ok
+test whole_u64_input_range_is_rejected_or_quoted_without_panic ... ok
+test synthetic_two_segment_curve_crosses_both_directions_with_native_parity ... ok
+test repeated_round_trips_cannot_extract_quote_and_preserve_exact_fee_ledgers ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.92s
+
+     Running tests\validation.rs (target\debug\deps\validation-0395706d0fd7e8ac.exe)
+
+running 17 tests
+test native_swap_encoding_preserves_raw_u64_amounts_and_minimum_output ... ok
+test construction_alone_never_enables_quotes_or_instructions ... ok
+test constructor_rejects_wrong_owner_discriminator_size_and_executable_state ... ok
+test constructor_rejects_forged_pool_address_and_token_2022_pool ... ok
+test exact_out_zero_input_and_wrong_mint_pairs_are_rejected ... ok
+test cpi_transfer_authority_can_differ_from_user_and_payer ... ok
+test invalid_clock_never_produces_a_quote ... ok
+test threshold_crossing_buy_is_rejected_instead_of_returning_a_partial_fill ... ok
+test nonempty_referrals_and_missing_or_duplicate_token_accounts_are_rejected ... ok
+test buy_fees_use_integer_ceiling_and_are_reported_in_wsol_for_both_tiers ... ok
+test slot_and_timestamp_activation_are_rechecked_on_every_quote ... ok
+test migrated_completed_and_migrating_pools_are_unavailable ... ok
+test corrupt_config_refresh_invalidates_previously_valid_state ... ok
+test malformed_curve_limits_and_point_order_are_rejected ... ok
+test missing_dependency_invalidates_previous_quote_until_successful_refresh ... ok
+test unsupported_config_modes_fail_closed ... ok
+test legacy_mint_and_vault_integrity_are_required ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+

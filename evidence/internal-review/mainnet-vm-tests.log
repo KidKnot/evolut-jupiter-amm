@@ -1,0 +1,127 @@
+TAP version 13
+# bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+# bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+# Subtest: upgrade preserves old one-percent curve with two-percent Raydium destination and both curve claims
+ok 1 - upgrade preserves old one-percent curve with two-percent Raydium destination and both curve claims
+  ---
+  duration_ms: 262.203915
+  ...
+# Subtest: actual SBF graduation \#13, 0.5 SOL, baseFirst=false
+ok 2 - actual SBF graduation \#13, 0.5 SOL, baseFirst=false
+  ---
+  duration_ms: 118.866164
+  ...
+# Subtest: actual SBF graduation \#13, 0.5 SOL, baseFirst=true
+ok 3 - actual SBF graduation \#13, 0.5 SOL, baseFirst=true
+  ---
+  duration_ms: 118.128001
+  ...
+# Subtest: actual SBF graduation \#13, 85 SOL, baseFirst=false
+ok 4 - actual SBF graduation \#13, 85 SOL, baseFirst=false
+  ---
+  duration_ms: 111.985957
+  ...
+# Subtest: actual SBF graduation \#13, 85 SOL, baseFirst=true
+ok 5 - actual SBF graduation \#13, 85 SOL, baseFirst=true
+  ---
+  duration_ms: 118.618708
+  ...
+# Subtest: actual SBF graduation \#2, 0.5 SOL, baseFirst=false
+ok 6 - actual SBF graduation \#2, 0.5 SOL, baseFirst=false
+  ---
+  duration_ms: 128.992121
+  ...
+# Subtest: actual SBF graduation \#2, 0.5 SOL, baseFirst=true
+ok 7 - actual SBF graduation \#2, 0.5 SOL, baseFirst=true
+  ---
+  duration_ms: 124.911006
+  ...
+# Subtest: actual SBF graduation \#2, 85 SOL, baseFirst=false
+ok 8 - actual SBF graduation \#2, 85 SOL, baseFirst=false
+  ---
+  duration_ms: 123.962264
+  ...
+# Subtest: actual SBF graduation \#2, 85 SOL, baseFirst=true
+ok 9 - actual SBF graduation \#2, 85 SOL, baseFirst=true
+  ---
+  duration_ms: 121.816454
+  ...
+# Subtest: creator claims split net receipts and follow NFT transfers, baseFirst=false
+ok 10 - creator claims split net receipts and follow NFT transfers, baseFirst=false
+  ---
+  duration_ms: 204.441961
+  ...
+# Subtest: creator claims split net receipts and follow NFT transfers, baseFirst=true
+ok 11 - creator claims split net receipts and follow NFT transfers, baseFirst=true
+  ---
+  duration_ms: 217.703402
+  ...
+# Subtest: LP claims remain independent and preserve locked principal, config \#13
+ok 12 - LP claims remain independent and preserve locked principal, config \#13
+  ---
+  duration_ms: 170.056265
+  ...
+# Subtest: LP claims remain independent and preserve locked principal, config \#2
+ok 13 - LP claims remain independent and preserve locked principal, config \#2
+  ---
+  duration_ms: 144.416538
+  ...
+# Subtest: permissionless external collection before our claim is accounted for; pools stay isolated
+ok 14 - permissionless external collection before our claim is accounted for; pools stay isolated
+  ---
+  duration_ms: 155.174213
+  ...
+# Subtest: one holder can claim both creator Fee Keys within the app compute and packet budgets
+ok 15 - one holder can claim both creator Fee Keys within the app compute and packet budgets
+  ---
+  duration_ms: 127.62196
+  ...
+# Subtest: creator-share override 0: split only net, invalid rate rolls back
+ok 16 - creator-share override 0: split only net, invalid rate rolls back
+  ---
+  duration_ms: 162.861151
+  ...
+# Subtest: creator-share override 333333: split only net, invalid rate rolls back
+ok 17 - creator-share override 333333: split only net, invalid rate rolls back
+  ---
+  duration_ms: 152.391246
+  ...
+# Subtest: creator-share override 1000000: split only net, invalid rate rolls back
+ok 18 - creator-share override 1000000: split only net, invalid rate rolls back
+  ---
+  duration_ms: 134.085228
+  ...
+# Subtest: creator-share override 1000001: split only net, invalid rate rolls back
+ok 19 - creator-share override 1000001: split only net, invalid rate rolls back
+  ---
+  duration_ms: 144.715978
+  ...
+# Subtest: graduation fails closed on changed permission
+ok 20 - graduation fails closed on changed permission
+  ---
+  duration_ms: 81.43623
+  ...
+# Subtest: graduation fails closed on changed fee-rate
+ok 21 - graduation fails closed on changed fee-rate
+  ---
+  duration_ms: 89.005602
+  ...
+# Subtest: cold admin, treasury and operator permissions are separated on mainnet
+ok 22 - cold admin, treasury and operator permissions are separated on mainnet
+  ---
+  duration_ms: 99.912004
+  ...
+# Subtest: late graduation failure rolls back CPMM initialization, locks, revenue and burn
+ok 23 - late graduation failure rolls back CPMM initialization, locks, revenue and burn
+  ---
+  duration_ms: 90.914482
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17023.652282

@@ -1,0 +1,24 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+dynamic_bonding_curve = "FHrKE2Pibu6Bd2Y9pHyjkHkEWeftTcy1DhN63dDwQa97"
+
+[programs.devnet]
+dynamic_bonding_curve = "FHrKE2Pibu6Bd2Y9pHyjkHkEWeftTcy1DhN63dDwQa97"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "keys/deployer.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+ixdata = "yarn run tsx --tsconfig ./tsconfig.json ./scripts/generate_ix_data_for_tests.ts"
+
+[toolchain]
+anchor_version = "0.31.0"
+solana_version = "2.1.0"

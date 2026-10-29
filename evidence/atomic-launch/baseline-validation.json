@@ -1,0 +1,47 @@
+{
+  "preparedDate": "2026-10-29",
+  "status": "local-review-candidate-not-published",
+  "independentAudit": "none; confirmed by owner",
+  "sourcePermission": "none held; rightsholder clarification required",
+  "rust": "rustc 1.94.1 stable",
+  "platform": "Windows x64 MSVC",
+  "testCommand": "node run-cargo.mjs test --locked --offline",
+  "dependencyCache": "Existing Cargo cache reused; standalone adapter and vendored path dependency compiled for this repository",
+  "tests": {
+    "passed": 27,
+    "failed": 0,
+    "validation": 17,
+    "execution": 4,
+    "parity": 2,
+    "officialKitCases": 6,
+    "securityInvariants": 4
+  },
+  "formatCommand": "node run-cargo.mjs fmt --package evolut-jupiter-amm -- --check",
+  "formatting": "passed; unchanged vendored code intentionally not reformatted",
+  "optionalFixtureTool": {
+    "install": "npm ci --ignore-scripts --no-audit --no-fund",
+    "dependency": "@solana/web3.js 1.98.4",
+    "lockInstall": "passed",
+    "moduleLoadingAndPublicPdaCheck": "passed",
+    "liveRecapture": "not run; reviewed existing finalized fixtures retained"
+  },
+  "warnings": [
+    "Three deprecation warnings from unchanged vendored Anchor/Solana source",
+    "Optional npm fixture tooling inherits uuid 8.3.2 deprecation; no install scripts ran"
+  ],
+  "ci": "Workflow prepared; remote GitHub Actions has not run",
+  "limitations": [
+    "No independent contract audit",
+    "1% execution state is synthetic",
+    "Live untouched fixture is 2% / 85 SOL with one lamport initial quote reserve; sell evidence uses local buy then sell",
+    "Final Jupiter CPI/multi-hop routing not verified",
+    "No meaningful organic traction or real 85 SOL graduation claim"
+  ],
+  "transactionsSubmitted": 0,
+  "internalReview": {
+    "report": "docs/INTERNAL-SECURITY-REVIEW-20261029.md",
+    "combinedCasesPassed": 121,
+    "status": "completed with open findings; not external audit"
+  },
+  "dependencyAdvisories": "Known advisory matches recorded and triaged; remediation open, not a clean scan"
+}

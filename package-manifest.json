@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "preparedDate": "2026-10-29",
+  "status": "tested-sdk-verified-mainnet-artifact-publication-authorized-source-rights-unresolved",
+  "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "programUnderTest": "tests/fixtures/program-under-test.json",
+  "historicalBaseline": "evidence/atomic-launch/baseline-validation.json",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 87,
+      "sha256": "7033888bacaca538703d043f360739f71857d61be008507fa2a3222115cded3d"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 744,
+      "sha256": "3ee6ed00040cf97413308ef094f8471ddf2b252bc7d455762e972c106fa80a76"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 104,
+      "sha256": "3d413f1be49cdabeb7d693a6b8ed95df9ebe12d2614de60eb13ce26ed6204453"
+    },
+    {
+      "path": "Cargo.lock",
+      "bytes": 163972,
+      "sha256": "35dd161a39bd756f01f240b49d13bab6578b011ec2a5535742ffb768644938ce"
+    },
+    {
+      "path": "Cargo.toml",
+      "bytes": 1346,
+      "sha256": "f48516eaddb01d11010e68da33e86f612baf19a71b59fa7181a8740a599999bc"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7825,
+      "sha256": "226e7460d7c5c4785b9a5142ad8215a0f28c3a763e9198615ffe32d80c6661b0"
+    },
+    {
+      "path": "capture-mainnet.mjs",
+      "bytes": 6462,
+      "sha256": "4330559fbe89caf2069f2b9af447713a34d6b52961eabc5aa049cb63127da8bc"
+    },
+    {
+      "path": "docs/ATOMIC-LAUNCH-CANDIDATE.md",
+      "bytes": 4075,
+      "sha256": "18afe503da547e786ce4619681dc342f7b9cef38e90267dfe0c76b920c7bcbfb"
+    },
+    {
+      "path": "docs/AUDIT-STATUS.md",
+      "bytes": 2842,
+      "sha256": "4ea8c518b7b2840565dc7525dd91ea8ffa119721022897777377a8fc1e35868c"
+    },
+    {
+      "path": "docs/DEPENDENCY-REMEDIATION.md",
+      "bytes": 7944,
+      "sha256": "9dec4d238f2ebf3fb886f2c7b2f073a9722ebdc146c0696eca7edebabbb79fdd"
+    },
+    {
+      "path": "docs/FORM-DESCRIPTION.txt",
+      "bytes": 4491,
+      "sha256": "6b3f08a3e7327df2b30dce5e962f5c96f9dc2664c8c5a88fe0dbbba6d3103f41"
+    },
+    {
+      "path": "docs/FORM-SUBJECT.txt",
+      "bytes": 92,
+      "sha256": "3c0b86f73a232bc44b37d64c1484e7a01cdadde14d0158dd4cc8df7052e2541a"
+    },
+    {
+      "path": "docs/INTERNAL-SECURITY-REVIEW-20261029.md",
+      "bytes": 11712,
+      "sha256": "2dec8e3ed5f45ca01b0e41d3deb64cb03d765b1421e57adae26607ce5675beba"
+    },
+    {
+      "path": "docs/JUPITER-SUBMISSION.md",
+      "bytes": 8670,
+      "sha256": "9e267eedc55f5fc27aa54732e1ccc9a142f38955667245cefe9bade4349e6ba0"
+    },
+    {
+      "path": "docs/LIVE-POOLS.md",
+      "bytes": 6044,
+      "sha256": "c0cc142b16fd44b9ad5d2143bdeb9eb97c9de042fe2f8fa3931393c719ffad70"
+    },
+    {
+      "path": "docs/PERMISSION-REQUEST.md",
+      "bytes": 1383,
+      "sha256": "975d1d991d04d22017cbbe64744ed685b13e3819f29ef080addce5fa2514b1c4"
+    },
+    {
+      "path": "docs/RELEASE-STATUS.md",
+      "bytes": 2061,
+      "sha256": "183e74568f5a20020f693f20942f4e3748f1dcf38679148ffc69eae329129c13"
+    },
+    {
+      "path": "docs/REMEDIATION-ADDENDUM.md",
+      "bytes": 4184,
+      "sha256": "e9a707ac0b0ad09ee01b43363a90a72370f62a943880e39212f524735aea6b93"
+    },
+    {
+      "path": "docs/SOURCE-RIGHTS.md",
+      "bytes": 4153,
+      "sha256": "32318d6f25232ec53a79d00ede6e0456dba221b92100ad32e832461117b2a846"
+    },
+    {
+      "path": "docs/internal-review/DEPENDENCY-REVIEW.md",
+      "bytes": 5176,
+      "sha256": "3173e9e08683d879f6a25706b1b2813e5495fc05238967a46498ba7157c87eb9"
+    },
+    {
+      "path": "docs/internal-review/authorities-launch.md",
+      "bytes": 15694,
+      "sha256": "bac2d77dc7692689495ce06114edcfd19e7cc8478da43d4ea41ef6eecf66187f"
+    },
+    {
+      "path": "docs/internal-review/graduation-claims.md",
+      "bytes": 15243,
+      "sha256": "ea06acb4e82166e38c8713228f4a4d9c061b07b008396685c1633480b437efbc"
+    },
+    {
+      "path": "docs/internal-review/math-adapter.md",
+      "bytes": 13977,
+      "sha256": "1717946a72045a9f2531da4ade77b215a63a931000a5e9e210541c7c43501ea5"
+    },
+    {
+      "path": "evidence/atomic-launch/baseline-validation.json",
+      "bytes": 2022,
+      "sha256": "0ea4e8a6d421cb6c0050d48dfac9a6638e0f1c52bb7c3c77e644c5599cd72045"
+    },
+    {
+      "path": "evidence/atomic-launch/baseline-vendor-source-manifest.json",
+      "bytes": 16732,
+      "sha256": "6e42975b9a010bcbe1d2588b778765c151c530085ef82c5a0ed6466b355dd401"
+    },
+    {
+      "path": "evidence/atomic-launch/candidate-sbf-artifact.json",
+      "bytes": 295,
+      "sha256": "c54e4b954b94ffd2a88e77068f2cba3036a033c7291ce265726761decf757947"
+    },
+    {
+      "path": "evidence/atomic-launch/candidate-sbf-tests.log",
+      "bytes": 4440,
+      "sha256": "cd3793e96e15a2787173f447f84b8f1ea665bfec53c58cfd2db78012e8af2086"
+    },
+    {
+      "path": "evidence/atomic-launch/captured-baseline-885d9c88.so",
+      "bytes": 1207880,
+      "sha256": "885d9c887801162ea921ad9426e109bd87348f40ced68ed74fe7b4b8960103b6"
+    },
+    {
+      "path": "evidence/atomic-launch/dependency-advisories.json",
+      "bytes": 35502,
+      "sha256": "a95dc4b4ef273904315dd7008a2f0badedf232e7f17d4f1aa293c21f5acaa41a"
+    },
+    {
+      "path": "evidence/atomic-launch/dependency-regression-tests.log",
+      "bytes": 759,
+      "sha256": "a79a940c1c2e2093af394d1034c9630be60466671fd5acdc45054e05d43f83aa"
+    },
+    {
+      "path": "evidence/atomic-launch/patched-dependencies-baseline-sbf-tests.log",
+      "bytes": 18837,
+      "sha256": "7740242763577d25cf47435523cc8f52e41886f19a68bc8c51a3618773b184c6"
+    },
+    {
+      "path": "evidence/internal-review/AUDIT-EVIDENCE.json",
+      "bytes": 2999,
+      "sha256": "4f0272110eead3a7efd9c4a603b3648a51edd6e0dcbf2e621a5919fc0addee64"
+    },
+    {
+      "path": "evidence/internal-review/adapter-full-tests.log",
+      "bytes": 4887,
+      "sha256": "9db11cd4b584fa60a3b044cc7e8b04903c1b42303dc4ed27af2bdb1e8e8a0516"
+    },
+    {
+      "path": "evidence/internal-review/adapter-runtime-dependencies.log",
+      "bytes": 22206,
+      "sha256": "22d59eab406b707572170521e103c47cf1133542e95df5cacebc018629516936"
+    },
+    {
+      "path": "evidence/internal-review/authorities-adversarial-results.json",
+      "bytes": 595,
+      "sha256": "990380b72fbe41b89934460711cbcf9fa753c5a8d9216ce46c03817fd53aed83"
+    },
+    {
+      "path": "evidence/internal-review/check-public-dependencies.py",
+      "bytes": 2849,
+      "sha256": "d13151de8a70835295d486cc22884808fcaa378ddd6c1e9a03344dc71dc6bb48"
+    },
+    {
+      "path": "evidence/internal-review/contract-runtime-dependencies.log",
+      "bytes": 18384,
+      "sha256": "15b2f4db00d45c4e368b616c32831518b016de356d6823cca792bb3c6aaa1374"
+    },
+    {
+      "path": "evidence/internal-review/contract-rust-tests.log",
+      "bytes": 12822,
+      "sha256": "b7c4e801940cbe9710a8edd5fc43bc1ed922fb8cc625b29a4b4721798002789e"
+    },
+    {
+      "path": "evidence/internal-review/dependency-advisories.json",
+      "bytes": 41916,
+      "sha256": "8c1f5142eb1e287d1af71d078365bb854c3fd99c330b0cafac1e2ffbf10ec591"
+    },
+    {
+      "path": "evidence/internal-review/graduation-adversarial-results.json",
+      "bytes": 1153,
+      "sha256": "ea7d76f21ce333cc288693d334b33037aec7b7990a1ce47ea69b8f930c9573cc"
+    },
+    {
+      "path": "evidence/internal-review/mainnet-vm-tests.log",
+      "bytes": 4582,
+      "sha256": "95a9af3abaf9dbe84344dd5d7a244c2991f9ee5fca73b6edb31f906dfe1bda58"
+    },
+    {
+      "path": "evidence/internal-review/test-sources/README.md",
+      "bytes": 608,
+      "sha256": "98268509b8cc8be6ecb67e9b08c9d1871137f0bbc6f242c9d27f87bd9bb6bf1c"
+    },
+    {
+      "path": "evidence/internal-review/test-sources/authorities-curve-idl-codec.ts",
+      "bytes": 3945,
+      "sha256": "5b21ff50775a99afaa9e55a75fbe45045b620566e0d47477c49a001e2d65dab5"
+    },
+    {
+      "path": "evidence/internal-review/test-sources/authorities-fixture-helper.ts",
+      "bytes": 19328,
+      "sha256": "d7218459664f5b7a2be0f6d4ecbc010ab8e1a7ebfb30d5f161e4a8729904f3e3"
+    },
+    {
+      "path": "evidence/internal-review/test-sources/authorities-launch.test.ts",
+      "bytes": 10677,
+      "sha256": "0d36143ceb7d5e5474fbadb67d1986a4407dcddb0de2e74e84e5eb836a65b1bc"
+    },
+    {
+      "path": "evidence/internal-review/test-sources/contract-audit-graduation.test.ts",
+      "bytes": 22078,
+      "sha256": "c4e19a2f17bd3ea50e16352aa4a4cddd7cd377ccc53a4003bee108f41ad2dbe0"
+    },
+    {
+      "path": "evidence/internal-review/test-sources/contract-mainnet-fee-routes.test.ts",
+      "bytes": 33997,
+      "sha256": "c38d06ccb62195eadc3b5b726f6388c9ea15815275b880a353e583cd40148ca0"
+    },
+    {
+      "path": "evidence/lp-lock-chain-evidence.json",
+      "bytes": 108335,
+      "sha256": "03e6c2bad60cf467431e363c89bda75542a196e48721d3f2aa327db3bf3bb78e"
+    },
+    {
+      "path": "evidence/lp-lock-proof.json",
+      "bytes": 6017,
+      "sha256": "8dcb198bc2ae72b5235f170baafc654f394f0e46d19cde8c56ef52e62e4026b0"
+    },
+    {
+      "path": "evidence/mainnet-upgrade-verification-20261029.json",
+      "bytes": 1132,
+      "sha256": "57c79132f2da99daa3ca7e74af86aec9f9fe39b971eb15f3726c08647b730493"
+    },
+    {
+      "path": "evidence/standalone-tests.log",
+      "bytes": 4887,
+      "sha256": "9db11cd4b584fa60a3b044cc7e8b04903c1b42303dc4ed27af2bdb1e8e8a0516"
+    },
+    {
+      "path": "evidence/upstream-file-comparison.json",
+      "bytes": 57843,
+      "sha256": "cf256aae4255ad505cb0fef31b97aebec00e39d10edaf79a0a0ef4b648dd182c"
+    },
+    {
+      "path": "evidence/upstream-license-history.json",
+      "bytes": 1721,
+      "sha256": "bb44209a706ed52c4cc9e268256a8a195d6974d908f86bc8dc08b761bd923beb"
+    },
+    {
+      "path": "evidence/validation.json",
+      "bytes": 2423,
+      "sha256": "c678b724c6025e988e558d4a352ac87373e9651b5ed331a69ebfb7ee904160fe"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 37784,
+      "sha256": "84e72a9a96f93173be9a66f0ac7c52b9cca9515ae15115f66dd5832810dee87b"
+    },
+    {
+      "path": "package.json",
+      "bytes": 387,
+      "sha256": "6fdd52bb5f6670083cd0c31b3b8ee820c85ebfc34575b617f39ccb212e6453a8"
+    },
+    {
+      "path": "run-cargo.mjs",
+      "bytes": 1210,
+      "sha256": "51cfd327a21553301096f17847d93bb481bca6b9505de95828df3733ba738b97"
+    },
+    {
+      "path": "scripts/finalize-candidate-evidence.py",
+      "bytes": 3817,
+      "sha256": "4d4641f906dfc20c9a79982cc744144ac50851b2d35029411638d67a47e5f579"
+    },
+    {
+      "path": "scripts/sync-candidate-source.py",
+      "bytes": 2088,
+      "sha256": "58e1d24a6872337cc3e805b5661b598753e018c5ed6e0fdba6594e124350a382"
+    },
+    {
+      "path": "scripts/verify-package.mjs",
+      "bytes": 1867,
+      "sha256": "f78e7549a10739436bbd2b4997c3bc91b9f00708a7defc2eb8344f8d93d7b81d"
+    },
+    {
+      "path": "src/lib.rs",
+      "bytes": 17200,
+      "sha256": "89c070e5f95716d0e2df7c3939981883e661a4cf442136942cae0d75e79352b9"
+    },
+    {
+      "path": "src/quote.rs",
+      "bytes": 3558,
+      "sha256": "9cc5fd6e8d91afce16d40135cfeec24eed2eeb02ac8fb329cf23e872375ebf28"
+    },
+    {
+      "path": "tests/execution.rs",
+      "bytes": 16150,
+      "sha256": "a5641733fdc03318c037b1cf58034fa083684ca56534f68c8cfe21d042084e7f"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/12YRPScRtYqKzf1fg4hDtX5iyU6dd53dro66o9t5kb5Y.bin",
+      "bytes": 1105,
+      "sha256": "c7706ef386cb59f5258453ac03e4d154ddaa7add095af7b109af0a4544bef04e"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/2Zm57mfAkRUEk8MJkwmUj15q1PXgXSrt7s6d3HPZ92zX.bin",
+      "bytes": 1105,
+      "sha256": "197486b496145fabfe14411777b6e89d25e840cf7b5aa09909fb267b20a49d80"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/3j7tct8s3bVbZ5M53dCoHTzirhLE43sTxvuz4JQGYgM6.bin",
+      "bytes": 222,
+      "sha256": "3db48cb80e883834c3db8191d0de55bc5ed2521020e923a0d1f1371a2a75cf66"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/3wWJhR21G5cHBRJSNHBtcKBrxKmyX21vtdJPGCz1ah8j.bin",
+      "bytes": 817,
+      "sha256": "6842f953850e6d4f79b6e2c91584b7edeb179ba3565c28f8d3b64f54443176d8"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/5F9tGLxiqoZgVg9H7cLEKV3hVGgAp2L33Xan3ovtfrsc.bin",
+      "bytes": 222,
+      "sha256": "20aa93d4aebade9015671f59288a594b62829e730d29a9b71599f07a7ec9b790"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/5k3iKSP7JE3mgeVCDQaFKo1HxEMBNLDoUD2svnGxNyH3.bin",
+      "bytes": 222,
+      "sha256": "e88ccc04368dc02b2fa259d75b7824fb3b762a5e083afcd8bc2066cb7eeb07a9"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/8HnddjgrXR45BzP1fgo3oLUc5xjP1JRkxF9DR8Wmr2uR.bin",
+      "bytes": 1105,
+      "sha256": "db32e730f7eb69cb00f230cf1a795373556628cea291495a23d2b8153bbe22e0"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/8uVAf8b8BhYZbQdzCHt8CfCW33Y9N25sHYkLz2yAwZX5.bin",
+      "bytes": 817,
+      "sha256": "1e09f09870f537d58c28a9bebdec6743d52f471ae6609ea69cd89ce09f48027b"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/8wKyaHRNrpxPYFGky9QKpNJ5fnnJg3HjLqtcxjGcEvoL.bin",
+      "bytes": 139,
+      "sha256": "5f2f51d45ca8b6f0fc8905d7d3393e1a3af7ff6617bac4b32bd71100428d2b12"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/95Fns7zY9BiQmUS7cDE412aUmPtTjskPV7irFBFzLiLy.bin",
+      "bytes": 222,
+      "sha256": "1abc8e4eba73bade61acff8a3784568af5128af480994df42af82240a4718fb1"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/9CC5mL6E8kfktYjw3JmiVsjsn4dCh8asUPBmYNXtasVi.bin",
+      "bytes": 222,
+      "sha256": "29e0b3c8464c28a1700ca3dfd1ee7bfd40bc3a965c9091a48d85fe51c41af1ba"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/Bro3jkhij9KzV4ExSaBAmiWxDsqBbsSAxTMEXWosEvoL.bin",
+      "bytes": 139,
+      "sha256": "a19b4855bfaa1c30e0288bb0c218a11065b3194efd70a684cef24a7f3adaaa21"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/DtuGZfbhKivNpowa15dBeGF2jRWKUx37L9apFqLz4Z5a.bin",
+      "bytes": 1105,
+      "sha256": "86234b3ee5503530eda91d0d072105ac59f94b3ca8a9ea9ac9fe515089551610"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/ERxX254zXHKbE9LyAq5HJyboeWDXK4cJVd9Ax8b1Pn1.bin",
+      "bytes": 222,
+      "sha256": "eb7f856737b5cd58655c94ad4acee2542f4ddd9b631a0a519b5ed4434254899f"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/Ek1ug36x75SqcWCdyD67tUdJuJYgfsSZoenpAeREvoL.bin",
+      "bytes": 139,
+      "sha256": "5a9319684296a3715bb66113deeb43b34fb99f315705822d2366f489d2bfffe8"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/FxEFJfTWdptZdNFyP9epc66rhFtXjtV6nf4Yn1wMqQw7.bin",
+      "bytes": 1105,
+      "sha256": "1181d7c656d68bcde8c983516c4e4890a815b6c0de7ee1860c7fa9e447288245"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7.bin",
+      "bytes": 817,
+      "sha256": "d8286de562e97247c58de5dd5ddd6b8934ce9ba54ca764c2ea300650b0de6770"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/HFCAXuDGmKuorVoeQaYsrq9WApVbojhkQbY4KRs8uANb.bin",
+      "bytes": 1105,
+      "sha256": "324be673468c1d85f42253cb6c8ffad13cb34e6837efac87e726debc92b9675b"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/So11111111111111111111111111111111111111112.bin",
+      "bytes": 139,
+      "sha256": "d71f4130ae9753c80d41c739fcb7279cf00bb158cbad502884bf966e02d1f2d3"
+    },
+    {
+      "path": "tests/fixtures/accounts/H8h1jyNiqG7vj7srt8RxAb7mtaaXa8WEb8VJPm1r3sT7/SysvarC1ock11111111111111111111111111111111.bin",
+      "bytes": 97,
+      "sha256": "1e489e018dbcc7fd6e531a70b974378cb19fd3379efdac3d69d43beaae0f8e64"
+    },
+    {
+      "path": "tests/fixtures/captured/mainnet.json",
+      "bytes": 20749,
+      "sha256": "b70462f0a9f4d54a866f78ca63d99b5caeb944fe8d7a1e611b24612b8b8b77fe"
+    },
+    {
+      "path": "tests/fixtures/evolut.so",
+      "bytes": 1142312,
+      "sha256": "e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441"
+    },
+    {
+      "path": "tests/fixtures/program-under-test.json",
+      "bytes": 913,
+      "sha256": "5322d7975cb5ead75aea1d7ad757b010a6342851836e02edb0891b736aafa7c2"
+    },
+    {
+      "path": "tests/parity.rs",
+      "bytes": 1504,
+      "sha256": "0e51514d2090fe8eb6fc55b8ab7638c93031949d6a862121661b08d01de19995"
+    },
+    {
+      "path": "tests/security_invariants.rs",
+      "bytes": 19548,
+      "sha256": "18958f8d1208c7e4ca89b75a09d11f090e6a2612465c73cc658074eb4fec8029"
+    },
+    {
+      "path": "tests/validation.rs",
+      "bytes": 21266,
+      "sha256": "524713f0219a4be38adf2fb73de286ca0fd860767ded50a3306e2049e89801d7"
+    },
+    {
+      "path": "vendor-source-manifest.json",
+      "bytes": 19625,
+      "sha256": "fd31069cf864f3acc814ddaa6e600336a3d630b5fa43e8ecfc39a87702e97ca6"
+    },
+    {
+      "path": "vendor/evolut-curve/Anchor.toml",
+      "bytes": 587,
+      "sha256": "5695f31c7fe71b89c892fef5a01f77cc864ac41c720a08a21ed60c6d6dda6714"
+    },
+    {
+      "path": "vendor/evolut-curve/Cargo.lock",
+      "bytes": 104578,
+      "sha256": "6876dcda628c6a7879e579a2ce6860baa1897ca4785a225d879966d293425dab"
+    },
+    {
+      "path": "vendor/evolut-curve/Cargo.toml",
+      "bytes": 516,
+      "sha256": "3442309b6ae05e34b40988e1a8218ae3354040a01c0e086ab8f5b5e4ed6bbfd2"
+    },
+    {
+      "path": "vendor/evolut-curve/README.md",
+      "bytes": 1928,
+      "sha256": "172d3977affdabceb26ef7636856bd6845b41e2972f9edccfdc75aca172d1b3e"
+    },
+    {
+      "path": "vendor/evolut-curve/UPSTREAM-NOTICES.md",
+      "bytes": 1132,
+      "sha256": "c3be86dabf716544323cdb918ef0e9c2017513661a7e0d35695b179176d24d46"
+    },
+    {
+      "path": "vendor/evolut-curve/dynamic-bonding-curve-sdk/Cargo.toml",
+      "bytes": 499,
+      "sha256": "a5d090ef9bc3b5a1e1cd152b786cdb5df6b6aecc648438b726d75c8106a3663f"
+    },
+    {
+      "path": "vendor/evolut-curve/dynamic-bonding-curve-sdk/src/lib.rs",
+      "bytes": 80,
+      "sha256": "ba8d5417fbd53fabc37ddcd58add6f8c53321e626451de14f134212cb22122e2"
+    },
+    {
+      "path": "vendor/evolut-curve/dynamic-bonding-curve-sdk/src/quote_exact_in.rs",
+      "bytes": 1369,
+      "sha256": "38a215862aaae2f82828eb285e010cd22a16b2c813766d56a3a19084644bda55"
+    },
+    {
+      "path": "vendor/evolut-curve/dynamic-bonding-curve-sdk/src/quote_exact_out.rs",
+      "bytes": 1344,
+      "sha256": "d1af0785945a8de642fbe8aa2c939941e9a91052b498f81b1f16ee01aa758597"
+    },
+    {
+      "path": "vendor/evolut-curve/dynamic-bonding-curve-sdk/src/quote_partial_fill.rs",
+      "bytes": 1375,
+      "sha256": "1cff6504ef335ab4ce9b37f9d9649c0f1ec29debc1da00c5f7fe19c1dd75d008"
+    },
+    {
+      "path": "vendor/evolut-curve/idl/evolut_curve.json",
+      "bytes": 87282,
+      "sha256": "d16f11c2838a6006cca2263f70bdb309378272fcb0c3f48682b06075c3cbe07b"
+    },
+    {
+      "path": "vendor/evolut-curve/idl/evolut_curve.mainnet.json",
+      "bytes": 87282,
+      "sha256": "81ad64a42cc27589188ca9eb9189a07aa501e38a57a164b12329076532acb900"
+    },
+    {
+      "path": "vendor/evolut-curve/idls/locker.json",
+      "bytes": 69444,
+      "sha256": "87aac5fc5055ffbef7003a8030bb48ead4d19238257f1adc13ecde12c6f675d7"
+    },
+    {
+      "path": "vendor/evolut-curve/libs/locker/Cargo.toml",
+      "bytes": 203,
+      "sha256": "bebc18d3f6b9e4636f1c91198b7d046b7b20972391451b475256089338d0883c"
+    },
+    {
+      "path": "vendor/evolut-curve/libs/locker/src/lib.rs",
+      "bytes": 81,
+      "sha256": "981010b0931f2e88eaad0884b4e33db663ccaf16bbe99da097cd328c79fd83de"
+    },
+    {
+      "path": "vendor/evolut-curve/mainnet-candidate.json",
+      "bytes": 11090,
+      "sha256": "9f27f53f2c94ddbd29213ba1d17eb3a79c745d11f8c4b60441742ed6d10a7a0e"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/Cargo.toml",
+      "bytes": 910,
+      "sha256": "20fcd8eb7639fe00a58ff6622f0b530014adbc9ea09c98fd28afd018a043e90d"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/Xargo.toml",
+      "bytes": 64,
+      "sha256": "f36d7db5970cc4260ebb5be4ecf2dcfc7cec0a7d644412e84c3cb10dd7d07a56"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/access_control.rs",
+      "bytes": 1147,
+      "sha256": "137ff06c6971029e933287b1fc5846fca368f5466be076df240b0cac39bcb641"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/base_fee/fee_rate_limiter.rs",
+      "bytes": 15833,
+      "sha256": "45706268a47192869b02e8befded68b4c2b97818509709ada20bfeec9f86f887"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/base_fee/fee_scheduler.rs",
+      "bytes": 4417,
+      "sha256": "acc7a7e75cea2e2998fe6fb7b573709a02984fedb68162233c8dff8065c6a235"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/base_fee/mod.rs",
+      "bytes": 2064,
+      "sha256": "58a80a24667025e0c709f05db1bc75e0e5765fabfa123a6d78a56f419b079278"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/const_pda.rs",
+      "bytes": 1296,
+      "sha256": "64cb72a2a06a50a7c78e2bebde3f3e92103a424bc32c436e24d407a62f6b08d0"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/constants.rs",
+      "bytes": 5152,
+      "sha256": "356c8b08566f0e8be9b753062253399705ee80420ccf3490662f175f0110e4d6"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/curve.rs",
+      "bytes": 9926,
+      "sha256": "9c2fe5552595d28df5d7b315bc9c9c1ae88e41288d6aa82140fc6f00dd7e8a2b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/error.rs",
+      "bytes": 4739,
+      "sha256": "5d6c3bc8119846bc5e8db0ea34a5cb17ff1795d009adbfb7c808ca27adb20e6b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/event.rs",
+      "bytes": 4016,
+      "sha256": "18321489c472ed19b1f4008d5fb266e8c13dad85d8837a4c4b0aadb494a21fff"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/auth.rs",
+      "bytes": 881,
+      "sha256": "313144bd3f203c5785b27d2431dfef79ac820088b8a384e672b3d0f77fd2fb59"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/ix_close_claim_protocol_fee_operator.rs",
+      "bytes": 845,
+      "sha256": "f984856fafce1380291d879a9a1c5faf691dc39d97c85715cf210b811e29f529"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/ix_create_claim_protocol_fee_operator.rs",
+      "bytes": 1163,
+      "sha256": "0aaf27e4cbaadf8943ca825fdad36bd5f8b964eac67d3bddd7fe087088e4688b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/ix_operational_authority.rs",
+      "bytes": 1592,
+      "sha256": "9940c033b3d4aba807c6af90e4a08b76c523b1563715bf8f62fe9843b4fa748e"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/mod.rs",
+      "bytes": 302,
+      "sha256": "2dd9885042e8d8f54358ff0720f7b87130122fa8d80e16fa5d82e17ef9b3ce1b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_creator_trading_fee.rs",
+      "bytes": 2915,
+      "sha256": "1de26e54279bce12eaf0214114ae9b019ad1e9bfbcc4c5a403f175a0bf8fd622"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
+      "bytes": 7830,
+      "sha256": "92feb084a27352cc646162ccae2b9666c4bb36539149a6d17a84299f423f6c21"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_create_virtual_pool_metadata.rs",
+      "bytes": 1885,
+      "sha256": "81461139919480c58663bdf5762e9665391017d336714741ab4705c644aba4c0"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_transfer_pool_creator.rs",
+      "bytes": 1652,
+      "sha256": "f9a863f21bae0c5f5cab328fe482435dbcc307f333f3ebb4178a7955be0e440a"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_withdraw_creator_surplus.rs",
+      "bytes": 2632,
+      "sha256": "f52643bc1fec317db068acd292e7b87e87cf07c968d76389a89b730e14e88dec"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+      "bytes": 403,
+      "sha256": "ae2ec3a28725298adf0e31ef589b23943ad779cc01299f8d12b042569e1eb27b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
+      "bytes": 9210,
+      "sha256": "c1b9c06a5319c75a243a77cadb0e0bf262fc6932c925219891ff3fa8939794d1"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_authorization.rs",
+      "bytes": 3272,
+      "sha256": "9a4b3eb4d04474ad9552e1e3f371591f066fe96a619a4faeb63dd511f05df211"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_fee.rs",
+      "bytes": 3029,
+      "sha256": "51ba4071cc267648dedc773d1e7bc9e89cd367e0c3fa8959927542312ede86a6"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
+      "bytes": 347,
+      "sha256": "50e19d1d0f90f907e31af4b0fee311eab1a6b4fc1034a78c37ff13b116da951a"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/paid_launch.rs",
+      "bytes": 2053,
+      "sha256": "53314a198de9e7b5b5dc1563be4a6febbe4d7901adedb8b64eab4ca8960516ab"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/process_create_token_metadata.rs",
+      "bytes": 2598,
+      "sha256": "5d314cab3683c35c6f6d3f10e61fa5c009c78034cd80f4298d7ae2d3b517c51e"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/create_locker.rs",
+      "bytes": 4987,
+      "sha256": "6b7324351c6d2f91556f6a9eeee6427554fe3ee1f621bb998dafb8a699732470"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/flash_rent.rs",
+      "bytes": 852,
+      "sha256": "9e2a20431b6d36b3a35df97ea137273b4a5c42f547e99fbf5cdf168a45d1b9b0"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
+      "bytes": 25528,
+      "sha256": "613b999f7248d3fd9942021e75d31975b015bca383796f0ba5eef00d84c443a8"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/mod.rs",
+      "bytes": 196,
+      "sha256": "3a14a8c51d89b45b9eca04bba112eebf19fdf92727b770240cd65bfaa35b615f"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/withdraw_leftover.rs",
+      "bytes": 3255,
+      "sha256": "727e1cd5f56577567d2f5bb5f0417093f7f558b5284bc72b908da8b5944cda28"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/mod.rs",
+      "bytes": 285,
+      "sha256": "8eac77c554d1a8a1a82ea3095e2470fc1191c096b8b39844b6796a8a87473dc4"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_fee.rs",
+      "bytes": 3356,
+      "sha256": "5c1c54d8fc16ba316d6f21cc7c6a86edb34b7b2a01a718630f3004b0db1fd79c"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_pool_creation_fee.rs",
+      "bytes": 1606,
+      "sha256": "e85b85513a20bb97d3288baa6bcffa03d29036c8662623a70f326e668f09cb51"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
+      "bytes": 3011,
+      "sha256": "6887032e2d021086853784818d2371ccd4ccb9bdd3ae9734dd2eeb72770d5a33"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_withdraw_protocol_surplus.rs",
+      "bytes": 2895,
+      "sha256": "e814161349c9fead1458c7c4ce793d5f0f09bf865ebb970d9b9e74c81287a12f"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/mod.rs",
+      "bytes": 328,
+      "sha256": "f47ff60b6824ff30dfa4f1a83978c8722211f2d19fb3bd728934310b83be5d7a"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_pool_creation_fee.rs",
+      "bytes": 1519,
+      "sha256": "ef39b312e9bc46830754a29410640bf67b12b2e38681bef647ae0a57490dc3bd"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_trading_fee.rs",
+      "bytes": 3285,
+      "sha256": "e5ffa2270ef29d889e04559d5570bf89b631b55c16e5cce25ba57bac16a7b7bc"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/partner/ix_create_config.rs",
+      "bytes": 15032,
+      "sha256": "05baf1c7d3a3e96a499b9888511b00d8ddd6bb75a6cef9ea4f9f3f840c5c3948"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/partner/ix_create_partner_metadata.rs",
+      "bytes": 1707,
+      "sha256": "9400a4fa1bd74a4557127ab94527a108c8ba23babba7db67a9ceb81b2fce9a2b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/partner/ix_withdraw_partner_surplus.rs",
+      "bytes": 2823,
+      "sha256": "8281c25ba1b904aeaccad0b17d6abee9c1fa649ed4c8d53484ab37f6b533ec7e"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/partner/mod.rs",
+      "bytes": 387,
+      "sha256": "ac09893de90370d9c25acbc72abf0272a137db9f2bb562c5bddd36cf1d6d021d"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/swap/ix_swap.rs",
+      "bytes": 13777,
+      "sha256": "ad50c09df775f5ba451f1dee72dbc972ba9912deadd5c30c6a2bff3c7ef6491c"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/swap/mod.rs",
+      "bytes": 559,
+      "sha256": "2a354c3df3a1731a400b29d3abb1b718a4f37bb70f95b9c337764e4b497d12fe"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_in.rs",
+      "bytes": 930,
+      "sha256": "6caf7e5e6601f1d25b05c55fa56dd796137b7eb516e0a3107b2ded85658b210c"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_out.rs",
+      "bytes": 1133,
+      "sha256": "61d773d8426d01d7b814a7eccbede20d18615757ee9a398ea93b49beebec2b6f"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/swap/swap_partial_fill.rs",
+      "bytes": 1180,
+      "sha256": "78e7f8030e0d838993315ca39a12a281deafe03cbc72e3c92f957f57eff03b43"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/lib.rs",
+      "bytes": 7550,
+      "sha256": "c69768c5cf3de172ba57542676c3813f9f98f9e75b87466cc10c786fd7001c4b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/macros.rs",
+      "bytes": 301,
+      "sha256": "4a53e3e47e140e03f00629060ba2280ce4c9834d5f9585f7dc21553fee429ccd"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/math/fee_math.rs",
+      "bytes": 7058,
+      "sha256": "fef9967d0ec27e6034ccb876ced8b4a2162bbfa99d6ac62243b1c44b79b003b4"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/math/mod.rs",
+      "bytes": 167,
+      "sha256": "bc52f8202a14d4a581e73a76a59a3b0a032c7574897fbb9aa59a3a9522eae89d"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/math/safe_math.rs",
+      "bytes": 6472,
+      "sha256": "80103fc13c20587c72ba49a5a5df08a56260e3a37b7d5e2d16d0cb884ff77c92"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/math/u128x128_math.rs",
+      "bytes": 1950,
+      "sha256": "ab6e22be11306b6e278280b748b440cf65b4d71e0c7fa2c232f2ff6f62fe7033"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/math/utils_math.rs",
+      "bytes": 2946,
+      "sha256": "3b8a8878b049c815802d941a8c053f23a00559087905c9f3b72451b2c3dc1c38"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/params/fee_parameters.rs",
+      "bytes": 6092,
+      "sha256": "9744b26e84bcb2115a143290e74f744e1aef809f80bbb8e615418cdf149377cc"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/params/liquidity_distribution.rs",
+      "bytes": 4876,
+      "sha256": "4b4bf4d094ef125bcbeefee493d045b6624144b0dac21431b7d956de0e130287"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/params/mod.rs",
+      "bytes": 73,
+      "sha256": "18f19c264047f91ed5edcee8776058288836815f08076ea03027ce16bb94bb40"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/params/swap.rs",
+      "bytes": 326,
+      "sha256": "538c2df68ef934c74fb36a43a30e2207877079f5c1ea6c88f6734169e1bf551e"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/raydium.rs",
+      "bytes": 13005,
+      "sha256": "358d8a3f894bbf12a8d103235e515d15c4f32d1bf3cc1cda394031f18bdc7216"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/claim_fee_operator.rs",
+      "bytes": 503,
+      "sha256": "47984c13b3b0459cf129b4df363b7ecc533bda073e2e885ea48ae0f944fb7352"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/config.rs",
+      "bytes": 22696,
+      "sha256": "95419c2d08754fa1d3c3e1eaccb9f833aded4231303c2a67b0c15548713abf9e"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/fee.rs",
+      "bytes": 8137,
+      "sha256": "7f4d3230ef92e48ffe3e202c1cd74f9f45663b2bffbc448393d50fd7cd95b926"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/mod.rs",
+      "bytes": 417,
+      "sha256": "d6898ea8e323b883baea27a557bf341ad493015a969e01acb69124eb3b155f32"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/operational_authority.rs",
+      "bytes": 377,
+      "sha256": "880a4f46e3902fbb69b54c7b3c043c30a18e89fc44d710bc591df96a9c33fe98"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/partner_metadata.rs",
+      "bytes": 794,
+      "sha256": "811933b36672a4dc3f97563b1794f040871f2b412a77fce41a6f6b4eb79c1962"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/raydium_creator_fees.rs",
+      "bytes": 3473,
+      "sha256": "22ecbffcaaacd6bebd615d607874b7a576168955195ac9893af72abbd491432b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/virtual_pool.rs",
+      "bytes": 40871,
+      "sha256": "f4f6f05601b2a1ca90e7243ac3efd6705a67718e35ad61b20a659e4ee97e72b1"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/virtual_pool_metadata.rs",
+      "bytes": 813,
+      "sha256": "5b2ef5faaa02186e64509867576203e1b760f3232b849584bce59e98ee38b806"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/utils/activation_handler.rs",
+      "bytes": 1878,
+      "sha256": "99d3107065a216e8d1c8961680e8e67dc11782f8f7bbbad17302c31920e42915"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/utils/cpi_checker.rs",
+      "bytes": 849,
+      "sha256": "7758e0372ce656c3559cdfa56488ae72b0d4cafdfdd7147ecc2ac0e953dd1da8"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/utils/mod.rs",
+      "bytes": 67,
+      "sha256": "9ea72e2e9fc2c83de91b3757eb63ef296a426b2d232b4b779ef7771469365e6c"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/utils/token.rs",
+      "bytes": 5076,
+      "sha256": "4793181a224fd3443d806e0ac1fc769dcbc4bda7e81d4735659165093188dbf4"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/tests/graduation_burn_policy.rs",
+      "bytes": 2867,
+      "sha256": "03dd1be7ca6876542a71d19c0e1575169a8de5404c73453adabfa01831128b7d"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/tests/graduation_revenue_policy.rs",
+      "bytes": 1810,
+      "sha256": "51abdc5f81f543941879e75af5622e536d5a104537bd1eda8aa8fa953f5abd6d"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/tests/mainnet_candidate_economics.rs",
+      "bytes": 14166,
+      "sha256": "1976f4f3712554188ceb0f8e16efeffa84a746e869ff76475c582d93359b8c62"
+    },
+    {
+      "path": "vendor/evolut-curve/rust-toolchain.toml",
+      "bytes": 33,
+      "sha256": "169c401788e58025ddef8c46f0be7291703aab15ad6dde289fecfa151f747491"
+    }
+  ],
+  "releaseStatus": "docs/RELEASE-STATUS.md",
+  "mainnetVerification": "evidence/mainnet-upgrade-verification-20261029.json"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "locally-built-artifact-matches-finalized-mainnet",
+  "statusAtOriginalTestTime": "locally-built-candidate-not-deployed",
+  "mainnetVerificationEvidence": "evidence/mainnet-upgrade-verification-20261029.json",
+  "program": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "binary": "tests/fixtures/evolut.so",
+  "bytes": 1142312,
+  "sha256": "e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441",
+  "elfFlags": 0,
+  "architecture": "SBPF v0",
+  "platformTools": "v1.58",
+  "rustc": "1.95.0-dev (1e20dd0d5 2026-10-05)",
+  "sourceManifest": "vendor-source-manifest.json",
+  "accountSnapshot": "tests/fixtures/captured/mainnet.json",
+  "accountSnapshotChanged": false,
+  "capturedBaselineProgramSha256": "885d9c887801162ea921ad9426e109bd87348f40ced68ed74fe7b4b8960103b6",
+  "capturedBaselineProgram": "evidence/atomic-launch/captured-baseline-885d9c88.so",
+  "transactionsSubmitted": 0
+}

@@ -1,0 +1,460 @@
+   Compiling quote v1.0.47
+   Compiling num-traits v0.2.19
+   Compiling syn v2.0.119
+   Compiling syn v1.0.109
+   Compiling zeroize_derive v1.5.0
+   Compiling serde_derive v1.0.228
+   Compiling zeroize v1.9.0
+   Compiling generic-array v0.14.7
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling digest v0.10.7
+   Compiling bytemuck_derive v1.11.0
+   Compiling serde v1.0.228
+   Compiling bytemuck v1.25.2
+   Compiling sha2 v0.10.9
+   Compiling curve25519-dalek-derive v0.1.1
+   Compiling thiserror-impl v2.0.18
+   Compiling curve25519-dalek v4.1.3
+   Compiling thiserror v2.0.18
+   Compiling bv v0.11.1
+   Compiling bincode v1.3.3
+   Compiling ahash v0.8.12
+   Compiling darling_core v0.23.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling toml_edit v0.23.10+spec-1.0.0
+   Compiling proc-macro-crate v3.4.0
+   Compiling darling_macro v0.23.0
+   Compiling wincode v0.5.5
+   Compiling darling v0.23.0
+   Compiling hashbrown v0.13.2
+   Compiling wincode-derive v0.4.6
+   Compiling borsh-derive v1.6.0
+   Compiling borsh v1.6.0
+   Compiling zmij v1.0.19
+   Compiling solana-hash v4.5.0
+   Compiling rand_chacha v0.3.1
+   Compiling solana-sha256-hasher v3.1.0
+   Compiling solana-address v2.6.1
+   Compiling rand v0.8.6
+   Compiling toml v0.5.11
+   Compiling borsh-derive-internal v0.10.4
+   Compiling solana-hash v2.3.0
+   Compiling proc-macro-crate v0.1.5
+   Compiling borsh-schema-derive-internal v0.10.4
+   Compiling solana-sha256-hasher v2.3.0
+   Compiling borsh-derive v0.10.4
+   Compiling solana-decode-error v2.3.0
+   Compiling serde_json v1.0.149
+   Compiling borsh v0.10.4
+   Compiling solana-pubkey v2.4.0
+   Compiling num-integer v0.1.46
+   Compiling solana-pubkey v4.2.0
+   Compiling solana-instruction v2.3.3
+   Compiling solana-sdk-ids v3.1.0
+   Compiling solana-instruction-error v2.4.0
+   Compiling solana-sdk-ids v2.2.1
+   Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
+   Compiling blake3 v1.8.5
+   Compiling solana-instruction v3.4.0
+   Compiling solana-sysvar-id v3.1.0
+   Compiling num-bigint v0.4.8
+   Compiling serde_bytes v0.11.19
+   Compiling digest v0.11.3
+   Compiling thiserror-impl v1.0.69
+   Compiling thiserror v1.0.69
+   Compiling crunchy v0.2.4
+   Compiling solana-get-sysvar v1.0.0
+   Compiling hmac v0.12.1
+   Compiling solana-sdk-macro v3.0.1
+   Compiling digest v0.9.0
+   Compiling sha3 v0.10.9
+   Compiling solana-program-error v2.2.2
+   Compiling solana-sysvar-id v2.2.1
+   Compiling pbkdf2 v0.11.0
+   Compiling num-derive v0.4.2
+   Compiling signature v2.2.0
+   Compiling solana-sdk-macro v2.2.1
+   Compiling solana-account-info v3.1.1
+   Compiling solana-epoch-schedule v3.2.0
+   Compiling qstring v0.7.2
+   Compiling uriparse v0.6.4
+   Compiling solana-account-info v2.3.0
+   Compiling solana-clock v3.1.1
+   Compiling solana-transaction-error v2.2.1
+   Compiling inout v0.1.4
+   Compiling cipher v0.4.4
+   Compiling ed25519 v2.2.3
+   Compiling block-buffer v0.9.0
+   Compiling sha2 v0.9.9
+   Compiling ed25519-dalek v2.2.0
+   Compiling solana-rent v4.3.0
+   Compiling solana-slot-hashes v3.1.0
+   Compiling solana-fee-calculator v3.2.2
+   Compiling solana-transaction-error v3.3.1
+   Compiling solana-system-interface v1.0.0
+   Compiling universal-hash v0.5.1
+   Compiling solana-program-entrypoint v3.1.1
+   Compiling polyval v0.6.2
+   Compiling solana-signature v3.4.1
+   Compiling aes v0.8.4
+   Compiling ctr v0.9.2
+   Compiling solana-stake-history v1.0.0
+   Compiling solana-clock v2.2.3
+   Compiling solana-last-restart-slot v3.1.0
+   Compiling solana-epoch-rewards v3.1.0
+   Compiling solana-slot-history v3.1.0
+   Compiling aead v0.5.2
+   Compiling getrandom v0.1.16
+   Compiling aes-gcm-siv v0.11.1
+   Compiling solana-sysvar v4.1.0
+   Compiling solana-signer v3.0.1
+   Compiling libsecp256k1-core v0.2.2
+   Compiling merlin v3.0.0
+   Compiling rand_core v0.9.5
+   Compiling rand_chacha v0.9.0
+   Compiling rand_core v0.5.1
+   Compiling rand v0.9.5
+   Compiling libsecp256k1-gen-ecmult v0.2.1
+   Compiling libsecp256k1-gen-genmult v0.2.1
+   Compiling solana-account v4.3.1
+   Compiling radium v0.7.0
+   Compiling paste v1.0.15
+   Compiling libsecp256k1 v0.6.0
+   Compiling rand_chacha v0.2.2
+   Compiling solana-rent v2.2.1
+   Compiling solana-slot-hashes v2.2.1
+   Compiling solana-fee-calculator v2.2.1
+   Compiling solana-serialize-utils v2.2.1
+   Compiling num-iter v0.1.46
+   Compiling solana-short-vec v3.2.2
+   Compiling solana-short-vec v2.2.1
+   Compiling num-bigint v0.2.6
+   Compiling solana-msg v3.1.0
+   Compiling tap v1.0.1
+   Compiling winapi v0.3.9
+   Compiling anyhow v1.0.104
+   Compiling wyz v0.5.1
+   Compiling solana-system-interface v3.2.0
+   Compiling rand v0.7.3
+   Compiling solana-derivation-path v2.2.1
+   Compiling solana-cpi v2.2.1
+   Compiling solana-program-entrypoint v2.3.0
+   Compiling solana-serialize-utils v3.1.2
+   Compiling solana-bincode v2.2.1
+   Compiling solana-signature v2.3.0
+   Compiling memoffset v0.9.1
+   Compiling num-rational v0.2.4
+   Compiling num-complex v0.2.4
+   Compiling solana-svm-feature-set v4.1.2
+   Compiling funty v2.0.0
+   Compiling void v1.0.2
+   Compiling base64 v0.12.3
+   Compiling bitvec v1.0.1
+   Compiling unreachable v1.0.0
+   Compiling solana-signer v2.2.1
+   Compiling solana-message v2.4.0
+   Compiling solana-stake-interface v1.2.1
+   Compiling solana-seed-derivable v2.2.1
+   Compiling solana-message v4.4.0
+   Compiling solana-instructions-sysvar v2.2.2
+   Compiling solana-nonce v2.2.1
+   Compiling solana-address-lookup-table-interface v2.2.2
+   Compiling solana-account v2.2.1
+   Compiling solana-epoch-rewards v2.2.1
+   Compiling solana-last-restart-slot v2.2.1
+   Compiling solana-epoch-schedule v2.2.1
+   Compiling solana-seed-phrase v2.2.1
+   Compiling solana-slot-history v2.2.1
+   Compiling solana-keccak-hasher v2.2.1
+   Compiling itertools v0.12.1
+   Compiling solana-borsh v2.2.1
+   Compiling solana-serde-varint v2.2.2
+   Compiling unicode-segmentation v1.13.3
+   Compiling ascii v0.9.3
+   Compiling memchr v2.7.6
+   Compiling solana-zk-sdk v2.3.13
+   Compiling combine v3.8.1
+   Compiling heck v0.3.3
+   Compiling solana-vote-interface v2.2.6
+   Compiling solana-example-mocks v2.2.1
+   Compiling solana-sysvar v2.3.0
+   Compiling solana-feature-gate-interface v2.2.2
+   Compiling solana-transaction v4.1.5
+   Compiling solana-secp256k1-recover v2.2.1
+   Compiling ff v0.13.1
+   Compiling solana-loader-v4-interface v2.2.1
+   Compiling solana-loader-v3-interface v5.0.0
+   Compiling solana-program-pack v2.2.1
+   Compiling hash32 v0.3.1
+   Compiling solana-blake3-hasher v2.2.1
+   Compiling solana-big-mod-exp v2.2.1
+   Compiling solana-loader-v2-interface v2.2.1
+   Compiling solana-stable-layout v2.2.1
+   Compiling enum-iterator-derive v1.5.0
+   Compiling rand_xorshift v0.3.0
+   Compiling bs58 v0.5.1
+   Compiling solana-native-token v2.3.0
+   Compiling rustc-demangle v0.1.28
+   Compiling enum-iterator v2.3.0
+   Compiling solana-sbpf v0.21.0
+   Compiling solana-program v2.3.0
+   Compiling group v0.13.0
+   Compiling num v0.2.1
+   Compiling solana-svm-transaction v4.1.2
+   Compiling solana-instructions-sysvar v3.0.1
+   Compiling solana-cpi v3.1.0
+   Compiling itertools v0.14.0
+   Compiling enum-ordinalize-derive v4.4.1
+   Compiling solana-precompile-error v3.0.0
+   Compiling solana-fee-structure v3.0.0
+   Compiling eager v0.1.0
+   Compiling solana-svm-timings v4.1.2
+   Compiling enum-ordinalize v4.4.1
+   Compiling solana-svm-callback v4.1.2
+   Compiling solana-stake-interface v3.1.0
+   Compiling solana-transaction-context v4.1.2
+   Compiling percentage v0.1.0
+   Compiling anchor-syn v0.31.2
+   Compiling solana-svm-type-overrides v4.1.2
+   Compiling solana-loader-v3-interface v7.0.0
+   Compiling solana-stable-layout v3.0.1
+   Compiling solana-svm-log-collector v4.1.2
+   Compiling ark-std v0.5.0
+   Compiling ark-serialize-derive v0.5.0
+   Compiling solana-svm-measure v4.1.2
+   Compiling solana-program-runtime v4.1.2
+   Compiling ark-serialize v0.5.0
+   Compiling educe v0.6.0
+   Compiling spl-pod v0.5.1
+   Compiling ark-ff-macros v0.5.0
+   Compiling spl-discriminator-syn v0.2.1
+   Compiling solana-seed-phrase v3.0.0
+   Compiling itertools v0.13.0
+   Compiling ark-std v0.4.0
+   Compiling der v0.7.10
+   Compiling ark-serialize-derive v0.4.2
+   Compiling ark-ff-asm v0.5.0
+   Compiling glob v0.3.4
+   Compiling allocator-api2 v0.2.21
+   Compiling blst v0.3.16
+   Compiling hashbrown v0.15.5
+   Compiling ark-ff v0.5.0
+   Compiling ark-serialize v0.4.2
+   Compiling spl-discriminator-derive v0.2.0
+   Compiling ark-ff-macros v0.4.2
+   Compiling itertools v0.10.5
+   Compiling ark-ff-asm v0.4.2
+   Compiling derivative v2.2.0
+   Compiling num_cpus v1.17.0
+   Compiling threadpool v1.8.1
+   Compiling ark-ff v0.4.2
+   Compiling ark-poly v0.5.0
+   Compiling spl-discriminator v0.4.1
+   Compiling spki v0.7.3
+   Compiling libsecp256k1-core v0.3.0
+   Compiling base16ct v0.2.0
+   Compiling sec1 v0.7.3
+   Compiling ark-poly v0.4.2
+   Compiling pkcs8 v0.10.2
+   Compiling ark-ec v0.5.0
+   Compiling solana-keypair v3.1.2
+   Compiling pairing v0.23.0
+   Compiling crypto-bigint v0.5.5
+   Compiling rustversion v1.0.22
+   Compiling byte-slice-cast v1.2.3
+   Compiling blstrs v0.7.1
+   Compiling elliptic-curve v0.13.8
+   Compiling ark-bn254 v0.5.0
+   Compiling agave-feature-set v4.1.2
+   Compiling ark-ec v0.4.2
+   Compiling libsecp256k1-gen-genmult v0.3.0
+   Compiling libsecp256k1-gen-ecmult v0.3.0
+   Compiling spl-type-length-value v0.7.0
+   Compiling spl-program-error-derive v0.4.1
+   Compiling rfc6979 v0.4.0
+   Compiling solana-curve25519 v2.3.13
+   Compiling ecdsa v0.16.9
+   Compiling spl-program-error v0.6.0
+   Compiling ark-bn254 v0.4.0
+   Compiling libsecp256k1 v0.7.2
+   Compiling anchor-lang-idl-spec v0.1.0
+   Compiling solana-packet v4.2.0
+   Compiling serde_with_macros v3.21.0
+   Compiling num_enum_derive v0.7.6
+   Compiling serde_with v3.21.0
+   Compiling num_enum v0.7.6
+   Compiling anchor-lang-idl v0.1.4
+   Compiling spl-tlv-account-resolution v0.9.0
+   Compiling light-poseidon v0.2.0
+   Compiling k256 v0.13.4
+   Compiling spl-token-confidential-transfer-proof-extraction v0.2.1
+   Compiling light-poseidon v0.4.0
+   Compiling solana-derivation-path v3.0.0
+   Compiling solana-bincode v3.1.0
+   Compiling cfg_eval v0.1.2
+   Compiling solana-hash-512 v1.1.0
+   Compiling solana-sha512-hasher v1.0.1
+   Compiling solana-poseidon v4.0.0
+   Compiling solana-seed-derivable v3.0.0
+   Compiling spl-elgamal-registry v0.1.1
+   Compiling solana-secp256k1-recover v3.2.0
+   Compiling anchor-attribute-program v0.31.2
+   Compiling spl-transfer-hook-interface v0.9.0
+   Compiling spl-token v7.0.0
+   Compiling spl-token-confidential-transfer-ciphertext-arithmetic v0.2.1
+   Compiling spl-token-metadata-interface v0.6.0
+   Compiling solana-bn254 v3.2.1
+   Compiling solana-bls12-381-syscall v0.1.0
+   Compiling spl-token-group-interface v0.5.0
+   Compiling anchor-attribute-access-control v0.31.2
+   Compiling anchor-attribute-account v0.31.2
+   Compiling anchor-attribute-error v0.31.2
+   Compiling anchor-attribute-event v0.31.2
+   Compiling anchor-derive-serde v0.31.2
+   Compiling anchor-attribute-constant v0.31.2
+   Compiling anchor-derive-accounts v0.31.2
+   Compiling spl-token-confidential-transfer-proof-generation v0.2.0
+   Compiling spl-memo v6.0.0
+   Compiling solana-nonce v3.2.1
+   Compiling solana-keccak-hasher v3.1.0
+   Compiling solana-blake3-hasher v3.1.0
+   Compiling solana-big-mod-exp v3.0.0
+   Compiling solana-curve25519 v4.0.1
+   Compiling solana-serde-varint v3.0.1
+   Compiling anchor-derive-space v0.31.2
+   Compiling rust_decimal v1.40.0
+   Compiling base64 v0.21.7
+   Compiling solana-security-txt v1.1.3
+   Compiling anchor-lang v0.31.2
+   Compiling spl-token-2022 v6.0.0
+   Compiling solana-syscalls v4.1.2
+   Compiling solana-vote-interface v6.0.3
+   Compiling solana-nonce-account v4.1.1
+   Compiling solana-zk-sdk v5.0.1
+   Compiling solana-bls-signatures v3.3.0
+   Compiling spl-associated-token-account-client v2.0.0
+   Compiling solana-address v1.1.0
+   Compiling qualifier_attr v0.2.2
+   Compiling solana-bpf-loader-program v4.1.2
+   Compiling solana-zk-elgamal-proof-program v4.1.2
+   Compiling solana-pubkey v3.0.0
+   Compiling spl-associated-token-account v6.0.0
+   Compiling solana-vote-program v4.1.2
+   Compiling solana-system-program v4.1.2
+   Compiling solana-builtins-default-costs v4.1.2
+   Compiling solana-compute-budget v4.1.2
+   Compiling solana-zk-token-proof-program v4.1.2
+   Compiling solana-compute-budget-program v4.1.2
+   Compiling num-rational v0.4.2
+   Compiling solana-compute-budget-interface v3.0.0
+   Compiling solana-borsh v3.0.2
+   Compiling num-derive v0.3.3
+   Compiling num-complex v0.4.6
+   Compiling keccak-const v0.2.0
+   Compiling ruint-macro v1.2.1
+   Compiling mpl-token-metadata v5.1.1
+   Compiling ruint v1.20.0
+   Compiling const-crypto v0.3.0
+   Compiling num v0.4.3
+   Compiling solana-compute-budget-instruction v4.1.2
+   Compiling solana-builtins v4.1.2
+   Compiling jupiter-amm-interface v0.7.0 (https://github.com/jup-ag/jupiter-amm-interface?rev=70f56e0495b7c818e4c38e37b2007656892ca2a1#70f56e04)
+   Compiling anchor-spl v0.31.2
+   Compiling solana-loader-v4-interface v3.1.0
+   Compiling locker v0.0.1 (C:\extrc\AsolanProject\output\atomic-launch-jupiter-20261029\vendor\evolut-curve\libs\locker)
+   Compiling solana-fee v4.1.2
+   Compiling agave-reserved-account-keys v4.1.2
+   Compiling ansi_term v0.12.1
+   Compiling solana-instructions-sysvar v4.0.0
+   Compiling solana-loader-v3-interface v8.0.1
+   Compiling solana-feature-gate-interface v4.0.0
+   Compiling solana-address-lookup-table-interface v3.1.0
+   Compiling static_assertions v1.1.0
+   Compiling solana-native-token v3.0.0
+   Compiling litesvm v0.14.0
+   Compiling dynamic-bonding-curve v0.1.8 (C:\extrc\AsolanProject\output\atomic-launch-jupiter-20261029\vendor\evolut-curve\programs\dynamic-bonding-curve)
+warning: use of deprecated module `anchor_lang::solana_program::system_instruction`: Use `solana_system_interface` crate instead
+ --> vendor\evolut-curve\programs\dynamic-bonding-curve\src\instructions\migration\flash_rent.rs:3:39
+  |
+3 |     solana_program::{program::invoke, system_instruction},
+  |                                       ^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated module `anchor_lang::solana_program::system_instruction`: Use `solana_system_interface` crate instead
+  --> vendor\evolut-curve\programs\dynamic-bonding-curve\src\instructions\migration\graduate.rs:11:39
+   |
+11 |     solana_program::{program::invoke, system_instruction},
+   |                                       ^^^^^^^^^^^^^^^^^^
+
+   Compiling jupiter-amm-test-kit v0.1.0 (https://github.com/jup-ag/jupiter-amm-interface?rev=70f56e0495b7c818e4c38e37b2007656892ca2a1#70f56e04)
+warning: use of deprecated method `anchor_lang::prelude::AccountInfo::<'a>::realloc`: Use AccountInfo::resize() instead
+  --> vendor\evolut-curve\programs\dynamic-bonding-curve\src\lib.rs:34:1
+   |
+34 | #[program]
+   | ^^^^^^^^^^
+   |
+   = note: this warning originates in the attribute macro `program` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: `dynamic-bonding-curve` (lib) generated 3 warnings
+   Compiling evolut-jupiter-amm v0.1.0 (C:\extrc\AsolanProject\output\atomic-launch-jupiter-20261029)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1m 29s
+     Running unittests src\lib.rs (target\debug\deps\evolut_jupiter_amm-096a5088e22d85ce.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\execution.rs (target\debug\deps\execution-187c00f60b452fe6.exe)
+
+running 4 tests
+test captured_mainnet_two_percent_buy_then_sell_matches_quote_and_fee_ledgers ... ok
+test above_85_sol_threshold_rejects_partial_fill_in_quote_and_native_execution ... ok
+test synthetic_fee_only_one_percent_variant_buy_then_sell_matches_quote_and_fee_ledgers ... ok
+test buy_and_sell_slippage_rejections_preserve_all_pool_and_token_accounts ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+     Running tests\parity.rs (target\debug\deps\parity-b41d98802ab53611.exe)
+
+running 2 tests
+test pinned_mainnet_program_bytecode ... ok
+test official_kit_mainnet_85sol_2pct_exact_input_buys ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.40s
+
+     Running tests\security_invariants.rs (target\debug\deps\security_invariants-1dd7f7f5569a5638.exe)
+
+running 4 tests
+test fee_ceiling_and_half_split_conserve_every_lamport_at_integer_extremes ... ok
+test whole_u64_input_range_is_rejected_or_quoted_without_panic ... ok
+test synthetic_two_segment_curve_crosses_both_directions_with_native_parity ... ok
+test repeated_round_trips_cannot_extract_quote_and_preserve_exact_fee_ledgers ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.99s
+
+     Running tests\validation.rs (target\debug\deps\validation-0395706d0fd7e8ac.exe)
+
+running 17 tests
+test native_swap_encoding_preserves_raw_u64_amounts_and_minimum_output ... ok
+test constructor_rejects_wrong_owner_discriminator_size_and_executable_state ... ok
+test constructor_rejects_forged_pool_address_and_token_2022_pool ... ok
+test exact_out_zero_input_and_wrong_mint_pairs_are_rejected ... ok
+test construction_alone_never_enables_quotes_or_instructions ... ok
+test threshold_crossing_buy_is_rejected_instead_of_returning_a_partial_fill ... ok
+test nonempty_referrals_and_missing_or_duplicate_token_accounts_are_rejected ... ok
+test invalid_clock_never_produces_a_quote ... ok
+test cpi_transfer_authority_can_differ_from_user_and_payer ... ok
+test buy_fees_use_integer_ceiling_and_are_reported_in_wsol_for_both_tiers ... ok
+test slot_and_timestamp_activation_are_rechecked_on_every_quote ... ok
+test migrated_completed_and_migrating_pools_are_unavailable ... ok
+test corrupt_config_refresh_invalidates_previously_valid_state ... ok
+test malformed_curve_limits_and_point_order_are_rejected ... ok
+test missing_dependency_invalidates_previous_quote_until_successful_refresh ... ok
+test unsupported_config_modes_fail_closed ... ok
+test legacy_mint_and_vault_integrity_are_required ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+

@@ -1,0 +1,438 @@
+{
+  "source": "atomic-launch-contract-20261029 local candidate; not yet deployed",
+  "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "status": "modified-candidate-source-not-baseline-byte-identical",
+  "baselineSource": "evolut-matched-fees-source-20261028.zip",
+  "baselineManifest": "evidence/atomic-launch/baseline-vendor-source-manifest.json",
+  "sourceFiles": 95,
+  "unchangedFromBaseline": 86,
+  "changes": [
+    {
+      "path": "Cargo.lock",
+      "baselineSha256": "09a2c57f934a27333326fda4f735bed9225b4e47747b4db5ba8e3dc5ce82b82b",
+      "candidateSha256": "6876dcda628c6a7879e579a2ce6860baa1897ca4785a225d879966d293425dab"
+    },
+    {
+      "path": "Cargo.toml",
+      "baselineSha256": "c082b6397a036ef8a0334211ac8d4428f0789ca836a6247d2b99a94bc772bde5",
+      "candidateSha256": "3442309b6ae05e34b40988e1a8218ae3354040a01c0e086ab8f5b5e4ed6bbfd2"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/error.rs",
+      "baselineSha256": "15382df84423ef9c5a2fbc5e93507fd288954b876f252fb329e4a7c0cf58c511",
+      "candidateSha256": "5d6c3bc8119846bc5e8db0ea34a5cb17ff1795d009adbfb7c808ca27adb20e6b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
+      "baselineSha256": "97d340c68f968ba1fc08cd8bc50c437561a0cda6e7010b3a83444ce53a974587",
+      "candidateSha256": "c1b9c06a5319c75a243a77cadb0e0bf262fc6932c925219891ff3fa8939794d1"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_fee.rs",
+      "baselineSha256": null,
+      "candidateSha256": "51ba4071cc267648dedc773d1e7bc9e89cd367e0c3fa8959927542312ede86a6"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
+      "baselineSha256": "543e89d378d4ad0fb58f7c95972939676c3714581feb9c71cbf32d21cfb5e279",
+      "candidateSha256": "50e19d1d0f90f907e31af4b0fee311eab1a6b4fc1034a78c37ff13b116da951a"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/paid_launch.rs",
+      "baselineSha256": "1032353d7d8540f9511abffa6ca1dd479f080ad516ea40d2e76b6364b4955db4",
+      "candidateSha256": "53314a198de9e7b5b5dc1563be4a6febbe4d7901adedb8b64eab4ca8960516ab"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_config.rs",
+      "baselineSha256": "7c205b37d7de00266615debc6a82c8cd8d6f7fb4256307f392b1db01a7a8fcd6",
+      "candidateSha256": "05baf1c7d3a3e96a499b9888511b00d8ddd6bb75a6cef9ea4f9f3f840c5c3948"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "baselineSha256": "d7a3904383a842c6b4c0b5c55c1dc50314d93c5819b65f2c378048c064a5d051",
+      "candidateSha256": "169c401788e58025ddef8c46f0be7291703aab15ad6dde289fecfa151f747491"
+    }
+  ],
+  "files": [
+    {
+      "path": "Anchor.toml",
+      "sha256": "5695f31c7fe71b89c892fef5a01f77cc864ac41c720a08a21ed60c6d6dda6714"
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "6876dcda628c6a7879e579a2ce6860baa1897ca4785a225d879966d293425dab"
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "3442309b6ae05e34b40988e1a8218ae3354040a01c0e086ab8f5b5e4ed6bbfd2"
+    },
+    {
+      "path": "README.md",
+      "sha256": "172d3977affdabceb26ef7636856bd6845b41e2972f9edccfdc75aca172d1b3e"
+    },
+    {
+      "path": "UPSTREAM-NOTICES.md",
+      "sha256": "c3be86dabf716544323cdb918ef0e9c2017513661a7e0d35695b179176d24d46"
+    },
+    {
+      "path": "dynamic-bonding-curve-sdk/Cargo.toml",
+      "sha256": "a5d090ef9bc3b5a1e1cd152b786cdb5df6b6aecc648438b726d75c8106a3663f"
+    },
+    {
+      "path": "dynamic-bonding-curve-sdk/src/lib.rs",
+      "sha256": "ba8d5417fbd53fabc37ddcd58add6f8c53321e626451de14f134212cb22122e2"
+    },
+    {
+      "path": "dynamic-bonding-curve-sdk/src/quote_exact_in.rs",
+      "sha256": "38a215862aaae2f82828eb285e010cd22a16b2c813766d56a3a19084644bda55"
+    },
+    {
+      "path": "dynamic-bonding-curve-sdk/src/quote_exact_out.rs",
+      "sha256": "d1af0785945a8de642fbe8aa2c939941e9a91052b498f81b1f16ee01aa758597"
+    },
+    {
+      "path": "dynamic-bonding-curve-sdk/src/quote_partial_fill.rs",
+      "sha256": "1cff6504ef335ab4ce9b37f9d9649c0f1ec29debc1da00c5f7fe19c1dd75d008"
+    },
+    {
+      "path": "idl/evolut_curve.json",
+      "sha256": "d16f11c2838a6006cca2263f70bdb309378272fcb0c3f48682b06075c3cbe07b"
+    },
+    {
+      "path": "idl/evolut_curve.mainnet.json",
+      "sha256": "81ad64a42cc27589188ca9eb9189a07aa501e38a57a164b12329076532acb900"
+    },
+    {
+      "path": "idls/locker.json",
+      "sha256": "87aac5fc5055ffbef7003a8030bb48ead4d19238257f1adc13ecde12c6f675d7"
+    },
+    {
+      "path": "libs/locker/Cargo.toml",
+      "sha256": "bebc18d3f6b9e4636f1c91198b7d046b7b20972391451b475256089338d0883c"
+    },
+    {
+      "path": "libs/locker/src/lib.rs",
+      "sha256": "981010b0931f2e88eaad0884b4e33db663ccaf16bbe99da097cd328c79fd83de"
+    },
+    {
+      "path": "mainnet-candidate.json",
+      "sha256": "9f27f53f2c94ddbd29213ba1d17eb3a79c745d11f8c4b60441742ed6d10a7a0e"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/Cargo.toml",
+      "sha256": "20fcd8eb7639fe00a58ff6622f0b530014adbc9ea09c98fd28afd018a043e90d"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/Xargo.toml",
+      "sha256": "f36d7db5970cc4260ebb5be4ecf2dcfc7cec0a7d644412e84c3cb10dd7d07a56"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/access_control.rs",
+      "sha256": "137ff06c6971029e933287b1fc5846fca368f5466be076df240b0cac39bcb641"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/base_fee/fee_rate_limiter.rs",
+      "sha256": "45706268a47192869b02e8befded68b4c2b97818509709ada20bfeec9f86f887"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/base_fee/fee_scheduler.rs",
+      "sha256": "acc7a7e75cea2e2998fe6fb7b573709a02984fedb68162233c8dff8065c6a235"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/base_fee/mod.rs",
+      "sha256": "58a80a24667025e0c709f05db1bc75e0e5765fabfa123a6d78a56f419b079278"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/const_pda.rs",
+      "sha256": "64cb72a2a06a50a7c78e2bebde3f3e92103a424bc32c436e24d407a62f6b08d0"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/constants.rs",
+      "sha256": "356c8b08566f0e8be9b753062253399705ee80420ccf3490662f175f0110e4d6"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/curve.rs",
+      "sha256": "9c2fe5552595d28df5d7b315bc9c9c1ae88e41288d6aa82140fc6f00dd7e8a2b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/error.rs",
+      "sha256": "5d6c3bc8119846bc5e8db0ea34a5cb17ff1795d009adbfb7c808ca27adb20e6b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/event.rs",
+      "sha256": "18321489c472ed19b1f4008d5fb266e8c13dad85d8837a4c4b0aadb494a21fff"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/admin/auth.rs",
+      "sha256": "313144bd3f203c5785b27d2431dfef79ac820088b8a384e672b3d0f77fd2fb59"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/admin/ix_close_claim_protocol_fee_operator.rs",
+      "sha256": "f984856fafce1380291d879a9a1c5faf691dc39d97c85715cf210b811e29f529"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/admin/ix_create_claim_protocol_fee_operator.rs",
+      "sha256": "0aaf27e4cbaadf8943ca825fdad36bd5f8b964eac67d3bddd7fe087088e4688b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/admin/ix_operational_authority.rs",
+      "sha256": "9940c033b3d4aba807c6af90e4a08b76c523b1563715bf8f62fe9843b4fa748e"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/admin/mod.rs",
+      "sha256": "2dd9885042e8d8f54358ff0720f7b87130122fa8d80e16fa5d82e17ef9b3ce1b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_creator_trading_fee.rs",
+      "sha256": "1de26e54279bce12eaf0214114ae9b019ad1e9bfbcc4c5a403f175a0bf8fd622"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
+      "sha256": "92feb084a27352cc646162ccae2b9666c4bb36539149a6d17a84299f423f6c21"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_create_virtual_pool_metadata.rs",
+      "sha256": "81461139919480c58663bdf5762e9665391017d336714741ab4705c644aba4c0"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_transfer_pool_creator.rs",
+      "sha256": "f9a863f21bae0c5f5cab328fe482435dbcc307f333f3ebb4178a7955be0e440a"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_withdraw_creator_surplus.rs",
+      "sha256": "f52643bc1fec317db068acd292e7b87e87cf07c968d76389a89b730e14e88dec"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+      "sha256": "ae2ec3a28725298adf0e31ef589b23943ad779cc01299f8d12b042569e1eb27b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
+      "sha256": "c1b9c06a5319c75a243a77cadb0e0bf262fc6932c925219891ff3fa8939794d1"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_authorization.rs",
+      "sha256": "9a4b3eb4d04474ad9552e1e3f371591f066fe96a619a4faeb63dd511f05df211"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_fee.rs",
+      "sha256": "51ba4071cc267648dedc773d1e7bc9e89cd367e0c3fa8959927542312ede86a6"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
+      "sha256": "50e19d1d0f90f907e31af4b0fee311eab1a6b4fc1034a78c37ff13b116da951a"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/paid_launch.rs",
+      "sha256": "53314a198de9e7b5b5dc1563be4a6febbe4d7901adedb8b64eab4ca8960516ab"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/process_create_token_metadata.rs",
+      "sha256": "5d314cab3683c35c6f6d3f10e61fa5c009c78034cd80f4298d7ae2d3b517c51e"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/migration/create_locker.rs",
+      "sha256": "6b7324351c6d2f91556f6a9eeee6427554fe3ee1f621bb998dafb8a699732470"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/migration/flash_rent.rs",
+      "sha256": "9e2a20431b6d36b3a35df97ea137273b4a5c42f547e99fbf5cdf168a45d1b9b0"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
+      "sha256": "613b999f7248d3fd9942021e75d31975b015bca383796f0ba5eef00d84c443a8"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/migration/mod.rs",
+      "sha256": "3a14a8c51d89b45b9eca04bba112eebf19fdf92727b770240cd65bfaa35b615f"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/migration/withdraw_leftover.rs",
+      "sha256": "727e1cd5f56577567d2f5bb5f0417093f7f558b5284bc72b908da8b5944cda28"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/mod.rs",
+      "sha256": "8eac77c554d1a8a1a82ea3095e2470fc1191c096b8b39844b6796a8a87473dc4"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_fee.rs",
+      "sha256": "5c1c54d8fc16ba316d6f21cc7c6a86edb34b7b2a01a718630f3004b0db1fd79c"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_pool_creation_fee.rs",
+      "sha256": "e85b85513a20bb97d3288baa6bcffa03d29036c8662623a70f326e668f09cb51"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
+      "sha256": "6887032e2d021086853784818d2371ccd4ccb9bdd3ae9734dd2eeb72770d5a33"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/operator/ix_withdraw_protocol_surplus.rs",
+      "sha256": "e814161349c9fead1458c7c4ce793d5f0f09bf865ebb970d9b9e74c81287a12f"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/operator/mod.rs",
+      "sha256": "f47ff60b6824ff30dfa4f1a83978c8722211f2d19fb3bd728934310b83be5d7a"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_pool_creation_fee.rs",
+      "sha256": "ef39b312e9bc46830754a29410640bf67b12b2e38681bef647ae0a57490dc3bd"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_trading_fee.rs",
+      "sha256": "e5ffa2270ef29d889e04559d5570bf89b631b55c16e5cce25ba57bac16a7b7bc"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_config.rs",
+      "sha256": "05baf1c7d3a3e96a499b9888511b00d8ddd6bb75a6cef9ea4f9f3f840c5c3948"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_partner_metadata.rs",
+      "sha256": "9400a4fa1bd74a4557127ab94527a108c8ba23babba7db67a9ceb81b2fce9a2b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/ix_withdraw_partner_surplus.rs",
+      "sha256": "8281c25ba1b904aeaccad0b17d6abee9c1fa649ed4c8d53484ab37f6b533ec7e"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/partner/mod.rs",
+      "sha256": "ac09893de90370d9c25acbc72abf0272a137db9f2bb562c5bddd36cf1d6d021d"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/swap/ix_swap.rs",
+      "sha256": "ad50c09df775f5ba451f1dee72dbc972ba9912deadd5c30c6a2bff3c7ef6491c"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/swap/mod.rs",
+      "sha256": "2a354c3df3a1731a400b29d3abb1b718a4f37bb70f95b9c337764e4b497d12fe"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_in.rs",
+      "sha256": "6caf7e5e6601f1d25b05c55fa56dd796137b7eb516e0a3107b2ded85658b210c"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_out.rs",
+      "sha256": "61d773d8426d01d7b814a7eccbede20d18615757ee9a398ea93b49beebec2b6f"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/swap/swap_partial_fill.rs",
+      "sha256": "78e7f8030e0d838993315ca39a12a281deafe03cbc72e3c92f957f57eff03b43"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/lib.rs",
+      "sha256": "c69768c5cf3de172ba57542676c3813f9f98f9e75b87466cc10c786fd7001c4b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/macros.rs",
+      "sha256": "4a53e3e47e140e03f00629060ba2280ce4c9834d5f9585f7dc21553fee429ccd"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/math/fee_math.rs",
+      "sha256": "fef9967d0ec27e6034ccb876ced8b4a2162bbfa99d6ac62243b1c44b79b003b4"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/math/mod.rs",
+      "sha256": "bc52f8202a14d4a581e73a76a59a3b0a032c7574897fbb9aa59a3a9522eae89d"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/math/safe_math.rs",
+      "sha256": "80103fc13c20587c72ba49a5a5df08a56260e3a37b7d5e2d16d0cb884ff77c92"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/math/u128x128_math.rs",
+      "sha256": "ab6e22be11306b6e278280b748b440cf65b4d71e0c7fa2c232f2ff6f62fe7033"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/math/utils_math.rs",
+      "sha256": "3b8a8878b049c815802d941a8c053f23a00559087905c9f3b72451b2c3dc1c38"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/params/fee_parameters.rs",
+      "sha256": "9744b26e84bcb2115a143290e74f744e1aef809f80bbb8e615418cdf149377cc"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/params/liquidity_distribution.rs",
+      "sha256": "4b4bf4d094ef125bcbeefee493d045b6624144b0dac21431b7d956de0e130287"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/params/mod.rs",
+      "sha256": "18f19c264047f91ed5edcee8776058288836815f08076ea03027ce16bb94bb40"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/params/swap.rs",
+      "sha256": "538c2df68ef934c74fb36a43a30e2207877079f5c1ea6c88f6734169e1bf551e"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/raydium.rs",
+      "sha256": "358d8a3f894bbf12a8d103235e515d15c4f32d1bf3cc1cda394031f18bdc7216"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/claim_fee_operator.rs",
+      "sha256": "47984c13b3b0459cf129b4df363b7ecc533bda073e2e885ea48ae0f944fb7352"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/config.rs",
+      "sha256": "95419c2d08754fa1d3c3e1eaccb9f833aded4231303c2a67b0c15548713abf9e"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/fee.rs",
+      "sha256": "7f4d3230ef92e48ffe3e202c1cd74f9f45663b2bffbc448393d50fd7cd95b926"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/mod.rs",
+      "sha256": "d6898ea8e323b883baea27a557bf341ad493015a969e01acb69124eb3b155f32"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/operational_authority.rs",
+      "sha256": "880a4f46e3902fbb69b54c7b3c043c30a18e89fc44d710bc591df96a9c33fe98"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/partner_metadata.rs",
+      "sha256": "811933b36672a4dc3f97563b1794f040871f2b412a77fce41a6f6b4eb79c1962"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/raydium_creator_fees.rs",
+      "sha256": "22ecbffcaaacd6bebd615d607874b7a576168955195ac9893af72abbd491432b"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/virtual_pool.rs",
+      "sha256": "f4f6f05601b2a1ca90e7243ac3efd6705a67718e35ad61b20a659e4ee97e72b1"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/state/virtual_pool_metadata.rs",
+      "sha256": "5b2ef5faaa02186e64509867576203e1b760f3232b849584bce59e98ee38b806"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/utils/activation_handler.rs",
+      "sha256": "99d3107065a216e8d1c8961680e8e67dc11782f8f7bbbad17302c31920e42915"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/utils/cpi_checker.rs",
+      "sha256": "7758e0372ce656c3559cdfa56488ae72b0d4cafdfdd7147ecc2ac0e953dd1da8"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/utils/mod.rs",
+      "sha256": "9ea72e2e9fc2c83de91b3757eb63ef296a426b2d232b4b779ef7771469365e6c"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/utils/token.rs",
+      "sha256": "4793181a224fd3443d806e0ac1fc769dcbc4bda7e81d4735659165093188dbf4"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/tests/graduation_burn_policy.rs",
+      "sha256": "03dd1be7ca6876542a71d19c0e1575169a8de5404c73453adabfa01831128b7d"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/tests/graduation_revenue_policy.rs",
+      "sha256": "51abdc5f81f543941879e75af5622e536d5a104537bd1eda8aa8fa953f5abd6d"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/tests/mainnet_candidate_economics.rs",
+      "sha256": "1976f4f3712554188ceb0f8e16efeffa84a746e869ff76475c582d93359b8c62"
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "169c401788e58025ddef8c46f0be7291703aab15ad6dde289fecfa151f747491"
+    }
+  ]
+}

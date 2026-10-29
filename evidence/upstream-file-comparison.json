@@ -1,0 +1,1101 @@
+{
+  "upstream": "https://github.com/MeteoraAg/dynamic-bonding-curve",
+  "revision": "828f350831a0f3c085b64c4998a27ccf7d84a76a",
+  "caution": "Matching files establish lineage, not the exact original checkout or a grant of rights.",
+  "reports": [
+    {
+      "root": "original-supplied-moltrade-dbc",
+      "compared": 75,
+      "exact": 3,
+      "lfNormalized": 50,
+      "entries": [
+        {
+          "file": "CHANGELOG.md",
+          "rawGitBlob": "eb1a3a53d632e4faaa7cd56d5b877f907d1f6412",
+          "lfNormalizedGitBlob": "3781c13aa0838a4ac7687f60b48deec882f0c873",
+          "upstreamGitBlob": "3781c13aa0838a4ac7687f60b48deec882f0c873",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "Cargo.toml",
+          "rawGitBlob": "6e82e81bdd21193ef0b4a6de676a8a1c69a35c34",
+          "lfNormalizedGitBlob": "d464d790ff238af60c5d078ca523491884be5f36",
+          "upstreamGitBlob": "d464d790ff238af60c5d078ca523491884be5f36",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "README.md",
+          "rawGitBlob": "7e79df253268e5998cfc0455714603eea80c6ac2",
+          "lfNormalizedGitBlob": "84f71966081aeb7e6c1a2e7d76c3f79cad89c5a8",
+          "upstreamGitBlob": "84f71966081aeb7e6c1a2e7d76c3f79cad89c5a8",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/lib.rs",
+          "rawGitBlob": "ff99d1815eaa0e44329e4bb2000ac1f7112080c9",
+          "lfNormalizedGitBlob": "ff99d1815eaa0e44329e4bb2000ac1f7112080c9",
+          "upstreamGitBlob": "d0c7c72cf044896074b6306be11c7fc25d966c28",
+          "match": "different"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/quote_exact_in.rs",
+          "rawGitBlob": "2e8528a357178e603568bba758f0a877af3f693a",
+          "lfNormalizedGitBlob": "b783b8eabdc62e146c9f992b6672b9a5f2ebd87d",
+          "upstreamGitBlob": "b783b8eabdc62e146c9f992b6672b9a5f2ebd87d",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/quote_exact_out.rs",
+          "rawGitBlob": "98294caba019e87f44bf595e3fb50195aa4a068d",
+          "lfNormalizedGitBlob": "d48fe2e527551dccfa9ddacc4f02407b88c5b424",
+          "upstreamGitBlob": "d48fe2e527551dccfa9ddacc4f02407b88c5b424",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/quote_partial_fill.rs",
+          "rawGitBlob": "cd50049bf9fae3a725a5c6bc22741416744e8550",
+          "lfNormalizedGitBlob": "874caf78a000e6c3bc2f90097695958c532c39c4",
+          "upstreamGitBlob": "874caf78a000e6c3bc2f90097695958c532c39c4",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/Cargo.toml",
+          "rawGitBlob": "e6cd0fc1c2c89b33cf09b60137f4ae5c72fc7937",
+          "lfNormalizedGitBlob": "385cd98184af3982b841095be786cdbaf4cba6f2",
+          "upstreamGitBlob": "8c3883427843bebb1bdaaf3f25806609e3df4983",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/access_control.rs",
+          "rawGitBlob": "fd844ba1c323da9269b95cb7e5afdf580c7b66dc",
+          "lfNormalizedGitBlob": "7bb5918b694a74df4d2a402a06ad16e4bb48a627",
+          "upstreamGitBlob": "7bb5918b694a74df4d2a402a06ad16e4bb48a627",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/base_fee/fee_rate_limiter.rs",
+          "rawGitBlob": "86de658dfa1f3952e539389c4e3881df341c9079",
+          "lfNormalizedGitBlob": "6d1f0131a212b88d9c3660fed62691066b47f0b3",
+          "upstreamGitBlob": "6d1f0131a212b88d9c3660fed62691066b47f0b3",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/base_fee/fee_scheduler.rs",
+          "rawGitBlob": "234727ad10c3e0b306401b936f57b30ce7cd05ac",
+          "lfNormalizedGitBlob": "0d661f90d01417bd128a9bd8788a934cfb926f01",
+          "upstreamGitBlob": "0d661f90d01417bd128a9bd8788a934cfb926f01",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/base_fee/mod.rs",
+          "rawGitBlob": "0124e3340b3123a0d0c3317d68cbd385b8643e65",
+          "lfNormalizedGitBlob": "12ac19feea675ea41e983a9cb25b438b2e6eed6f",
+          "upstreamGitBlob": "12ac19feea675ea41e983a9cb25b438b2e6eed6f",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/const_pda.rs",
+          "rawGitBlob": "fee2c22da3e0ae841a531bb64c6be8a1f9c84790",
+          "lfNormalizedGitBlob": "25f6f26e20fff3196d761ff671b8d5ad0aecd199",
+          "upstreamGitBlob": "25f6f26e20fff3196d761ff671b8d5ad0aecd199",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/constants.rs",
+          "rawGitBlob": "c5941836a8cce9d993fb0f71536bab67c508f9e6",
+          "lfNormalizedGitBlob": "7ed3969bc8f26a40693dc358d4296e02cf8851e7",
+          "upstreamGitBlob": "4fe18d534729a5c5ae42a4533eee46f40f7e8213",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/curve.rs",
+          "rawGitBlob": "b60f4b1466e80a44ef9e3f7c0081250105bea89c",
+          "lfNormalizedGitBlob": "4828babef84febe192cdb81d4552e8418949e209",
+          "upstreamGitBlob": "4828babef84febe192cdb81d4552e8418949e209",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/error.rs",
+          "rawGitBlob": "10f56aae14de3ba8b2fc8a1ba1bb2b5432cd3e63",
+          "lfNormalizedGitBlob": "10f56aae14de3ba8b2fc8a1ba1bb2b5432cd3e63",
+          "upstreamGitBlob": "370a36d5ec5c01e625d8e2b168fc6d2f2f4ac957",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/event.rs",
+          "rawGitBlob": "2056a24c366be5f5dd50ee0795627f5cabff5efc",
+          "lfNormalizedGitBlob": "2056a24c366be5f5dd50ee0795627f5cabff5efc",
+          "upstreamGitBlob": "0da18c1171136a26d65a4470191b02f42871b0a6",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/auth.rs",
+          "rawGitBlob": "86b4248fadd462149d2daf417bc13f83af3f44a8",
+          "lfNormalizedGitBlob": "86b4248fadd462149d2daf417bc13f83af3f44a8",
+          "upstreamGitBlob": "56625015fe3ea48c5c5751adbd94670b4c8c468b",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/ix_close_claim_protocol_fee_operator.rs",
+          "rawGitBlob": "f92c62029f7e51ee34e1aee4e4f3ff1dbe97ea66",
+          "lfNormalizedGitBlob": "cf8a236550d9f6394113f1d5c8aeafeb2f78c594",
+          "upstreamGitBlob": "cf8a236550d9f6394113f1d5c8aeafeb2f78c594",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/ix_create_claim_protocol_fee_operator.rs",
+          "rawGitBlob": "478c70965f6eaf57450236ca54eade9e17b65523",
+          "lfNormalizedGitBlob": "c3e38dfdf0d398eac9e6ff5c60fb0f242394f3fb",
+          "upstreamGitBlob": "c3e38dfdf0d398eac9e6ff5c60fb0f242394f3fb",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/mod.rs",
+          "rawGitBlob": "bf0368594213867410226a8cd8b4b8a413b52d4e",
+          "lfNormalizedGitBlob": "734cbc48534f98ecb5a203977fb83cf881afe003",
+          "upstreamGitBlob": "734cbc48534f98ecb5a203977fb83cf881afe003",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_creator_trading_fee.rs",
+          "rawGitBlob": "777fb1b23ac067707caba106b521f2270eb9b47c",
+          "lfNormalizedGitBlob": "b235111dc43307f89697fb1c8cebafe74ef51fa2",
+          "upstreamGitBlob": "6b54e68544fadbfad17b8124086f26b368785484",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_create_virtual_pool_metadata.rs",
+          "rawGitBlob": "685feab2026e484e62398e5e6b283b26b73b1a76",
+          "lfNormalizedGitBlob": "394c7cb3cb62a70f6299f85b6c3f493c8f5c0f90",
+          "upstreamGitBlob": "394c7cb3cb62a70f6299f85b6c3f493c8f5c0f90",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_transfer_pool_creator.rs",
+          "rawGitBlob": "1a48924a34484f10446033d8ba2d01a58eee73e9",
+          "lfNormalizedGitBlob": "1a48924a34484f10446033d8ba2d01a58eee73e9",
+          "upstreamGitBlob": "f417187eb6b1308dee1a5d2af916b8d3819df382",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_withdraw_creator_surplus.rs",
+          "rawGitBlob": "12ecc8b3ed37d31d9012cf8d538e669cd7ccb87b",
+          "lfNormalizedGitBlob": "476ba72e2fd6442155917e1be372619a0298fc41",
+          "upstreamGitBlob": "476ba72e2fd6442155917e1be372619a0298fc41",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+          "rawGitBlob": "2a1c1890a42d495372b8236c1458b3a4c12082bb",
+          "lfNormalizedGitBlob": "ffffd015326a231faa7b1519cbe74f95b2e32808",
+          "upstreamGitBlob": "ffffd015326a231faa7b1519cbe74f95b2e32808",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
+          "rawGitBlob": "1021e596a9f377311aef30938565e08a69ddb5f8",
+          "lfNormalizedGitBlob": "1021e596a9f377311aef30938565e08a69ddb5f8",
+          "upstreamGitBlob": "819892f80f999be80d921816f1a074ce11702aa7",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_authorization.rs",
+          "rawGitBlob": "6a6e48982561ee7b97409851db3f153c5bd12053",
+          "lfNormalizedGitBlob": "6a6e48982561ee7b97409851db3f153c5bd12053",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
+          "rawGitBlob": "12259da63ad0c47e9df0e1a6ab0d95e6584f37f8",
+          "lfNormalizedGitBlob": "12259da63ad0c47e9df0e1a6ab0d95e6584f37f8",
+          "upstreamGitBlob": "1c08dfebd26f7da37810e6ef39b320a4033650ab",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/paid_launch.rs",
+          "rawGitBlob": "b0c85b26b3812deaea229389007282bd20481438",
+          "lfNormalizedGitBlob": "b0c85b26b3812deaea229389007282bd20481438",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/process_create_token_metadata.rs",
+          "rawGitBlob": "e7b8fb9c8ab2310963e74c78c087479898c2c663",
+          "lfNormalizedGitBlob": "2b51245dd8610725437ec4ec67be9ca7b3a8c2f9",
+          "upstreamGitBlob": "2b51245dd8610725437ec4ec67be9ca7b3a8c2f9",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/create_locker.rs",
+          "rawGitBlob": "9e62a3cca9bdea121f95f44bafae95944b473e3e",
+          "lfNormalizedGitBlob": "7c1b2c53022993fe47154f44b73013c44b00b2b9",
+          "upstreamGitBlob": "7c1b2c53022993fe47154f44b73013c44b00b2b9",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/flash_rent.rs",
+          "rawGitBlob": "ee4cb192b00c9237f63a4e4887692b2f21781ca5",
+          "lfNormalizedGitBlob": "9cf4b10ee17163904e4e89e73745cbb74a9a1133",
+          "upstreamGitBlob": "9cf4b10ee17163904e4e89e73745cbb74a9a1133",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
+          "rawGitBlob": "7a358753bd213de136f45b9b01d82fcb8308f864",
+          "lfNormalizedGitBlob": "7a358753bd213de136f45b9b01d82fcb8308f864",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/mod.rs",
+          "rawGitBlob": "3ecedd295bb35710de3b2330fa61cd3456f6f9d6",
+          "lfNormalizedGitBlob": "3ecedd295bb35710de3b2330fa61cd3456f6f9d6",
+          "upstreamGitBlob": "8bc30e22c98dd3381aea1b9b7b241d14eb42eb5a",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/withdraw_leftover.rs",
+          "rawGitBlob": "5944c9944178494667e4fa80c06dc6d8607340d5",
+          "lfNormalizedGitBlob": "5944c9944178494667e4fa80c06dc6d8607340d5",
+          "upstreamGitBlob": "1b3404c8c7a5da9e54588b659a22fcd596bf2fbd",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/mod.rs",
+          "rawGitBlob": "bbc0f3a91b633aff479e6f6ead89b3d59dd013db",
+          "lfNormalizedGitBlob": "bbc0f3a91b633aff479e6f6ead89b3d59dd013db",
+          "upstreamGitBlob": "bbc0f3a91b633aff479e6f6ead89b3d59dd013db",
+          "match": "exact-bytes"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_fee.rs",
+          "rawGitBlob": "b2a13eb438a6284fee5a0250e686ab610f916645",
+          "lfNormalizedGitBlob": "e46ed776f6e4635c5f71fd8f0f8fbeab4e44e702",
+          "upstreamGitBlob": "e46ed776f6e4635c5f71fd8f0f8fbeab4e44e702",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_pool_creation_fee.rs",
+          "rawGitBlob": "b89a20d365a0d9bcc4d19c1952764b7336529ba2",
+          "lfNormalizedGitBlob": "6ca5c729d56ec5469d67ca83d121edf4fd3e2780",
+          "upstreamGitBlob": "6ca5c729d56ec5469d67ca83d121edf4fd3e2780",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_withdraw_protocol_surplus.rs",
+          "rawGitBlob": "e722c64b25fca64b016c5a67a604f16f0b10185e",
+          "lfNormalizedGitBlob": "98bc91aeb168807e1bab5f9b11a40b04586df6d5",
+          "upstreamGitBlob": "98bc91aeb168807e1bab5f9b11a40b04586df6d5",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/mod.rs",
+          "rawGitBlob": "cbecb760020e26fa6edbc9ca2afd637975b7d143",
+          "lfNormalizedGitBlob": "68e16105b52b365e8cbe3bdad2edc71223e591e4",
+          "upstreamGitBlob": "ef22ec787de8417e25b07425edb6f3f06df23d84",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_pool_creation_fee.rs",
+          "rawGitBlob": "fec91afcfe0ceb51cb6b18464410b6e61a27ca22",
+          "lfNormalizedGitBlob": "03bdee860dc4ada8983df9b72aa0754c15bac03f",
+          "upstreamGitBlob": "03bdee860dc4ada8983df9b72aa0754c15bac03f",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_trading_fee.rs",
+          "rawGitBlob": "e99897beee6b2f947bdb43c52cfe3718af7b626f",
+          "lfNormalizedGitBlob": "87aa87e96bee4dfdf536c4eca6147dd5ec2b2c72",
+          "upstreamGitBlob": "87aa87e96bee4dfdf536c4eca6147dd5ec2b2c72",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_config.rs",
+          "rawGitBlob": "146a0162a623436da31df2cf7ccbb95a50cc62aa",
+          "lfNormalizedGitBlob": "146a0162a623436da31df2cf7ccbb95a50cc62aa",
+          "upstreamGitBlob": "eeffc26544d2b4f2b722f9009d6d174f892e369e",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_partner_metadata.rs",
+          "rawGitBlob": "fcdbf6459f3800b1b0d9ce35352033124c619e8c",
+          "lfNormalizedGitBlob": "4744400d367fa5a14b5ffc865e17ec17fdbbf11b",
+          "upstreamGitBlob": "4744400d367fa5a14b5ffc865e17ec17fdbbf11b",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_withdraw_partner_surplus.rs",
+          "rawGitBlob": "f2bd50ea587ef9ce4b58f9dac09706abeb52bf99",
+          "lfNormalizedGitBlob": "a353cf4616ba01e6f375b0a27d4b24a4488cff12",
+          "upstreamGitBlob": "a353cf4616ba01e6f375b0a27d4b24a4488cff12",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/mod.rs",
+          "rawGitBlob": "8e9a5784c607c2e7b8d88503ec19171d02a9b5cf",
+          "lfNormalizedGitBlob": "1d99ee37f13520d609db8f79ac1f88b250b7c529",
+          "upstreamGitBlob": "1d99ee37f13520d609db8f79ac1f88b250b7c529",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/ix_swap.rs",
+          "rawGitBlob": "1e31cfb2a8b974e9ccd4dcd5be1badcaee7937c2",
+          "lfNormalizedGitBlob": "1e31cfb2a8b974e9ccd4dcd5be1badcaee7937c2",
+          "upstreamGitBlob": "1e31cfb2a8b974e9ccd4dcd5be1badcaee7937c2",
+          "match": "exact-bytes"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/mod.rs",
+          "rawGitBlob": "23c010256d6a4a6887ba56e66a28c5c66041f55a",
+          "lfNormalizedGitBlob": "e2f42309c31428ed7fca9cb61af44009953932a8",
+          "upstreamGitBlob": "e2f42309c31428ed7fca9cb61af44009953932a8",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_in.rs",
+          "rawGitBlob": "6f7b1c2e4bf526f2f26413a44a9aa7ac6e38ca99",
+          "lfNormalizedGitBlob": "0a55b565fbb03ea303137313e4f3877bc5ee2d8c",
+          "upstreamGitBlob": "0a55b565fbb03ea303137313e4f3877bc5ee2d8c",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_out.rs",
+          "rawGitBlob": "24fe60af4e58944ddc155312e92979e61513f2fd",
+          "lfNormalizedGitBlob": "cb199b5be06ec3de4afc37e7904d2be285227262",
+          "upstreamGitBlob": "cb199b5be06ec3de4afc37e7904d2be285227262",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/swap_partial_fill.rs",
+          "rawGitBlob": "e660f13dd49802840cec1871e28e98253f65d336",
+          "lfNormalizedGitBlob": "7eeddd0a4a248ae746f639322b4d858ec0572980",
+          "upstreamGitBlob": "7eeddd0a4a248ae746f639322b4d858ec0572980",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/lib.rs",
+          "rawGitBlob": "06ee10994431e28c0f3d5f07584acb80f50a3dbb",
+          "lfNormalizedGitBlob": "06ee10994431e28c0f3d5f07584acb80f50a3dbb",
+          "upstreamGitBlob": "488e5a723735d0aab166d5e606d1152b27fb47e4",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/macros.rs",
+          "rawGitBlob": "d9ce743319efb5e1564f73443cd458903255f973",
+          "lfNormalizedGitBlob": "ea16db9337cba84c5dd09b8dce2f62776b6b8532",
+          "upstreamGitBlob": "ea16db9337cba84c5dd09b8dce2f62776b6b8532",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/fee_math.rs",
+          "rawGitBlob": "369bd13ac09eb99d73bc1c4d46ad474b5eefb2cd",
+          "lfNormalizedGitBlob": "19a8f3c930a647fe7425175abfbaa5248e07e00d",
+          "upstreamGitBlob": "19a8f3c930a647fe7425175abfbaa5248e07e00d",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/mod.rs",
+          "rawGitBlob": "6dc496cd2a82a060e84cfa6d6cb6cbed65c19bcf",
+          "lfNormalizedGitBlob": "e109a4eb61729f1e0480212b86322677483d6c2e",
+          "upstreamGitBlob": "e109a4eb61729f1e0480212b86322677483d6c2e",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/safe_math.rs",
+          "rawGitBlob": "778843fdfb7585e574e218a6b6b65666ab7da98c",
+          "lfNormalizedGitBlob": "95a2f70f465727f632ca346e717b76ec59eb7cb6",
+          "upstreamGitBlob": "95a2f70f465727f632ca346e717b76ec59eb7cb6",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/u128x128_math.rs",
+          "rawGitBlob": "9201ba084ad7880519c66f7a6a49e4e8f4dc8d3a",
+          "lfNormalizedGitBlob": "9158c077c8c8270b10e4085df9523d28dcc75a7f",
+          "upstreamGitBlob": "9158c077c8c8270b10e4085df9523d28dcc75a7f",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/utils_math.rs",
+          "rawGitBlob": "c9d8a481eacd33c71fce95b0200f2da0f726fc7a",
+          "lfNormalizedGitBlob": "a43bdf0d0175c57f2f98a18c75faa5c861903530",
+          "upstreamGitBlob": "a43bdf0d0175c57f2f98a18c75faa5c861903530",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/fee_parameters.rs",
+          "rawGitBlob": "c703f33041f84c8b2f657befbe256c4c8d06e3e7",
+          "lfNormalizedGitBlob": "4d44659bb3c600a9ea2f85c3297dbe63b120ef61",
+          "upstreamGitBlob": "4d44659bb3c600a9ea2f85c3297dbe63b120ef61",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/liquidity_distribution.rs",
+          "rawGitBlob": "bbd4130d137d3cbeda39688aff536a6a3bb579c3",
+          "lfNormalizedGitBlob": "bbd4130d137d3cbeda39688aff536a6a3bb579c3",
+          "upstreamGitBlob": "2a2703dd3daa29771cbcc4d858c491573ad4a119",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/mod.rs",
+          "rawGitBlob": "e9a43033abcaa7cd5d84e6cfdcbbfa14108f9b5a",
+          "lfNormalizedGitBlob": "6d5a45664becaa1a17806d24098b057d7ac6dc7f",
+          "upstreamGitBlob": "6d5a45664becaa1a17806d24098b057d7ac6dc7f",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/swap.rs",
+          "rawGitBlob": "24e6aff7ac821ce710f12064ca4fb56d4864a4b5",
+          "lfNormalizedGitBlob": "ad25d973ec26fe3b456c307dbc69d2743602b211",
+          "upstreamGitBlob": "ad25d973ec26fe3b456c307dbc69d2743602b211",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/raydium.rs",
+          "rawGitBlob": "da02d7a7ae6b1612f0b7295f5de251eff733f6b5",
+          "lfNormalizedGitBlob": "da02d7a7ae6b1612f0b7295f5de251eff733f6b5",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/claim_fee_operator.rs",
+          "rawGitBlob": "911c19fa8f9eee63c8801759e88839c5c101ceac",
+          "lfNormalizedGitBlob": "0b564d869d92d04582120dd21e28da0d41bef5e9",
+          "upstreamGitBlob": "0b564d869d92d04582120dd21e28da0d41bef5e9",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/config.rs",
+          "rawGitBlob": "6d2bf19422f8a7a15b12142c0fe63ec74ec92381",
+          "lfNormalizedGitBlob": "6d2bf19422f8a7a15b12142c0fe63ec74ec92381",
+          "upstreamGitBlob": "57b322fb045ff76e8ab05f19604f55f929911182",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/fee.rs",
+          "rawGitBlob": "ecabe7bd2dede6e7b12529ee3e8e887e035e8cb9",
+          "lfNormalizedGitBlob": "57cb8226ec88b27b7ee1fbe35fea4fc9a70ea90b",
+          "upstreamGitBlob": "57cb8226ec88b27b7ee1fbe35fea4fc9a70ea90b",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/mod.rs",
+          "rawGitBlob": "00c8cb2f38a7ab4e9d8f621500b3bee918b8587c",
+          "lfNormalizedGitBlob": "00c8cb2f38a7ab4e9d8f621500b3bee918b8587c",
+          "upstreamGitBlob": "00c8cb2f38a7ab4e9d8f621500b3bee918b8587c",
+          "match": "exact-bytes"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/partner_metadata.rs",
+          "rawGitBlob": "8ae26361eae365c08767a001482f3161bd57f38c",
+          "lfNormalizedGitBlob": "a9fd7c972b6188da0d61120b9ba9171b1bffcabd",
+          "upstreamGitBlob": "a9fd7c972b6188da0d61120b9ba9171b1bffcabd",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/virtual_pool.rs",
+          "rawGitBlob": "1052274ea04da8d88ff4f05f01913c2ce362b8bf",
+          "lfNormalizedGitBlob": "1052274ea04da8d88ff4f05f01913c2ce362b8bf",
+          "upstreamGitBlob": "45a9663f164f4933feb99363608091fdc9931b49",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/virtual_pool_metadata.rs",
+          "rawGitBlob": "c988acc514024581e9061e14746edbef962d5bd0",
+          "lfNormalizedGitBlob": "21cc44a6d1b519c8b93fa1cd42dfb2b6b164c3a2",
+          "upstreamGitBlob": "21cc44a6d1b519c8b93fa1cd42dfb2b6b164c3a2",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/activation_handler.rs",
+          "rawGitBlob": "8ae7d65be8267e2b4324f839ed23a6ef51343628",
+          "lfNormalizedGitBlob": "c186a23a56cb425b2638db3fc1e2cef89751e970",
+          "upstreamGitBlob": "c186a23a56cb425b2638db3fc1e2cef89751e970",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/cpi_checker.rs",
+          "rawGitBlob": "7c6ec39393812813a5c22e895b97351c0d4f155c",
+          "lfNormalizedGitBlob": "9a9d5384fc00c976f2b97a69064bfaac59fb2e18",
+          "upstreamGitBlob": "9a9d5384fc00c976f2b97a69064bfaac59fb2e18",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/mod.rs",
+          "rawGitBlob": "4822da0ca3883a39b4d658a8bd9ee7847912774c",
+          "lfNormalizedGitBlob": "72be23665434cd294180edddbd2144f42793577e",
+          "upstreamGitBlob": "72be23665434cd294180edddbd2144f42793577e",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/token.rs",
+          "rawGitBlob": "a919e7d06b50d858ce064883d0d5002d4342e017",
+          "lfNormalizedGitBlob": "73e042e14eb841df70dffa3b5038920522be2335",
+          "upstreamGitBlob": "73e042e14eb841df70dffa3b5038920522be2335",
+          "match": "exact-after-CRLF-normalization"
+        }
+      ]
+    },
+    {
+      "root": "vendor/evolut-curve",
+      "compared": 79,
+      "exact": 0,
+      "lfNormalized": 40,
+      "entries": [
+        {
+          "file": "Cargo.toml",
+          "rawGitBlob": "b3862363ecae8e6d0736b2d6052c6a3c54463a08",
+          "lfNormalizedGitBlob": "821deaf68cb40ec9afe90191355be2a097c1999d",
+          "upstreamGitBlob": "d464d790ff238af60c5d078ca523491884be5f36",
+          "match": "different"
+        },
+        {
+          "file": "README.md",
+          "rawGitBlob": "b153ca52576ceef98cda0c93fa9458b908333594",
+          "lfNormalizedGitBlob": "2d63135d4e54f3181a967db19883a9a3b8f651cc",
+          "upstreamGitBlob": "84f71966081aeb7e6c1a2e7d76c3f79cad89c5a8",
+          "match": "different"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/lib.rs",
+          "rawGitBlob": "91996781ec44371ee3197c9cb26947f4865a3c1f",
+          "lfNormalizedGitBlob": "ff99d1815eaa0e44329e4bb2000ac1f7112080c9",
+          "upstreamGitBlob": "d0c7c72cf044896074b6306be11c7fc25d966c28",
+          "match": "different"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/quote_exact_in.rs",
+          "rawGitBlob": "2e8528a357178e603568bba758f0a877af3f693a",
+          "lfNormalizedGitBlob": "b783b8eabdc62e146c9f992b6672b9a5f2ebd87d",
+          "upstreamGitBlob": "b783b8eabdc62e146c9f992b6672b9a5f2ebd87d",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/quote_exact_out.rs",
+          "rawGitBlob": "98294caba019e87f44bf595e3fb50195aa4a068d",
+          "lfNormalizedGitBlob": "d48fe2e527551dccfa9ddacc4f02407b88c5b424",
+          "upstreamGitBlob": "d48fe2e527551dccfa9ddacc4f02407b88c5b424",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "dynamic-bonding-curve-sdk/src/quote_partial_fill.rs",
+          "rawGitBlob": "cd50049bf9fae3a725a5c6bc22741416744e8550",
+          "lfNormalizedGitBlob": "874caf78a000e6c3bc2f90097695958c532c39c4",
+          "upstreamGitBlob": "874caf78a000e6c3bc2f90097695958c532c39c4",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/Cargo.toml",
+          "rawGitBlob": "53ea253bceef4611fa994e841da347ec0e0f282e",
+          "lfNormalizedGitBlob": "2608ac4901be5d1460dc625627c0d51b3a2d65f8",
+          "upstreamGitBlob": "8c3883427843bebb1bdaaf3f25806609e3df4983",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/access_control.rs",
+          "rawGitBlob": "fd844ba1c323da9269b95cb7e5afdf580c7b66dc",
+          "lfNormalizedGitBlob": "7bb5918b694a74df4d2a402a06ad16e4bb48a627",
+          "upstreamGitBlob": "7bb5918b694a74df4d2a402a06ad16e4bb48a627",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/base_fee/fee_rate_limiter.rs",
+          "rawGitBlob": "86de658dfa1f3952e539389c4e3881df341c9079",
+          "lfNormalizedGitBlob": "6d1f0131a212b88d9c3660fed62691066b47f0b3",
+          "upstreamGitBlob": "6d1f0131a212b88d9c3660fed62691066b47f0b3",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/base_fee/fee_scheduler.rs",
+          "rawGitBlob": "234727ad10c3e0b306401b936f57b30ce7cd05ac",
+          "lfNormalizedGitBlob": "0d661f90d01417bd128a9bd8788a934cfb926f01",
+          "upstreamGitBlob": "0d661f90d01417bd128a9bd8788a934cfb926f01",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/base_fee/mod.rs",
+          "rawGitBlob": "0124e3340b3123a0d0c3317d68cbd385b8643e65",
+          "lfNormalizedGitBlob": "12ac19feea675ea41e983a9cb25b438b2e6eed6f",
+          "upstreamGitBlob": "12ac19feea675ea41e983a9cb25b438b2e6eed6f",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/const_pda.rs",
+          "rawGitBlob": "63154e0c10a21e4ad5b91c89fc62171750183e8e",
+          "lfNormalizedGitBlob": "cee1920de9fbc59e8f20eaf908a8183e741b152c",
+          "upstreamGitBlob": "25f6f26e20fff3196d761ff671b8d5ad0aecd199",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/constants.rs",
+          "rawGitBlob": "0b0f358b4adec86bb78e959b6a36f31d52373ed5",
+          "lfNormalizedGitBlob": "37bd4f61ffab56f945bbf75408be503c061b01c8",
+          "upstreamGitBlob": "4fe18d534729a5c5ae42a4533eee46f40f7e8213",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/curve.rs",
+          "rawGitBlob": "b60f4b1466e80a44ef9e3f7c0081250105bea89c",
+          "lfNormalizedGitBlob": "4828babef84febe192cdb81d4552e8418949e209",
+          "upstreamGitBlob": "4828babef84febe192cdb81d4552e8418949e209",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/error.rs",
+          "rawGitBlob": "356cacd4fee8acd183b3d9d431db53251d6b2faf",
+          "lfNormalizedGitBlob": "da4499b434df3ecfdc4d5171d57dc4d766b11fc9",
+          "upstreamGitBlob": "370a36d5ec5c01e625d8e2b168fc6d2f2f4ac957",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/event.rs",
+          "rawGitBlob": "29addef3e07ed969e2e974c3d03a81e42ea34da5",
+          "lfNormalizedGitBlob": "2056a24c366be5f5dd50ee0795627f5cabff5efc",
+          "upstreamGitBlob": "0da18c1171136a26d65a4470191b02f42871b0a6",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/auth.rs",
+          "rawGitBlob": "524f5b0128e615e06a92f5f997e73d397e30f2b4",
+          "lfNormalizedGitBlob": "b5bd435136fa4d0387300646b25b649a6ade641c",
+          "upstreamGitBlob": "56625015fe3ea48c5c5751adbd94670b4c8c468b",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/ix_close_claim_protocol_fee_operator.rs",
+          "rawGitBlob": "f92c62029f7e51ee34e1aee4e4f3ff1dbe97ea66",
+          "lfNormalizedGitBlob": "cf8a236550d9f6394113f1d5c8aeafeb2f78c594",
+          "upstreamGitBlob": "cf8a236550d9f6394113f1d5c8aeafeb2f78c594",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/ix_create_claim_protocol_fee_operator.rs",
+          "rawGitBlob": "478c70965f6eaf57450236ca54eade9e17b65523",
+          "lfNormalizedGitBlob": "c3e38dfdf0d398eac9e6ff5c60fb0f242394f3fb",
+          "upstreamGitBlob": "c3e38dfdf0d398eac9e6ff5c60fb0f242394f3fb",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/ix_operational_authority.rs",
+          "rawGitBlob": "492a12e1904820d6749d87c8bd5bba2c56644efc",
+          "lfNormalizedGitBlob": "492a12e1904820d6749d87c8bd5bba2c56644efc",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/admin/mod.rs",
+          "rawGitBlob": "509799ff1e0fb593121aa021a81834d3adf3dc5b",
+          "lfNormalizedGitBlob": "634608331cc286c545fb3d12a409ad48cfb60701",
+          "upstreamGitBlob": "734cbc48534f98ecb5a203977fb83cf881afe003",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_creator_trading_fee.rs",
+          "rawGitBlob": "777fb1b23ac067707caba106b521f2270eb9b47c",
+          "lfNormalizedGitBlob": "b235111dc43307f89697fb1c8cebafe74ef51fa2",
+          "upstreamGitBlob": "6b54e68544fadbfad17b8124086f26b368785484",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
+          "rawGitBlob": "3977ef188731e34a1335c2096a99c9d04744ff1f",
+          "lfNormalizedGitBlob": "3977ef188731e34a1335c2096a99c9d04744ff1f",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_create_virtual_pool_metadata.rs",
+          "rawGitBlob": "685feab2026e484e62398e5e6b283b26b73b1a76",
+          "lfNormalizedGitBlob": "394c7cb3cb62a70f6299f85b6c3f493c8f5c0f90",
+          "upstreamGitBlob": "394c7cb3cb62a70f6299f85b6c3f493c8f5c0f90",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_transfer_pool_creator.rs",
+          "rawGitBlob": "ee660ac6fac7c5d7f683e1ef293a4f78234dd6c6",
+          "lfNormalizedGitBlob": "1a48924a34484f10446033d8ba2d01a58eee73e9",
+          "upstreamGitBlob": "f417187eb6b1308dee1a5d2af916b8d3819df382",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/ix_withdraw_creator_surplus.rs",
+          "rawGitBlob": "12ecc8b3ed37d31d9012cf8d538e669cd7ccb87b",
+          "lfNormalizedGitBlob": "476ba72e2fd6442155917e1be372619a0298fc41",
+          "upstreamGitBlob": "476ba72e2fd6442155917e1be372619a0298fc41",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+          "rawGitBlob": "58555b02117d6a7dd44e1635ae37318a9c01d2df",
+          "lfNormalizedGitBlob": "d8f9150dbe8df92e11162e8ee89de7cd47640f4b",
+          "upstreamGitBlob": "ffffd015326a231faa7b1519cbe74f95b2e32808",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
+          "rawGitBlob": "8809f16676ae5cce2753681d8da5164fec4eed25",
+          "lfNormalizedGitBlob": "ef9ddba16f0c88e8267ec1ba5cb5e3775bc9b8a7",
+          "upstreamGitBlob": "819892f80f999be80d921816f1a074ce11702aa7",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_authorization.rs",
+          "rawGitBlob": "7484d44d586a001e512ca6acf196922acf35ffd4",
+          "lfNormalizedGitBlob": "71b3abecfe85507b4a1f2620a9a2bd48eabe3434",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
+          "rawGitBlob": "757abea857765fee69d02b24a633e242afb658b4",
+          "lfNormalizedGitBlob": "12259da63ad0c47e9df0e1a6ab0d95e6584f37f8",
+          "upstreamGitBlob": "1c08dfebd26f7da37810e6ef39b320a4033650ab",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/paid_launch.rs",
+          "rawGitBlob": "5b0dc2a870a554ccdb5c8bba8f02d2fa01662f94",
+          "lfNormalizedGitBlob": "b0c85b26b3812deaea229389007282bd20481438",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/initialize_pool/process_create_token_metadata.rs",
+          "rawGitBlob": "651c88c53687693600086c4fdf8eace9ed3c4c9d",
+          "lfNormalizedGitBlob": "94d43945ad2532e5d89c5be396d1f6df84225a3c",
+          "upstreamGitBlob": "2b51245dd8610725437ec4ec67be9ca7b3a8c2f9",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/create_locker.rs",
+          "rawGitBlob": "9e62a3cca9bdea121f95f44bafae95944b473e3e",
+          "lfNormalizedGitBlob": "7c1b2c53022993fe47154f44b73013c44b00b2b9",
+          "upstreamGitBlob": "7c1b2c53022993fe47154f44b73013c44b00b2b9",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/flash_rent.rs",
+          "rawGitBlob": "ee4cb192b00c9237f63a4e4887692b2f21781ca5",
+          "lfNormalizedGitBlob": "9cf4b10ee17163904e4e89e73745cbb74a9a1133",
+          "upstreamGitBlob": "9cf4b10ee17163904e4e89e73745cbb74a9a1133",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
+          "rawGitBlob": "4963e8d063cc7430caaacff3e06e8f9eb2ac72c4",
+          "lfNormalizedGitBlob": "e93ad3e7e55af44e78f0cf962f68f265873946fe",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/mod.rs",
+          "rawGitBlob": "df67325ac2f678efbd6414aa34e1cd8e8b061cea",
+          "lfNormalizedGitBlob": "3ecedd295bb35710de3b2330fa61cd3456f6f9d6",
+          "upstreamGitBlob": "8bc30e22c98dd3381aea1b9b7b241d14eb42eb5a",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/migration/withdraw_leftover.rs",
+          "rawGitBlob": "ddc63346d2236d83a4d0c4e323881edb0e502460",
+          "lfNormalizedGitBlob": "5944c9944178494667e4fa80c06dc6d8607340d5",
+          "upstreamGitBlob": "1b3404c8c7a5da9e54588b659a22fcd596bf2fbd",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/mod.rs",
+          "rawGitBlob": "3456520abceda6df5717d9003f5b75c8c8745a90",
+          "lfNormalizedGitBlob": "bbc0f3a91b633aff479e6f6ead89b3d59dd013db",
+          "upstreamGitBlob": "bbc0f3a91b633aff479e6f6ead89b3d59dd013db",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_fee.rs",
+          "rawGitBlob": "b2a13eb438a6284fee5a0250e686ab610f916645",
+          "lfNormalizedGitBlob": "e46ed776f6e4635c5f71fd8f0f8fbeab4e44e702",
+          "upstreamGitBlob": "e46ed776f6e4635c5f71fd8f0f8fbeab4e44e702",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_pool_creation_fee.rs",
+          "rawGitBlob": "b89a20d365a0d9bcc4d19c1952764b7336529ba2",
+          "lfNormalizedGitBlob": "6ca5c729d56ec5469d67ca83d121edf4fd3e2780",
+          "upstreamGitBlob": "6ca5c729d56ec5469d67ca83d121edf4fd3e2780",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
+          "rawGitBlob": "6e5739e266d1fa1e1f01be62d96c484135f3c4b6",
+          "lfNormalizedGitBlob": "6e5739e266d1fa1e1f01be62d96c484135f3c4b6",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/ix_withdraw_protocol_surplus.rs",
+          "rawGitBlob": "e722c64b25fca64b016c5a67a604f16f0b10185e",
+          "lfNormalizedGitBlob": "98bc91aeb168807e1bab5f9b11a40b04586df6d5",
+          "upstreamGitBlob": "98bc91aeb168807e1bab5f9b11a40b04586df6d5",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/operator/mod.rs",
+          "rawGitBlob": "0c6d25a16d6c6f97fafaec5ff1212b9e9dcd7939",
+          "lfNormalizedGitBlob": "505e34ca49a3f1b2db3a6dc528de6ee55c32aed2",
+          "upstreamGitBlob": "ef22ec787de8417e25b07425edb6f3f06df23d84",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_pool_creation_fee.rs",
+          "rawGitBlob": "d4e1cffd65a65286ca31b6b94a15994ae9692faa",
+          "lfNormalizedGitBlob": "ba61769db8853369304d9b32f36e0c2b1cd6fe95",
+          "upstreamGitBlob": "03bdee860dc4ada8983df9b72aa0754c15bac03f",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_trading_fee.rs",
+          "rawGitBlob": "6eac2681cd6267a1156e8ba6b2e4ad63d07cd2fe",
+          "lfNormalizedGitBlob": "ccb19dace9babf56a42a559baf3ccbacf33de81c",
+          "upstreamGitBlob": "87aa87e96bee4dfdf536c4eca6147dd5ec2b2c72",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_config.rs",
+          "rawGitBlob": "0d3c2d2c145a368cc7609068753179fc7fec6994",
+          "lfNormalizedGitBlob": "d58efb90b16c46220396dba345cfb2873a735fc0",
+          "upstreamGitBlob": "eeffc26544d2b4f2b722f9009d6d174f892e369e",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_partner_metadata.rs",
+          "rawGitBlob": "fcdbf6459f3800b1b0d9ce35352033124c619e8c",
+          "lfNormalizedGitBlob": "4744400d367fa5a14b5ffc865e17ec17fdbbf11b",
+          "upstreamGitBlob": "4744400d367fa5a14b5ffc865e17ec17fdbbf11b",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/ix_withdraw_partner_surplus.rs",
+          "rawGitBlob": "7ac02d727c7c303ef55034b59238d6e172e8de95",
+          "lfNormalizedGitBlob": "e01666e18ab4194b6c97c08a8aa548004225813f",
+          "upstreamGitBlob": "a353cf4616ba01e6f375b0a27d4b24a4488cff12",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/partner/mod.rs",
+          "rawGitBlob": "8e9a5784c607c2e7b8d88503ec19171d02a9b5cf",
+          "lfNormalizedGitBlob": "1d99ee37f13520d609db8f79ac1f88b250b7c529",
+          "upstreamGitBlob": "1d99ee37f13520d609db8f79ac1f88b250b7c529",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/ix_swap.rs",
+          "rawGitBlob": "7ad7f5e4fc0ce58fc899236407e020457b865ad5",
+          "lfNormalizedGitBlob": "1e31cfb2a8b974e9ccd4dcd5be1badcaee7937c2",
+          "upstreamGitBlob": "1e31cfb2a8b974e9ccd4dcd5be1badcaee7937c2",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/mod.rs",
+          "rawGitBlob": "23c010256d6a4a6887ba56e66a28c5c66041f55a",
+          "lfNormalizedGitBlob": "e2f42309c31428ed7fca9cb61af44009953932a8",
+          "upstreamGitBlob": "e2f42309c31428ed7fca9cb61af44009953932a8",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_in.rs",
+          "rawGitBlob": "6f7b1c2e4bf526f2f26413a44a9aa7ac6e38ca99",
+          "lfNormalizedGitBlob": "0a55b565fbb03ea303137313e4f3877bc5ee2d8c",
+          "upstreamGitBlob": "0a55b565fbb03ea303137313e4f3877bc5ee2d8c",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/swap_exact_out.rs",
+          "rawGitBlob": "24fe60af4e58944ddc155312e92979e61513f2fd",
+          "lfNormalizedGitBlob": "cb199b5be06ec3de4afc37e7904d2be285227262",
+          "upstreamGitBlob": "cb199b5be06ec3de4afc37e7904d2be285227262",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/instructions/swap/swap_partial_fill.rs",
+          "rawGitBlob": "e660f13dd49802840cec1871e28e98253f65d336",
+          "lfNormalizedGitBlob": "7eeddd0a4a248ae746f639322b4d858ec0572980",
+          "upstreamGitBlob": "7eeddd0a4a248ae746f639322b4d858ec0572980",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/lib.rs",
+          "rawGitBlob": "66713d1b71d54b8e9d7a4129a4de4d7a2c621d1c",
+          "lfNormalizedGitBlob": "866f40a748ae3f94bfbcfce6af0aaab744f0ca97",
+          "upstreamGitBlob": "488e5a723735d0aab166d5e606d1152b27fb47e4",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/macros.rs",
+          "rawGitBlob": "d9ce743319efb5e1564f73443cd458903255f973",
+          "lfNormalizedGitBlob": "ea16db9337cba84c5dd09b8dce2f62776b6b8532",
+          "upstreamGitBlob": "ea16db9337cba84c5dd09b8dce2f62776b6b8532",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/fee_math.rs",
+          "rawGitBlob": "369bd13ac09eb99d73bc1c4d46ad474b5eefb2cd",
+          "lfNormalizedGitBlob": "19a8f3c930a647fe7425175abfbaa5248e07e00d",
+          "upstreamGitBlob": "19a8f3c930a647fe7425175abfbaa5248e07e00d",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/mod.rs",
+          "rawGitBlob": "6dc496cd2a82a060e84cfa6d6cb6cbed65c19bcf",
+          "lfNormalizedGitBlob": "e109a4eb61729f1e0480212b86322677483d6c2e",
+          "upstreamGitBlob": "e109a4eb61729f1e0480212b86322677483d6c2e",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/safe_math.rs",
+          "rawGitBlob": "778843fdfb7585e574e218a6b6b65666ab7da98c",
+          "lfNormalizedGitBlob": "95a2f70f465727f632ca346e717b76ec59eb7cb6",
+          "upstreamGitBlob": "95a2f70f465727f632ca346e717b76ec59eb7cb6",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/u128x128_math.rs",
+          "rawGitBlob": "b2fa12d11c5feeb11b6d326f8126920b97321d99",
+          "lfNormalizedGitBlob": "843d5d5b4c6526560b674b2748a9ea178a6620d1",
+          "upstreamGitBlob": "9158c077c8c8270b10e4085df9523d28dcc75a7f",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/math/utils_math.rs",
+          "rawGitBlob": "c9d8a481eacd33c71fce95b0200f2da0f726fc7a",
+          "lfNormalizedGitBlob": "a43bdf0d0175c57f2f98a18c75faa5c861903530",
+          "upstreamGitBlob": "a43bdf0d0175c57f2f98a18c75faa5c861903530",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/fee_parameters.rs",
+          "rawGitBlob": "c703f33041f84c8b2f657befbe256c4c8d06e3e7",
+          "lfNormalizedGitBlob": "4d44659bb3c600a9ea2f85c3297dbe63b120ef61",
+          "upstreamGitBlob": "4d44659bb3c600a9ea2f85c3297dbe63b120ef61",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/liquidity_distribution.rs",
+          "rawGitBlob": "04526034fcb286e050ed098b4c2acfd0e0af4f0b",
+          "lfNormalizedGitBlob": "bbd4130d137d3cbeda39688aff536a6a3bb579c3",
+          "upstreamGitBlob": "2a2703dd3daa29771cbcc4d858c491573ad4a119",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/mod.rs",
+          "rawGitBlob": "e9a43033abcaa7cd5d84e6cfdcbbfa14108f9b5a",
+          "lfNormalizedGitBlob": "6d5a45664becaa1a17806d24098b057d7ac6dc7f",
+          "upstreamGitBlob": "6d5a45664becaa1a17806d24098b057d7ac6dc7f",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/params/swap.rs",
+          "rawGitBlob": "24e6aff7ac821ce710f12064ca4fb56d4864a4b5",
+          "lfNormalizedGitBlob": "ad25d973ec26fe3b456c307dbc69d2743602b211",
+          "upstreamGitBlob": "ad25d973ec26fe3b456c307dbc69d2743602b211",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/raydium.rs",
+          "rawGitBlob": "a03a2593fc17d4efd63ef549715c458fed062c23",
+          "lfNormalizedGitBlob": "524413b9f5a5dceedb2573aef1e33c314f187f8b",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/claim_fee_operator.rs",
+          "rawGitBlob": "911c19fa8f9eee63c8801759e88839c5c101ceac",
+          "lfNormalizedGitBlob": "0b564d869d92d04582120dd21e28da0d41bef5e9",
+          "upstreamGitBlob": "0b564d869d92d04582120dd21e28da0d41bef5e9",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/config.rs",
+          "rawGitBlob": "d2a3de5243288015181f911c9d218139032cd774",
+          "lfNormalizedGitBlob": "9994bb7c254cb528143263e8cc88515b6cb9a2b7",
+          "upstreamGitBlob": "57b322fb045ff76e8ab05f19604f55f929911182",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/fee.rs",
+          "rawGitBlob": "ecabe7bd2dede6e7b12529ee3e8e887e035e8cb9",
+          "lfNormalizedGitBlob": "57cb8226ec88b27b7ee1fbe35fea4fc9a70ea90b",
+          "upstreamGitBlob": "57cb8226ec88b27b7ee1fbe35fea4fc9a70ea90b",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/mod.rs",
+          "rawGitBlob": "efbb0ba8e8c10cf7ba4425d344d70535b6219291",
+          "lfNormalizedGitBlob": "4a216449ee59254c1a8f33c4e367cec86975e41e",
+          "upstreamGitBlob": "00c8cb2f38a7ab4e9d8f621500b3bee918b8587c",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/operational_authority.rs",
+          "rawGitBlob": "df1c39c7a39f645594aece940aa88db4ded5defa",
+          "lfNormalizedGitBlob": "df1c39c7a39f645594aece940aa88db4ded5defa",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/partner_metadata.rs",
+          "rawGitBlob": "8ae26361eae365c08767a001482f3161bd57f38c",
+          "lfNormalizedGitBlob": "a9fd7c972b6188da0d61120b9ba9171b1bffcabd",
+          "upstreamGitBlob": "a9fd7c972b6188da0d61120b9ba9171b1bffcabd",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/raydium_creator_fees.rs",
+          "rawGitBlob": "87507e2b64b370c5450e5fe1995ffd1e66b90a1f",
+          "lfNormalizedGitBlob": "87507e2b64b370c5450e5fe1995ffd1e66b90a1f",
+          "upstreamGitBlob": null,
+          "match": "not-in-upstream-revision"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/virtual_pool.rs",
+          "rawGitBlob": "607e98deb89980420fe5332d934b1f762c7a8a0e",
+          "lfNormalizedGitBlob": "1052274ea04da8d88ff4f05f01913c2ce362b8bf",
+          "upstreamGitBlob": "45a9663f164f4933feb99363608091fdc9931b49",
+          "match": "different"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/state/virtual_pool_metadata.rs",
+          "rawGitBlob": "c988acc514024581e9061e14746edbef962d5bd0",
+          "lfNormalizedGitBlob": "21cc44a6d1b519c8b93fa1cd42dfb2b6b164c3a2",
+          "upstreamGitBlob": "21cc44a6d1b519c8b93fa1cd42dfb2b6b164c3a2",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/activation_handler.rs",
+          "rawGitBlob": "8ae7d65be8267e2b4324f839ed23a6ef51343628",
+          "lfNormalizedGitBlob": "c186a23a56cb425b2638db3fc1e2cef89751e970",
+          "upstreamGitBlob": "c186a23a56cb425b2638db3fc1e2cef89751e970",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/cpi_checker.rs",
+          "rawGitBlob": "7c6ec39393812813a5c22e895b97351c0d4f155c",
+          "lfNormalizedGitBlob": "9a9d5384fc00c976f2b97a69064bfaac59fb2e18",
+          "upstreamGitBlob": "9a9d5384fc00c976f2b97a69064bfaac59fb2e18",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/mod.rs",
+          "rawGitBlob": "4822da0ca3883a39b4d658a8bd9ee7847912774c",
+          "lfNormalizedGitBlob": "72be23665434cd294180edddbd2144f42793577e",
+          "upstreamGitBlob": "72be23665434cd294180edddbd2144f42793577e",
+          "match": "exact-after-CRLF-normalization"
+        },
+        {
+          "file": "programs/dynamic-bonding-curve/src/utils/token.rs",
+          "rawGitBlob": "8c65e61e289c1157dc90603e7c7a052549977264",
+          "lfNormalizedGitBlob": "d95ed1287799c32adbf380b8dfb0c1ed6e326840",
+          "upstreamGitBlob": "73e042e14eb841df70dffa3b5038920522be2335",
+          "match": "different"
+        }
+      ]
+    }
+  ]
+}

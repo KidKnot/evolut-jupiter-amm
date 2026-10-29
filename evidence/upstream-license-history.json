@@ -1,0 +1,32 @@
+{
+  "checkedAtUtc": "2026-10-29T12:18:28.2838118Z",
+  "upstream": "https://github.com/MeteoraAg/dynamic-bonding-curve",
+  "head": "91e696eef6a3764157220f6c104f079b7830fc04",
+  "rootCommit": "2b239ffc3e30627a4cfcee8ff2eb62de8baecc64",
+  "rootDateUtc": "2025-03-09T06:34:30Z",
+  "licenseHistory": [
+    "34bfbe06fe9a33cb55f5bd4a12b618903a5a5f27 2026-02-06T08:25:26+07:00 Create license.md (#178)"
+  ],
+  "licenseIntroducedCommit": "34bfbe06fe9a33cb55f5bd4a12b618903a5a5f27",
+  "licenseIntroducedDateUtc": "2026-02-06T01:25:26Z",
+  "licenseParent": "7e6132940da7734a5a026576c3ca167a6166395a",
+  "introducedLicenseBlob": "f5a6ebe025fe809c646b3047fe18e8a79b668357",
+  "currentLicenseBlob": "f5a6ebe025fe809c646b3047fe18e8a79b668357",
+  "candidateInheritedRelease": "828f350831a0f3c085b64c4998a27ccf7d84a76a",
+  "candidateDateUtc": "2026-01-16T03:04:29Z",
+  "candidateLicenseNoticeFiles": [],
+  "candidateFileCount": 222,
+  "tags": [],
+  "limits": [
+    "No personal authorization or separate license agreement can be established from repository history.",
+    "Release-lineage comparison does not prove exact original checkout or acquisition terms.",
+    "No current license change is asserted to apply retroactively."
+  ],
+  "commands": [
+    "git log --all --format=%H,%aI,%s -- license.md LICENSE LICENSE.md COPYING NOTICE",
+    "git log --all --format= --name-only (case-insensitive license/copying/notice/copyright filename search)",
+    "git ls-tree -r --name-only 828f350831a0f3c085b64c4998a27ccf7d84a76a",
+    "git diff 34bfbe06fe9a33cb55f5bd4a12b618903a5a5f27 HEAD -- license.md",
+    "git show 828f350831a0f3c085b64c4998a27ccf7d84a76a:programs/dynamic-bonding-curve/Cargo.toml"
+  ]
+}

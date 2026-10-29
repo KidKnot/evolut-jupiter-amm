@@ -1,0 +1,25 @@
+{
+  "review": "internal AI-assisted graduation/claim security review",
+  "executedAtUtc": "2026-10-29T12:52:28.3252361Z",
+  "mainnetProgram": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "binarySha256": "885d9c887801162ea921ad9426e109bd87348f40ced68ed74fe7b4b8960103b6",
+  "testFile": "output/matched-fee-contract-20261028/vm-tests/audit-graduation-20261029.test.ts",
+  "command": "wsl.exe -d Ubuntu -- bash -lc 'cd /mnt/c/extrc/AsolanProject/output/matched-fee-contract-20261028/vm-tests && EVOLUT_VM_NETWORK=mainnet node --import tsx --test audit-graduation-20261029.test.ts'",
+  "exitCode": 0,
+  "tests": 23,
+  "passed": 23,
+  "failed": 0,
+  "skipped": 0,
+  "durationMs": 11148.738472,
+  "cases": {
+    "prefundReimbursement": 1,
+    "graduationAccountSubstitution": 13,
+    "donationPreservation": 1,
+    "claimAccountSubstitution": 8
+  },
+  "execution": "Offline LiteSVM, real hash-pinned SBF, synthetic accounts; no network transactions",
+  "outputNote": "Counters and timing recorded from observed TAP output; this JSON is a result summary, not raw TAP",
+  "warnings": [
+    "bigint native bindings unavailable; pure JS fallback used"
+  ]
+}

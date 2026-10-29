@@ -1,0 +1,10 @@
+/target/
+/node_modules/
+/build-logs/
+/.cache/
+.env
+.env.*
+*.pem
+*.key
+*-keypair.json
+*credentials*.json
