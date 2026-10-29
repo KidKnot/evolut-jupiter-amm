@@ -73,8 +73,8 @@
     },
     {
       "path": "docs/JUPITER-SUBMISSION.md",
-      "bytes": 8670,
-      "sha256": "9e267eedc55f5fc27aa54732e1ccc9a142f38955667245cefe9bade4349e6ba0"
+      "bytes": 8854,
+      "sha256": "54cd08bc50375e224f2ad945fe0b8f8e4928584af1fbb4725f7fc04d152fd8ac"
     },
     {
       "path": "docs/LIVE-POOLS.md",
@@ -88,8 +88,8 @@
     },
     {
       "path": "docs/RELEASE-STATUS.md",
-      "bytes": 2061,
-      "sha256": "183e74568f5a20020f693f20942f4e3748f1dcf38679148ffc69eae329129c13"
+      "bytes": 2625,
+      "sha256": "c668405e6a8f39bae7f20d0935d8a57c5db2db94e43480fda037c29d2d178f5a"
     },
     {
       "path": "docs/REMEDIATION-ADDENDUM.md",

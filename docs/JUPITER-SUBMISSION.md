@@ -8,9 +8,9 @@ independent audit, funding, endorsement or naming safeguards are claimed.
 the atomic-launch/dependency executable in this checkout. Matching backend
 rollout remains pending. See [release status](RELEASE-STATUS.md),
 [candidate validation](ATOMIC-LAUNCH-CANDIDATE.md) and the
-[remediation addendum](REMEDIATION-ADDENDUM.md). Before copying the description
-into the form, replace its relative SDK/report links with the actual published
-repository URLs; this file does not claim a repository has already been created.
+[remediation addendum](REMEDIATION-ADDENDUM.md). The SDK is now public at
+https://github.com/KidKnot/evolut-jupiter-amm and its links work without a login.
+The description below includes public URLs for the form.
 
 Form: https://support.jup.ag/requests/new/amm-integrators
 
@@ -48,7 +48,7 @@ Your guide asks for "Your security audit" without specifying an external auditor
 
 The addendum corrects the original Classic-fee interpretation: Classic launches were free at baseline, so there was no existing Classic charge to bypass. The owner subsequently approved a 0.015 SOL fee for both Classic and Evolving. The upgraded program now transfers that fee to the canonical treasury within new-pool initialization. Compatible dependencies were also updated, including matched patched integer arithmetic in execution and quoting. The remediation has separate host, actual-SBF, application and adapter test evidence. The owner-signed upgrade was verified against the tested executable; matching backend rollout is still pending. Evolving's upfront AI/creation funding remains a separate transaction and is not an automatic-refund escrow.
 
-The [SDK repository](../README.md) includes the adapter, source hashes, public account fixtures and reproducible tests. The owner has authorized its publication. We disclose unresolved inherited-source terms in [source rights](SOURCE-RIGHTS.md); we do not claim a granted permissive license or present an upstream audit as an audit of our modifications. Please let us know what source-license terms your team requires to operate and maintain this integration.
+The public [SDK repository](https://github.com/KidKnot/evolut-jupiter-amm) includes the adapter, source hashes, public account fixtures and reproducible tests. We disclose unresolved inherited-source terms in [source rights](https://github.com/KidKnot/evolut-jupiter-amm/blob/main/docs/SOURCE-RIGHTS.md); we do not claim a granted permissive license or present an upstream audit as an audit of our modifications. Please let us know what source-license terms your team requires to operate and maintain this integration.
 
 Representative mainnet examples and traction
 
@@ -64,9 +64,10 @@ Links and contact
 
 - Current temporary mainnet site: https://website-production-2062.up.railway.app/
 - Product notebook: https://www.evolut.fun/x/notebook
-- SDK and reproducible tests: [repository README](../README.md)
-- Security review: [historical report](INTERNAL-SECURITY-REVIEW-20261029.md) and [remediation addendum](REMEDIATION-ADDENDUM.md)
-- Current executable and rollout status: [release status](RELEASE-STATUS.md)
+- SDK and reproducible tests: https://github.com/KidKnot/evolut-jupiter-amm
+- Security review: https://github.com/KidKnot/evolut-jupiter-amm/blob/main/docs/INTERNAL-SECURITY-REVIEW-20261029.md
+- Remediation addendum: https://github.com/KidKnot/evolut-jupiter-amm/blob/main/docs/REMEDIATION-ADDENDUM.md
+- Current executable and rollout status: https://github.com/KidKnot/evolut-jupiter-amm/blob/main/docs/RELEASE-STATUS.md
 - X: https://x.com/evolutdotfun
 - Email: info@evolut.fun
 - Program: https://solscan.io/account/EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ

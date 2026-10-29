@@ -1,5 +1,14 @@
 # Release status — 29 October 2026
 
+The [SDK repository](https://github.com/KidKnot/evolut-jupiter-amm) was published
+on 29 October 2026. Repository and review-document access were verified without
+authentication. This is source publication, not a Jupiter submission or approval.
+
+The initial public commit `403c2a10f62adca51dae8d22a1743333d6b54f16` passed
+[GitHub CI](https://github.com/KidKnot/evolut-jupiter-amm/actions/runs/40893923842):
+package/source integrity, formatting, and the adapter test suite on Ubuntu.
+This is additional reproduction of the tests, not an independent security audit.
+
 The owner-signed mainnet upgrade is **finalized**. At 14:35:14 UTC, a bounded,
 read-only check verified the executable's bytes and SHA-256 against the exact
 fixture used by this repository's 27 passing adapter tests.
