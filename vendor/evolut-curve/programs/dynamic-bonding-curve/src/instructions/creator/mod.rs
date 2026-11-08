@@ -8,3 +8,5 @@ pub mod ix_transfer_pool_creator;
 pub use ix_transfer_pool_creator::*;
 pub mod ix_claim_raydium_creator_fees;
 pub use ix_claim_raydium_creator_fees::*;
+pub mod ix_claim_fees_sol;
+pub use ix_claim_fees_sol::*;

@@ -22,6 +22,25 @@ pub struct UpdateOperationalMetadataCtx<'info> {
 /// Rename only. No arbitrary instruction, URI, authority, mutability, minting,
 /// fee destination or token-transfer capability is delegated to the worker.
 pub fn handle_update_operational_metadata(ctx: Context<UpdateOperationalMetadataCtx>, name: String) -> Result<()> {
+    update_metadata(ctx, name, None)
+}
+
+/// The existing name-only entrypoint remains unchanged. This separate capability
+/// accepts only immutable Irys transaction URLs, never arbitrary external URIs.
+pub fn handle_update_operational_metadata_uri(ctx: Context<UpdateOperationalMetadataCtx>, name: String, uri: String) -> Result<()> {
+    require!(!name.is_empty() && valid_irys_uri(&uri), PoolError::InvalidInput);
+    update_metadata(ctx, name, Some(uri))
+}
+
+pub fn valid_irys_uri(uri: &str) -> bool {
+    const PREFIX: &str = "https://gateway.irys.xyz/";
+    match uri.strip_prefix(PREFIX) {
+        Some(id) => (32..=44).contains(&id.len()) && id.parse::<Pubkey>().is_ok(),
+        None => false,
+    }
+}
+
+fn update_metadata(ctx: Context<UpdateOperationalMetadataCtx>, name: String, uri: Option<String>) -> Result<()> {
     require!(ctx.accounts.operator.key() != Pubkey::default(), PoolError::Unauthorized);
     require!(name.as_bytes().len() <= 32, PoolError::InvalidInput);
     let config = ctx.accounts.config.load()?;
@@ -39,9 +58,34 @@ pub fn handle_update_operational_metadata(ctx: Context<UpdateOperationalMetadata
     let bump = [ctx.bumps.operational_authority];
     mpl_token_metadata::instructions::UpdateMetadataAccountV2CpiBuilder::new(&program)
         .metadata(&metadata_account).update_authority(&account)
-        .data(DataV2 { name, symbol: metadata.symbol, uri: metadata.uri,
+        .data(DataV2 { name, symbol: metadata.symbol, uri: uri.unwrap_or(metadata.uri),
             seller_fee_basis_points: metadata.seller_fee_basis_points,
             creators: metadata.creators, collection: metadata.collection, uses: metadata.uses })
         .invoke_signed(&[&[OperationalAuthority::SEED, &bump]])?;
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::valid_irys_uri;
+
+    #[test]
+    fn accepts_only_exact_immutable_irys_ids() {
+        let id = anchor_lang::prelude::Pubkey::new_from_array([9;32]).to_string();
+        assert!(valid_irys_uri(&format!("https://gateway.irys.xyz/{id}")));
+        assert!(valid_irys_uri("https://gateway.irys.xyz/11111111111111111111111111111111"));
+        for uri in [
+            format!("http://gateway.irys.xyz/{id}"),
+            format!("https://gateway.irys.xyz.evil.example/{id}"),
+            format!("https://user@gateway.irys.xyz/{id}"),
+            format!("https://gateway.irys.xyz:443/{id}"),
+            format!("https://gateway.irys.xyz/{id}?v=2"),
+            format!("https://gateway.irys.xyz/{id}#fragment"),
+            format!("https://gateway.irys.xyz/mutable/{id}"),
+            format!("https://gateway.irys.xyz/{id}/"),
+            format!("https://gateway.irys.xyz/{}", "1".repeat(31)),
+            format!("https://gateway.irys.xyz/{}", "1".repeat(33)),
+            format!("https://gateway.irys.xyz/{}", "A".repeat(42) + "_"),
+        ] { assert!(!valid_irys_uri(&uri), "{uri}"); }
+    }
 }

@@ -59,8 +59,11 @@ pub struct ClaimRaydiumCreatorFeesCtx<'info> {
 }
 
 pub fn handle_claim_raydium_creator_fees(ctx: Context<ClaimRaydiumCreatorFeesCtx>, side: u8) -> Result<()> {
+    claim_raydium_creator_fees_inner(ctx.accounts, side, ctx.bumps.fee_authority)
+}
+
+pub fn claim_raydium_creator_fees_inner(a: &mut ClaimRaydiumCreatorFeesCtx, side: u8, fee_authority_bump: u8) -> Result<()> {
     require!(cfg!(feature = "mainnet") && side < 2, PoolError::InvalidInput);
-    let a = &mut *ctx.accounts;
     let pool = a.virtual_pool.load()?;
     let config = a.config.load()?;
     require!(pool.is_migrated == 1 && creator_fee_route(&config.raydium_amm_config), PoolError::InvalidInput);
@@ -108,7 +111,7 @@ pub fn handle_claim_raydium_creator_fees(ctx: Context<ClaimRaydiumCreatorFeesCtx
     let amounts = a.ledger.claimable([a.collected_0.amount, a.collected_1.amount], side)?;
     a.ledger.record(side, amounts)?;
     let pool_key = a.virtual_pool.key();
-    let bump = [ctx.bumps.fee_authority];
+    let bump = [fee_authority_bump];
     let seed: &[&[u8]] = &[CREATOR_AUTH_SEED, pool_key.as_ref(), &bump];
     for (source, destination, amount) in [(&a.collected_0, &a.destination_0, amounts[0]),
         (&a.collected_1, &a.destination_1, amounts[1])] {

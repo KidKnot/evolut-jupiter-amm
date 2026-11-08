@@ -65,3 +65,7 @@ legal determination about any separate agreement.
 
 No license file was invented or applied to inherited code. The Cargo package
 remains `publish = false`; this setting itself is not a legal restriction or grant.
+
+## 8 November 2026 source refresh
+
+The owner requested the existing public contract repository be updated. The new candidate updates five previously published files and adds one Evolut-authored SOL-settlement helper, bringing the source manifest to 96 files. The October baseline manifest is retained in `evidence/irys-sol-20261108`. Existing attribution, rights limitations and publication scope remain unchanged; no new license grant is asserted.

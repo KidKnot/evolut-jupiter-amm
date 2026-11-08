@@ -1,0 +1,111 @@
+{
+  "status": "locally-tested-not-deployed",
+  "createdAtUtc": "2026-11-08T12:29:01.492465+00:00",
+  "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+  "baselineExecutableSha256": "e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441",
+  "executable": {
+    "path": "target/deploy-mainnet/dynamic_bonding_curve.so",
+    "sha256": "d6b91ac802247b85bf790879e3b6c0506c40e8665e80da4cd116d18d634d425a",
+    "bytes": 1323464
+  },
+  "idl": {
+    "path": "idl/evolut_curve.mainnet.json",
+    "sha256": "4ecc5346abe23fcd3bd238e82a934042a3a57126af99c184a7f65c94e71dfddc"
+  },
+  "programData": {
+    "currentAllocationBytes": 1207949,
+    "requiredAllocationBytes": 1323509,
+    "additionalBytes": 115560
+  },
+  "abiCompatibility": {
+    "instructions": {
+      "preserved": 25,
+      "added": [
+        "update_operational_metadata_uri",
+        "claim_curve_fees_sol",
+        "claim_raydium_lp_fees_sol",
+        "claim_raydium_creator_fees_sol"
+      ]
+    },
+    "accounts": {
+      "preserved": 7,
+      "added": []
+    },
+    "types": {
+      "preserved": 50,
+      "added": [
+        "SolFeeClaimed"
+      ]
+    }
+  },
+  "tests": {
+    "rustMainnet": {
+      "passed": 40,
+      "log": "test-mainnet.log"
+    },
+    "actualSbfVm": {
+      "passed": 83,
+      "log": "vm-mainnet-final.log"
+    },
+    "existingDeployedMetadataUpgrade": {
+      "passed": 2,
+      "log": "vm-existing-metadata.log"
+    }
+  },
+  "claims": {
+    "curve": "Native quote fees only; legacy nonzero base entitlement fails atomically without clearing either balance",
+    "lp": "Official Burn & Earn CollectCpFees only, then exact claimed token delta swapped through receipt-bound CPMM and unwrapped",
+    "creator": "Original ledger entitlement preserved; only new ATA deltas swapped; prior token and WSOL balances unchanged",
+    "slippage": "minimum total native SOL > 0; failing swap/min-output rolls back collection, ledger and rent",
+    "twoFeeKeys": "Same nonce/temp PDAs may close/reinitialize sequentially: LP1138bytes and creator1206bytes including compute price; both <1M CU",
+    "firstClaimRent": "Creator route retains existing persistent ledger/ATA initialization rent; sol_out excludes rent and network fees",
+    "legacyInstructions": "Preserved for compatibility; raw token claim instructions remain callable directly",
+    "prefunding": "All new temporary token accounts must start at zero; excessive native prefunding rejects atomically and a fresh nonce remains usable."
+  },
+  "metadata": {
+    "method": "update_operational_metadata_uri(name,uri)",
+    "uri": "https://gateway.irys.xyz/<canonical base58 32-byte data-item ID>",
+    "preserves": [
+      "ticker",
+      "update authority",
+      "mint authority",
+      "seller fee",
+      "creators",
+      "collection",
+      "uses",
+      "existing name-only ABI"
+    ]
+  },
+  "sourceChanges": [
+    {
+      "path": "programs/dynamic-bonding-curve/src/lib.rs",
+      "sha256": "673c1e671b99cdbb8b39b2778e6c465f015fdafda9862c1951d1f4042797583a"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_fees_sol.rs",
+      "sha256": "79ae9f03d408795303a27c1699374836e82a6504f7e2387973c518c6e21f3ad6"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
+      "sha256": "2de28480dd5cb738da387df4da64f09d244c5b5661f8358a70f3c1a6eadd1859"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+      "sha256": "aea2f15e8945bf69bf20afd79d719f4fc76b0b611f2f98648b5f15febbf09a0c"
+    },
+    {
+      "path": "programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
+      "sha256": "739683fa3d0b88b2e75f62196bc6266497ed75f904c6163529d0de6ece0a966e"
+    }
+  ],
+  "applicationCandidateCommit": "123e9a699f6840bcc47a323cb9e9d319d4b926aa",
+  "repositoryTestScope": "This repository reproduces adapter parity against the unchanged deployed baseline fixture plus IDL ABI compatibility. The 40 Rust and 83 VM candidate tests were run in the full application/contract workspace; no new program binary is published in this update.",
+  "standaloneRepositoryValidation": {
+    "date": "2026-11-08",
+    "adapterTestsPassed": 27,
+    "command": "node run-cargo.mjs test --locked --offline --jobs 2",
+    "formattingPassed": true,
+    "programFixture": "unchanged deployed baseline e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441",
+    "networkCalls": 0
+  }
+}

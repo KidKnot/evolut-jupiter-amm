@@ -47,6 +47,11 @@ pub mod dynamic_bonding_curve {
         instructions::handle_update_operational_metadata(ctx, name)
     }
 
+    /// Publish a verified immutable Irys metadata version without changing ticker or authority.
+    pub fn update_operational_metadata_uri(ctx: Context<UpdateOperationalMetadataCtx>, name: String, uri: String) -> Result<()> {
+        instructions::handle_update_operational_metadata_uri(ctx, name, uri)
+    }
+
     pub fn quote_paid_launch_buy(ctx: Context<QuotePaidLaunchBuyCtx>, amount: u64) -> Result<()> {
         instructions::handle_quote_paid_launch_buy(ctx, amount)
     }
@@ -194,5 +199,15 @@ pub mod dynamic_bonding_curve {
     /// LP-fee claims remain independent calls to the official Raydium locker.
     pub fn claim_raydium_creator_fees(ctx: Context<ClaimRaydiumCreatorFeesCtx>, side: u8) -> Result<()> {
         instructions::handle_claim_raydium_creator_fees(ctx, side)
+    }
+
+    pub fn claim_curve_fees_sol(ctx: Context<ClaimCurveFeesSolCtx>, side: u8, min_sol_out: u64, nonce: [u8;16]) -> Result<()> {
+        instructions::handle_claim_curve_fees_sol(ctx,side,min_sol_out,nonce)
+    }
+    pub fn claim_raydium_lp_fees_sol(ctx: Context<ClaimRaydiumLpFeesSolCtx>, side: u8, min_sol_out: u64, nonce: [u8;16]) -> Result<()> {
+        instructions::handle_claim_raydium_lp_fees_sol(ctx,side,min_sol_out,nonce)
+    }
+    pub fn claim_raydium_creator_fees_sol(ctx: Context<ClaimRaydiumCreatorFeesSolCtx>, side: u8, min_sol_out: u64, nonce: [u8;16]) -> Result<()> {
+        instructions::handle_claim_raydium_creator_fees_sol(ctx,side,min_sol_out,nonce)
     }
 }

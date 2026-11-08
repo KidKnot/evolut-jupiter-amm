@@ -111,6 +111,54 @@
       ]
     },
     {
+      "name": "update_operational_metadata_uri",
+      "docs": [
+        "Publish a verified immutable Irys metadata version without changing ticker or authority."
+      ],
+      "discriminator": [
+        132,
+        115,
+        165,
+        15,
+        76,
+        95,
+        246,
+        40
+      ],
+      "accounts": [
+        {
+          "name": "config"
+        },
+        {
+          "name": "pool"
+        },
+        {
+          "name": "operational_authority"
+        },
+        {
+          "name": "operator",
+          "signer": true
+        },
+        {
+          "name": "mint_metadata",
+          "writable": true
+        },
+        {
+          "name": "metadata_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        }
+      ]
+    },
+    {
       "name": "quote_paid_launch_buy",
       "discriminator": [
         196,
@@ -1747,6 +1795,318 @@
           "type": "u8"
         }
       ]
+    },
+    {
+      "name": "claim_curve_fees_sol",
+      "discriminator": [
+        223,
+        184,
+        223,
+        166,
+        54,
+        97,
+        35,
+        231
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "pool_authority"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "virtual_pool",
+          "writable": true
+        },
+        {
+          "name": "quote_mint"
+        },
+        {
+          "name": "quote_vault",
+          "writable": true
+        },
+        {
+          "name": "temporary_quote",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "min_sol_out",
+          "type": "u64"
+        },
+        {
+          "name": "nonce",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim_raydium_lp_fees_sol",
+      "discriminator": [
+        178,
+        204,
+        63,
+        131,
+        45,
+        127,
+        6,
+        177
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "fee_nft_account",
+          "writable": true
+        },
+        {
+          "name": "fee_lock",
+          "writable": true
+        },
+        {
+          "name": "lock_program"
+        },
+        {
+          "name": "lock_authority"
+        },
+        {
+          "name": "cpmm_program"
+        },
+        {
+          "name": "cpmm_authority"
+        },
+        {
+          "name": "raydium_pool",
+          "writable": true
+        },
+        {
+          "name": "raydium_amm_config"
+        },
+        {
+          "name": "lp_mint",
+          "writable": true
+        },
+        {
+          "name": "token_0_mint"
+        },
+        {
+          "name": "token_1_mint"
+        },
+        {
+          "name": "token_0_vault",
+          "writable": true
+        },
+        {
+          "name": "token_1_vault",
+          "writable": true
+        },
+        {
+          "name": "locked_lp_vault",
+          "writable": true
+        },
+        {
+          "name": "temporary_0",
+          "writable": true
+        },
+        {
+          "name": "temporary_1",
+          "writable": true
+        },
+        {
+          "name": "observation",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "token_2022_program"
+        },
+        {
+          "name": "memo_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "min_sol_out",
+          "type": "u64"
+        },
+        {
+          "name": "nonce",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim_raydium_creator_fees_sol",
+      "discriminator": [
+        189,
+        94,
+        92,
+        40,
+        108,
+        211,
+        252,
+        128
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "fee_authority"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "fee_nft_account",
+          "docs": [
+            "Current ownership, not the initial NFT recipient or a token delegate."
+          ]
+        },
+        {
+          "name": "fee_lock"
+        },
+        {
+          "name": "raydium_pool",
+          "writable": true
+        },
+        {
+          "name": "raydium_amm_config"
+        },
+        {
+          "name": "cpmm_program"
+        },
+        {
+          "name": "cpmm_authority"
+        },
+        {
+          "name": "token_0_mint"
+        },
+        {
+          "name": "token_1_mint"
+        },
+        {
+          "name": "token_0_vault",
+          "writable": true
+        },
+        {
+          "name": "token_1_vault",
+          "writable": true
+        },
+        {
+          "name": "collected_0",
+          "writable": true
+        },
+        {
+          "name": "collected_1",
+          "writable": true
+        },
+        {
+          "name": "destination_0",
+          "writable": true
+        },
+        {
+          "name": "destination_1",
+          "writable": true
+        },
+        {
+          "name": "creator_fee_share"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "temporary_0",
+          "writable": true
+        },
+        {
+          "name": "temporary_1",
+          "writable": true
+        },
+        {
+          "name": "observation",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "min_sol_out",
+          "type": "u64"
+        },
+        {
+          "name": "nonce",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        }
+      ]
     }
   ],
   "accounts": [
@@ -2390,6 +2750,58 @@
           {
             "name": "slot",
             "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "SolFeeClaimed",
+      "type": {
+        "fields": [
+          {
+            "name": "claimant",
+            "type": "pubkey"
+          },
+          {
+            "name": "virtual_pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "raydium_pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "source_kind",
+            "type": "u8"
+          },
+          {
+            "name": "side",
+            "type": "u8"
+          },
+          {
+            "name": "claimed_base",
+            "type": "u64"
+          },
+          {
+            "name": "claimed_quote",
+            "type": "u64"
+          },
+          {
+            "docs": [
+              "Native SOL delivered, excluding temporary-account rent refunds and network fees."
+            ],
+            "name": "sol_out",
+            "type": "u64"
+          },
+          {
+            "name": "nonce",
+            "type": {
+              "array": [
+                "u8",
+                16
+              ]
+            }
           }
         ],
         "kind": "struct"
@@ -4057,6 +4469,19 @@
     },
     {
       "discriminator": [
+        176,
+        65,
+        189,
+        63,
+        209,
+        50,
+        107,
+        225
+      ],
+      "name": "SolFeeClaimed"
+    },
+    {
+      "discriminator": [
         207,
         103,
         119,
@@ -4360,6 +4785,11 @@
       "code": 6057,
       "name": "PlatformConfigNotInitialized",
       "msg": "Platform config not initialized"
+    },
+    {
+      "code": 6058,
+      "name": "InvalidLaunchFeeRecipient",
+      "msg": "Launch fee requires the canonical writable platform treasury"
     }
   ]
 }

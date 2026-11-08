@@ -17,7 +17,9 @@ jobs:
         with:
           persist-credentials: false
       - name: Verify exact package and vendor bytes
-        run: node scripts/verify-package.mjs
+        run: |
+          node scripts/verify-package.mjs
+          node scripts/verify-upgrade-abi.mjs
       - name: Install reviewed Rust toolchain
         run: rustup toolchain install 1.94.1 --profile minimal --component rustfmt
       - name: Check adapter formatting

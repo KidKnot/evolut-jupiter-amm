@@ -1,3 +1,7 @@
+# Current release status — 8 November 2026
+
+The repository includes the [tested Irys/SOL-claim candidate](IRYS-SOL-CANDIDATE.md), pending owner upgrade. The deployed executable and fixture remain the October 29 baseline below. Source publication does not mean activation, Jupiter routing or independent audit approval.
+
 # Release status — 29 October 2026
 
 The [SDK repository](https://github.com/KidKnot/evolut-jupiter-amm) was published

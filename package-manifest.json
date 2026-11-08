@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "preparedDate": "2026-10-29",
-  "status": "tested-sdk-verified-mainnet-artifact-publication-authorized-source-rights-unresolved",
+  "preparedDate": "2026-11-08",
+  "status": "tested-upgrade-source-candidate-live-baseline-fixture-owner-upgrade-pending",
   "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
   "programUnderTest": "tests/fixtures/program-under-test.json",
   "historicalBaseline": "evidence/atomic-launch/baseline-validation.json",
@@ -13,8 +13,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 744,
-      "sha256": "3ee6ed00040cf97413308ef094f8471ddf2b252bc7d455762e972c106fa80a76"
+      "bytes": 802,
+      "sha256": "6211d6bf77fd3dd8211f60c42199d376361db642c327355432e5c9bbb2fc0803"
     },
     {
       "path": ".gitignore",
@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2333,
-      "sha256": "a235a29a480d9fe9fd9bfe4fde274db098ae977b7d0d5620dbc041325a431815"
+      "bytes": 2522,
+      "sha256": "19f83a44bf3969ba8f7f4cb70a14a264810daa4b306f7e05f39af0ed836565c3"
     },
     {
       "path": "capture-mainnet.mjs",
@@ -72,6 +72,11 @@
       "sha256": "2dec8e3ed5f45ca01b0e41d3deb64cb03d765b1421e57adae26607ce5675beba"
     },
     {
+      "path": "docs/IRYS-SOL-CANDIDATE.md",
+      "bytes": 2577,
+      "sha256": "3917f75177fa9dd9a82d6c984ccc8d046d77666dad3b42bb5c7e61efa26c1f2a"
+    },
+    {
       "path": "docs/LIVE-POOLS.md",
       "bytes": 6044,
       "sha256": "c0cc142b16fd44b9ad5d2143bdeb9eb97c9de042fe2f8fa3931393c719ffad70"
@@ -83,8 +88,8 @@
     },
     {
       "path": "docs/RELEASE-STATUS.md",
-      "bytes": 3435,
-      "sha256": "34cc916a2f2cd55a48b8050dfc11edda6c08b67794b54cecb177881b98e42c95"
+      "bytes": 3757,
+      "sha256": "116b9201ba89e02658c1d3bc42e4e27ed5fa9952088665055130749753cafc0b"
     },
     {
       "path": "docs/REMEDIATION-ADDENDUM.md",
@@ -93,8 +98,8 @@
     },
     {
       "path": "docs/SOURCE-RIGHTS.md",
-      "bytes": 4153,
-      "sha256": "32318d6f25232ec53a79d00ede6e0456dba221b92100ad32e832461117b2a846"
+      "bytes": 4603,
+      "sha256": "57e426952fa28b8829d091c0f7996c9556bffb9c41eca98ee3aaaff0b0fb5b4b"
     },
     {
       "path": "docs/internal-review/DEPENDENCY-REVIEW.md",
@@ -242,6 +247,21 @@
       "sha256": "c38d06ccb62195eadc3b5b726f6388c9ea15815275b880a353e583cd40148ca0"
     },
     {
+      "path": "evidence/irys-sol-20261108/baseline-abi.json",
+      "bytes": 11186,
+      "sha256": "839dcff8b2c28f0bd04b64788f3bf7981817120ab83b8075f858f6ecea3172ef"
+    },
+    {
+      "path": "evidence/irys-sol-20261108/baseline-vendor-source-manifest.json",
+      "bytes": 19625,
+      "sha256": "fd31069cf864f3acc814ddaa6e600336a3d630b5fa43e8ecfc39a87702e97ca6"
+    },
+    {
+      "path": "evidence/irys-sol-20261108/candidate.json",
+      "bytes": 4502,
+      "sha256": "825930ccdf9d0c6eefd2d2be817189ae8a53f2602d0cdbdda0c165a843f74d91"
+    },
+    {
       "path": "evidence/lp-lock-chain-evidence.json",
       "bytes": 108335,
       "sha256": "03e6c2bad60cf467431e363c89bda75542a196e48721d3f2aa327db3bf3bb78e"
@@ -305,6 +325,11 @@
       "path": "scripts/verify-package.mjs",
       "bytes": 1867,
       "sha256": "f78e7549a10739436bbd2b4997c3bc91b9f00708a7defc2eb8344f8d93d7b81d"
+    },
+    {
+      "path": "scripts/verify-upgrade-abi.mjs",
+      "bytes": 1271,
+      "sha256": "a9cfec6ed432a93e83a0b4e861cb6c84fb89dbb128b71fea2e68e14a1bccaa9f"
     },
     {
       "path": "src/lib.rs",
@@ -453,8 +478,8 @@
     },
     {
       "path": "vendor-source-manifest.json",
-      "bytes": 19625,
-      "sha256": "fd31069cf864f3acc814ddaa6e600336a3d630b5fa43e8ecfc39a87702e97ca6"
+      "bytes": 21167,
+      "sha256": "6b5091204dccfee545c38533ff36c19af3d5071a3bfa84eee01aa795c1b53cfd"
     },
     {
       "path": "vendor/evolut-curve/Anchor.toml",
@@ -513,8 +538,8 @@
     },
     {
       "path": "vendor/evolut-curve/idl/evolut_curve.mainnet.json",
-      "bytes": 87282,
-      "sha256": "81ad64a42cc27589188ca9eb9189a07aa501e38a57a164b12329076532acb900"
+      "bytes": 95384,
+      "sha256": "4ecc5346abe23fcd3bd238e82a934042a3a57126af99c184a7f65c94e71dfddc"
     },
     {
       "path": "vendor/evolut-curve/idls/locker.json",
@@ -622,9 +647,14 @@
       "sha256": "1de26e54279bce12eaf0214114ae9b019ad1e9bfbcc4c5a403f175a0bf8fd622"
     },
     {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_fees_sol.rs",
+      "bytes": 22244,
+      "sha256": "79ae9f03d408795303a27c1699374836e82a6504f7e2387973c518c6e21f3ad6"
+    },
+    {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
-      "bytes": 7830,
-      "sha256": "92feb084a27352cc646162ccae2b9666c4bb36539149a6d17a84299f423f6c21"
+      "bytes": 8004,
+      "sha256": "2de28480dd5cb738da387df4da64f09d244c5b5661f8358a70f3c1a6eadd1859"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_create_virtual_pool_metadata.rs",
@@ -643,8 +673,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
-      "bytes": 403,
-      "sha256": "ae2ec3a28725298adf0e31ef589b23943ad779cc01299f8d12b042569e1eb27b"
+      "bytes": 462,
+      "sha256": "aea2f15e8945bf69bf20afd79d719f4fc76b0b611f2f98648b5f15febbf09a0c"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
@@ -718,8 +748,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
-      "bytes": 3011,
-      "sha256": "6887032e2d021086853784818d2371ccd4ccb9bdd3ae9734dd2eeb72770d5a33"
+      "bytes": 5083,
+      "sha256": "739683fa3d0b88b2e75f62196bc6266497ed75f904c6163529d0de6ece0a966e"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_withdraw_protocol_surplus.rs",
@@ -788,8 +818,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/lib.rs",
-      "bytes": 7550,
-      "sha256": "c69768c5cf3de172ba57542676c3813f9f98f9e75b87466cc10c786fd7001c4b"
+      "bytes": 8556,
+      "sha256": "673c1e671b99cdbb8b39b2778e6c465f015fdafda9862c1951d1f4042797583a"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/macros.rs",
@@ -933,5 +963,6 @@
     }
   ],
   "releaseStatus": "docs/RELEASE-STATUS.md",
-  "mainnetVerification": "evidence/mainnet-upgrade-verification-20261029.json"
+  "mainnetVerification": "evidence/mainnet-upgrade-verification-20261029.json",
+  "candidateEvidence": "evidence/irys-sol-20261108/candidate.json"
 }
