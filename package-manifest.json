@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "preparedDate": "2026-11-08",
-  "status": "tested-upgrade-source-candidate-live-baseline-fixture-owner-upgrade-pending",
+  "status": "tested-combined-upgrade-source-candidate-live-baseline-fixture-owner-upgrade-pending",
   "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
   "programUnderTest": "tests/fixtures/program-under-test.json",
   "historicalBaseline": "evidence/atomic-launch/baseline-validation.json",
@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2522,
-      "sha256": "19f83a44bf3969ba8f7f4cb70a14a264810daa4b306f7e05f39af0ed836565c3"
+      "bytes": 2519,
+      "sha256": "8d0e0f39bb7522af7c43f957f994f7a868082c3ab41247729b5e91fa16449c06"
     },
     {
       "path": "capture-mainnet.mjs",
@@ -50,6 +50,11 @@
       "path": "docs/AUDIT-STATUS.md",
       "bytes": 2985,
       "sha256": "531841db31674dd7c5ef8f135861de06d70afb3c1ac8f71f9a30a38c79858b49"
+    },
+    {
+      "path": "docs/BUYBACK-CANDIDATE.md",
+      "bytes": 3002,
+      "sha256": "a5d2c0c1e3150a5ca676781fd7113662fe8396c87f55c681c4b6ac90cf907f2c"
     },
     {
       "path": "docs/DEPENDENCY-REMEDIATION.md",
@@ -73,8 +78,8 @@
     },
     {
       "path": "docs/IRYS-SOL-CANDIDATE.md",
-      "bytes": 2577,
-      "sha256": "3917f75177fa9dd9a82d6c984ccc8d046d77666dad3b42bb5c7e61efa26c1f2a"
+      "bytes": 2711,
+      "sha256": "9fba3a269924184cd2b7c91356dc977bf66772b467cab7f701288eea3c05e0de"
     },
     {
       "path": "docs/LIVE-POOLS.md",
@@ -88,8 +93,8 @@
     },
     {
       "path": "docs/RELEASE-STATUS.md",
-      "bytes": 3757,
-      "sha256": "116b9201ba89e02658c1d3bc42e4e27ed5fa9952088665055130749753cafc0b"
+      "bytes": 3814,
+      "sha256": "ab5698abd481e3bd5d9267e7a71b45b683271600e6887345f034b62a8747bec1"
     },
     {
       "path": "docs/REMEDIATION-ADDENDUM.md",
@@ -98,8 +103,8 @@
     },
     {
       "path": "docs/SOURCE-RIGHTS.md",
-      "bytes": 4603,
-      "sha256": "57e426952fa28b8829d091c0f7996c9556bffb9c41eca98ee3aaaff0b0fb5b4b"
+      "bytes": 5081,
+      "sha256": "d6240caf8a2e5777460cd748c021f3923a021a4dcb1d1b894bb3df6882202406"
     },
     {
       "path": "docs/internal-review/DEPENDENCY-REVIEW.md",
@@ -165,6 +170,21 @@
       "path": "evidence/atomic-launch/patched-dependencies-baseline-sbf-tests.log",
       "bytes": 18837,
       "sha256": "7740242763577d25cf47435523cc8f52e41886f19a68bc8c51a3618773b184c6"
+    },
+    {
+      "path": "evidence/buybacks-20261108/baseline-abi.json",
+      "bytes": 26322,
+      "sha256": "0b34623a92a362d9724caec3141827b409f0f4a659a6f6dc9748406409677f43"
+    },
+    {
+      "path": "evidence/buybacks-20261108/baseline-vendor-source-manifest.json",
+      "bytes": 21167,
+      "sha256": "6b5091204dccfee545c38533ff36c19af3d5071a3bfa84eee01aa795c1b53cfd"
+    },
+    {
+      "path": "evidence/buybacks-20261108/candidate.json",
+      "bytes": 1251,
+      "sha256": "6deda8e746fcc082d4906d6e68980336fd21532f22ad971eb1d85049272054aa"
     },
     {
       "path": "evidence/internal-review/AUDIT-EVIDENCE.json",
@@ -328,8 +348,8 @@
     },
     {
       "path": "scripts/verify-upgrade-abi.mjs",
-      "bytes": 1271,
-      "sha256": "a9cfec6ed432a93e83a0b4e861cb6c84fb89dbb128b71fea2e68e14a1bccaa9f"
+      "bytes": 1944,
+      "sha256": "f07f76327f24059c49c5af087eb7500441f8a225ba144a1704652bc5b45c4252"
     },
     {
       "path": "src/lib.rs",
@@ -478,8 +498,8 @@
     },
     {
       "path": "vendor-source-manifest.json",
-      "bytes": 21167,
-      "sha256": "6b5091204dccfee545c38533ff36c19af3d5071a3bfa84eee01aa795c1b53cfd"
+      "bytes": 24149,
+      "sha256": "553270deebbdbb0358babc10f410c6882d2408ebdd7b874d1c8ea64bb05848f4"
     },
     {
       "path": "vendor/evolut-curve/Anchor.toml",
@@ -538,8 +558,8 @@
     },
     {
       "path": "vendor/evolut-curve/idl/evolut_curve.mainnet.json",
-      "bytes": 95384,
-      "sha256": "4ecc5346abe23fcd3bd238e82a934042a3a57126af99c184a7f65c94e71dfddc"
+      "bytes": 116952,
+      "sha256": "0ee523f9105b07ab85fc901a1ed6454e1d9def8d75894548867a08a88f0da142"
     },
     {
       "path": "vendor/evolut-curve/idls/locker.json",
@@ -558,8 +578,8 @@
     },
     {
       "path": "vendor/evolut-curve/mainnet-candidate.json",
-      "bytes": 11090,
-      "sha256": "9f27f53f2c94ddbd29213ba1d17eb3a79c745d11f8c4b60441742ed6d10a7a0e"
+      "bytes": 21967,
+      "sha256": "853b421b27011fa8d3e30288570fbc5ded91dad43f90a00075b7535f41b4963a"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/Cargo.toml",
@@ -633,13 +653,18 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/ix_operational_authority.rs",
-      "bytes": 1592,
-      "sha256": "9940c033b3d4aba807c6af90e4a08b76c523b1563715bf8f62fe9843b4fa748e"
+      "bytes": 1634,
+      "sha256": "3b8cb52f3b7af7a59eda283cb1a3e9b1d1ed4d9495e6fe065382b30e7a4a2a58"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/admin/mod.rs",
       "bytes": 302,
       "sha256": "2dd9885042e8d8f54358ff0720f7b87130122fa8d80e16fa5d82e17ef9b3ce1b"
+    },
+    {
+      "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/buyback.rs",
+      "bytes": 41997,
+      "sha256": "576ceb989aa906290322abda560bb18e0584c48b64c3fcaf10e945b5f2e57015"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_creator_trading_fee.rs",
@@ -648,13 +673,13 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_fees_sol.rs",
-      "bytes": 22244,
-      "sha256": "79ae9f03d408795303a27c1699374836e82a6504f7e2387973c518c6e21f3ad6"
+      "bytes": 28047,
+      "sha256": "19ac38a64a944ff4a64fc74cdbbaed9d84a3472f0a540f535d257c72e06d5c9f"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
-      "bytes": 8004,
-      "sha256": "2de28480dd5cb738da387df4da64f09d244c5b5661f8358a70f3c1a6eadd1859"
+      "bytes": 9810,
+      "sha256": "aabb1671fadd28708b20c64e6e83ba62bdfd93bea9d1a30dd42cabf917a56dde"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/creator/ix_create_virtual_pool_metadata.rs",
@@ -688,8 +713,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_fee.rs",
-      "bytes": 3029,
-      "sha256": "51ba4071cc267648dedc773d1e7bc9e89cd367e0c3fa8959927542312ede86a6"
+      "bytes": 3111,
+      "sha256": "3734bd3333450e1a0658e6e8d666c46b64c9981e70780584577a9b3bd7d50545"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
@@ -718,8 +743,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
-      "bytes": 25528,
-      "sha256": "613b999f7248d3fd9942021e75d31975b015bca383796f0ba5eef00d84c443a8"
+      "bytes": 26132,
+      "sha256": "b9a988032922dc6ea67bbd1ed166496fa368580baffbf2594e83f7b980b165d5"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/migration/mod.rs",
@@ -733,8 +758,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/mod.rs",
-      "bytes": 285,
-      "sha256": "8eac77c554d1a8a1a82ea3095e2470fc1191c096b8b39844b6796a8a87473dc4"
+      "bytes": 324,
+      "sha256": "e7894bdb2356f685f450737baf5e51b08c0a6a1b0ac47d346f7f96b3437bb42e"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/instructions/operator/ix_claim_protocol_fee.rs",
@@ -818,8 +843,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/lib.rs",
-      "bytes": 8556,
-      "sha256": "673c1e671b99cdbb8b39b2778e6c465f015fdafda9862c1951d1f4042797583a"
+      "bytes": 11327,
+      "sha256": "8ce1f19f89a2ba267e9f351162f2c904ea2a5dce1c736207d16cc155d5d32318"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/macros.rs",
@@ -873,8 +898,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/raydium.rs",
-      "bytes": 13005,
-      "sha256": "358d8a3f894bbf12a8d103235e515d15c4f32d1bf3cc1cda394031f18bdc7216"
+      "bytes": 15962,
+      "sha256": "d0a370256d980b5fc736052455d608b1fae1b6a3dd543025c947d8093e1f5b17"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/claim_fee_operator.rs",
@@ -898,8 +923,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/operational_authority.rs",
-      "bytes": 377,
-      "sha256": "880a4f46e3902fbb69b54c7b3c043c30a18e89fc44d710bc591df96a9c33fe98"
+      "bytes": 390,
+      "sha256": "c73eacf58e01311eb162d26b322633853710b21cbe3dc0f42dca8449a6b3735a"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/partner_metadata.rs",
@@ -908,8 +933,8 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/raydium_creator_fees.rs",
-      "bytes": 3473,
-      "sha256": "22ecbffcaaacd6bebd615d607874b7a576168955195ac9893af72abbd491432b"
+      "bytes": 3560,
+      "sha256": "ad432a05626cf236646d39eb0bbb2a86a8546a9b049f9e024588352d7705dad8"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/src/state/virtual_pool.rs",
@@ -943,18 +968,18 @@
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/tests/graduation_burn_policy.rs",
-      "bytes": 2867,
-      "sha256": "03dd1be7ca6876542a71d19c0e1575169a8de5404c73453adabfa01831128b7d"
+      "bytes": 2930,
+      "sha256": "ed05a2187a5d7c0f3cbfb876253a37ed9f1dcfb01c5434d00c66efb88b84c661"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/tests/graduation_revenue_policy.rs",
-      "bytes": 1810,
-      "sha256": "51abdc5f81f543941879e75af5622e536d5a104537bd1eda8aa8fa953f5abd6d"
+      "bytes": 1856,
+      "sha256": "89b99d586c010bfc8a0f2b9eea9854f8dd306d2d41bd15d244fe866f271e5b9e"
     },
     {
       "path": "vendor/evolut-curve/programs/dynamic-bonding-curve/tests/mainnet_candidate_economics.rs",
-      "bytes": 14166,
-      "sha256": "1976f4f3712554188ceb0f8e16efeffa84a746e869ff76475c582d93359b8c62"
+      "bytes": 14410,
+      "sha256": "ffbcbcf3a411b4da50add06ad0a7ebc27e0b8461b8d628215d992dee60266f23"
     },
     {
       "path": "vendor/evolut-curve/rust-toolchain.toml",
@@ -964,5 +989,5 @@
   ],
   "releaseStatus": "docs/RELEASE-STATUS.md",
   "mainnetVerification": "evidence/mainnet-upgrade-verification-20261029.json",
-  "candidateEvidence": "evidence/irys-sol-20261108/candidate.json"
+  "candidateEvidence": "evidence/buybacks-20261108/candidate.json"
 }

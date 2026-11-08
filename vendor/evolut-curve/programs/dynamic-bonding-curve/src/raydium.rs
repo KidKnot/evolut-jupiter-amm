@@ -175,6 +175,43 @@ pub fn validate_fee_config(account: &AccountInfo) -> Result<AmmConfig> {
     Ok(config)
 }
 
+/// Trading validation does not depend on whether Raydium still permits NEW
+/// pools on a configuration. Existing official pools can continue trading.
+pub fn decode_trading_config(account:&AccountInfo)->Result<AmmConfig>{
+    let c:AmmConfig=decode(account,CPMM_ID,[218,244,33,104,203,203,43,111],236)?;
+    let(key,bump)=Pubkey::find_program_address(&[b"amm_config",&c.index.to_be_bytes()],&CPMM_ID);
+    require_keys_eq!(account.key(),key,PoolError::InvalidAccount);
+    require!(c.bump==bump&&c.trade_fee_rate.checked_add(c.creator_fee_rate).ok_or(PoolError::MathOverflow)?<1_000_000
+        &&c.protocol_fee_rate.checked_add(c.fund_fee_rate).ok_or(PoolError::MathOverflow)?<=1_000_000,PoolError::InvalidAccount);Ok(c)
+}
+pub fn effective_reserves(cp:&CpmmPool,amount0:u64,amount1:u64)->Result<[u64;2]>{
+    let liability0=cp.protocol_fees_token_0.checked_add(cp.fund_fees_token_0).and_then(|v|v.checked_add(cp.creator_fees_token_0)).ok_or(PoolError::MathOverflow)?;
+    let liability1=cp.protocol_fees_token_1.checked_add(cp.fund_fees_token_1).and_then(|v|v.checked_add(cp.creator_fees_token_1)).ok_or(PoolError::MathOverflow)?;
+    Ok([amount0.checked_sub(liability0).ok_or(PoolError::MathOverflow)?,amount1.checked_sub(liability1).ok_or(PoolError::MathOverflow)?])
+}
+/// An operator cannot opt out of the reserve-derived output floor or submit a
+/// batch whose input exceeds the configured fraction of effective reserves.
+pub fn bounded_swap_floor(amount:u64,input:u64,output:u64,cp:&CpmmPool,fee:&AmmConfig,impact:u16,slippage:u16)->Result<u64>{
+    let quoted=bounded_swap_quote(amount,input,output,cp,fee,impact,slippage)?;
+    require!(quoted>0,PoolError::ExceededSlippage);
+    // A one-lamport quote must demand that lamport, rather than rounding the
+    // slippage floor down to an unprotected zero-output swap.
+    Ok(((quoted as u128*(10_000-slippage as u128)/10_000) as u64).max(1))
+}
+/// Exact-input quote used to preserve genuinely unconvertible creator-fee dust.
+/// A zero result is evidence to retain tokens, never permission to swap for zero.
+pub fn bounded_swap_quote(amount:u64,input:u64,output:u64,cp:&CpmmPool,fee:&AmmConfig,impact:u16,slippage:u16)->Result<u64>{
+    require!(amount>0&&input>0&&output>0&&impact>0&&impact<=100&&slippage>0&&slippage<=100
+        &&amount as u128*10_000<=input as u128*impact as u128,PoolError::ExceededSlippage);
+    require!(!cp.enable_creator_fee||cp.creator_fee_on==0,PoolError::InvalidInput);
+    let rate=fee.trade_fee_rate.checked_add(if cp.enable_creator_fee{fee.creator_fee_rate}else{0}).ok_or(PoolError::MathOverflow)?;
+    require!(rate<1_000_000,PoolError::InvalidInput);
+    let charge=(amount as u128*rate as u128+999_999)/1_000_000;
+    let net=(amount as u128).checked_sub(charge).ok_or(PoolError::MathOverflow)?;
+    let quoted=net*(output as u128)/(input as u128+net);
+    u64::try_from(quoted).map_err(|_|PoolError::MathOverflow.into())
+}
+
 /// Creation policy is separate from the external pool's trading fee. Existing
 /// config/graduation validation above remains compatible with earlier pools.
 /// New mainnet configurations match the curve fee to the selected AMM tier.

@@ -1,0 +1,31 @@
+{
+  "status": "tested-awaiting-owner-upgrade",
+  "sourceCommit": "4257bde5acbf63db0245ae442dad5545f26232f8",
+  "features": [
+    "irys-metadata",
+    "native-sol-fee-claims",
+    "milestone-buybacks"
+  ],
+  "artifact": {
+    "programId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
+    "upgradeAuthority": "Ddu3yPxCZpfgc3h3cKTkbpv2W7WyNhc8eDf7gGZd6whY",
+    "bytes": 1437320,
+    "allocationBytes": 1437365,
+    "sha256": "912f2209678bc42de04d2127745cb2321d0c828666a31a6b2cc527f987c77796"
+  },
+  "idlSha256": "0ee523f9105b07ab85fc901a1ed6454e1d9def8d75894548867a08a88f0da142",
+  "fullWorkspaceValidation": {
+    "actualSbfTestsPassed": 105,
+    "rustTestsPassed": 44
+  },
+  "standaloneScope": "Adapter tests retain the deployed atomic-launch binary e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441. No new binary or captured account is published. Full-workspace candidate tests are separate evidence, not an independent audit.",
+  "standaloneRepositoryValidation": {
+    "adapterTestsPassed": 27,
+    "offline": true,
+    "formattingPassed": true,
+    "packageManifestPassed": true,
+    "abiPassed": true,
+    "fixture": "unchanged atomic-launch mainnet baseline",
+    "networkTransactions": 0
+  }
+}

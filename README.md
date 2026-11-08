@@ -4,7 +4,7 @@ Rust adapter for quoting Evolut’s Solana bonding curves through the Jupiter AM
 
 **Mainnet program:** [`EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ`](https://solscan.io/account/EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ)
 
-Prepared contract update: [Irys metadata and native SOL claims](docs/IRYS-SOL-CANDIDATE.md). The candidate is not yet deployed; quote math and existing swap interfaces remain unchanged.
+Prepared contract update: [Irys metadata, SOL claims and milestone buybacks](docs/BUYBACK-CANDIDATE.md). Owner upgrade is pending; curve quote math and swap interfaces are unchanged.
 
 ## Supported markets
 

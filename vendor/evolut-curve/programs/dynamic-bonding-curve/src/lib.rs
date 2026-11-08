@@ -35,6 +35,34 @@ declare_id!("EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ");
 pub mod dynamic_bonding_curve {
     use super::*;
 
+    pub fn initialize_buyback_policy(ctx:Context<InitializeBuybackPolicyCtx>,max_batch_lamports:u64,max_impact_bps:u16,max_slippage_bps:u16,cooldown_seconds:u32)->Result<()>{
+        instructions::handle_initialize_buyback_policy(ctx,max_batch_lamports,max_impact_bps,max_slippage_bps,cooldown_seconds)
+    }
+    pub fn set_buyback_policy_status(ctx:Context<AdminBuybackPolicyCtx>,enabled:bool,paused:bool,expected_nonce:u64)->Result<()>{
+        instructions::handle_set_buyback_policy_status(ctx,enabled,paused,expected_nonce)
+    }
+    pub fn set_buyback_platform(ctx:Context<SetBuybackPlatformCtx>,expected_nonce:u64)->Result<()>{instructions::handle_set_buyback_platform(ctx,expected_nonce)}
+    pub fn adopt_buyback_fee_key(ctx:Context<AdoptBuybackFeeKeyCtx>)->Result<()>{instructions::handle_adopt_buyback_fee_key(ctx)}
+    pub fn initialize_buyback_pool(ctx:Context<InitializeBuybackPoolCtx>)->Result<()>{instructions::handle_initialize_buyback_pool(ctx)}
+    pub fn collect_buyback_fees<'info>(ctx:Context<'_,'_,'_,'info,CollectBuybackFeesCtx<'info>>,kind:u8,expected_nonce:u64,max_claim_amount:u64,min_net_sol:u64,claim_nonce:[u8;16])->Result<()>{
+        instructions::handle_collect_buyback_fees(ctx,kind,expected_nonce,max_claim_amount,min_net_sol,claim_nonce)
+    }
+    pub fn checkpoint_buyback(ctx:Context<CheckpointBuybackCtx>,stage:u8,event_hash:[u8;32],milestone_slot:u64,expected_nonce:u64)->Result<()>{
+        instructions::handle_checkpoint_buyback(ctx,stage,event_hash,milestone_slot,expected_nonce)
+    }
+    pub fn execute_buyback(ctx:Context<ExecuteBuybackCtx>,stage:u8,leg:u8,amount:u64,min_out:u64,deadline:i64,expected_nonce:u64)->Result<()>{
+        instructions::handle_execute_buyback(ctx,stage,leg,amount,min_out,deadline,expected_nonce)
+    }
+    pub fn recover_buyback(ctx:Context<RecoverBuybackCtx>,expected_nonce:u64)->Result<()>{instructions::handle_recover_buyback(ctx,expected_nonce)}
+    // These fixed self-CPI entrypoints require the unforgeable per-pool vault
+    // signer. Existing public SOL-claim ABIs and wallet behavior stay unchanged.
+    pub fn settle_buyback_lp_fees(ctx:Context<ClaimRaydiumLpFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16],max_claim_amount:u64,max_impact_bps:u16,max_slippage_bps:u16)->Result<()>{
+        instructions::handle_settle_buyback_lp_fees(ctx,side,min_sol_out,nonce,max_claim_amount,max_impact_bps,max_slippage_bps)
+    }
+    pub fn settle_buyback_creator_fees(ctx:Context<ClaimRaydiumCreatorFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16],max_claim_amount:u64,max_impact_bps:u16,max_slippage_bps:u16)->Result<()>{
+        instructions::handle_settle_buyback_creator_fees(ctx,side,min_sol_out,nonce,max_claim_amount,max_impact_bps,max_slippage_bps)
+    }
+
     pub fn initialize_operational_authority(ctx: Context<InitializeOperationalAuthorityCtx>, operator: Pubkey) -> Result<()> {
         instructions::handle_initialize_operational_authority(ctx, operator)
     }

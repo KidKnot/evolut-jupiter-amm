@@ -8,6 +8,828 @@
   },
   "instructions": [
     {
+      "name": "initialize_buyback_policy",
+      "discriminator": [
+        253,
+        227,
+        134,
+        111,
+        84,
+        4,
+        165,
+        10
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "policy",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "max_batch_lamports",
+          "type": "u64"
+        },
+        {
+          "name": "max_impact_bps",
+          "type": "u16"
+        },
+        {
+          "name": "max_slippage_bps",
+          "type": "u16"
+        },
+        {
+          "name": "cooldown_seconds",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "set_buyback_policy_status",
+      "discriminator": [
+        192,
+        253,
+        151,
+        62,
+        240,
+        89,
+        32,
+        23
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true
+        },
+        {
+          "name": "policy",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "enabled",
+          "type": "bool"
+        },
+        {
+          "name": "paused",
+          "type": "bool"
+        },
+        {
+          "name": "expected_nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "set_buyback_platform",
+      "discriminator": [
+        187,
+        50,
+        224,
+        159,
+        131,
+        4,
+        224,
+        251
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true
+        },
+        {
+          "name": "policy",
+          "writable": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "base_mint"
+        },
+        {
+          "name": "raydium_pool"
+        }
+      ],
+      "args": [
+        {
+          "name": "expected_nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "adopt_buyback_fee_key",
+      "discriminator": [
+        252,
+        69,
+        210,
+        165,
+        69,
+        51,
+        213,
+        158
+      ],
+      "accounts": [
+        {
+          "name": "treasury",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "vault"
+        },
+        {
+          "name": "fee_nft"
+        },
+        {
+          "name": "source",
+          "writable": true
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "initialize_buyback_pool",
+      "discriminator": [
+        249,
+        20,
+        132,
+        77,
+        95,
+        35,
+        65,
+        181
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "operator",
+          "signer": true
+        },
+        {
+          "name": "operational_authority"
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "fee_nft_account"
+        },
+        {
+          "name": "raydium_pool"
+        },
+        {
+          "name": "token_0_mint"
+        },
+        {
+          "name": "token_1_mint"
+        },
+        {
+          "name": "fee_authority"
+        },
+        {
+          "name": "creator_ledger",
+          "writable": true
+        },
+        {
+          "name": "collected_0",
+          "writable": true
+        },
+        {
+          "name": "collected_1",
+          "writable": true
+        },
+        {
+          "name": "destination_0",
+          "writable": true
+        },
+        {
+          "name": "destination_1",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "collect_buyback_fees",
+      "discriminator": [
+        109,
+        58,
+        135,
+        214,
+        164,
+        176,
+        94,
+        22
+      ],
+      "accounts": [
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "operational_authority"
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "evolut_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "kind",
+          "type": "u8"
+        },
+        {
+          "name": "expected_nonce",
+          "type": "u64"
+        },
+        {
+          "name": "max_claim_amount",
+          "type": "u64"
+        },
+        {
+          "name": "min_net_sol",
+          "type": "u64"
+        },
+        {
+          "name": "claim_nonce",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "checkpoint_buyback",
+      "discriminator": [
+        10,
+        176,
+        28,
+        210,
+        202,
+        128,
+        37,
+        79
+      ],
+      "accounts": [
+        {
+          "name": "operator",
+          "signer": true
+        },
+        {
+          "name": "operational_authority"
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        }
+      ],
+      "args": [
+        {
+          "name": "stage",
+          "type": "u8"
+        },
+        {
+          "name": "event_hash",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        },
+        {
+          "name": "milestone_slot",
+          "type": "u64"
+        },
+        {
+          "name": "expected_nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "execute_buyback",
+      "discriminator": [
+        47,
+        32,
+        19,
+        100,
+        184,
+        96,
+        144,
+        49
+      ],
+      "accounts": [
+        {
+          "name": "operator",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "operational_authority"
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "raydium_pool",
+          "writable": true
+        },
+        {
+          "name": "raydium_amm_config"
+        },
+        {
+          "name": "cpmm_program"
+        },
+        {
+          "name": "cpmm_authority"
+        },
+        {
+          "name": "base_mint",
+          "writable": true
+        },
+        {
+          "name": "quote_mint"
+        },
+        {
+          "name": "base_vault",
+          "writable": true
+        },
+        {
+          "name": "quote_vault",
+          "writable": true
+        },
+        {
+          "name": "destination",
+          "writable": true
+        },
+        {
+          "name": "source",
+          "writable": true
+        },
+        {
+          "name": "observation",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "stage",
+          "type": "u8"
+        },
+        {
+          "name": "leg",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "min_out",
+          "type": "u64"
+        },
+        {
+          "name": "deadline",
+          "type": "i64"
+        },
+        {
+          "name": "expected_nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "recover_buyback",
+      "discriminator": [
+        197,
+        167,
+        62,
+        133,
+        7,
+        104,
+        226,
+        108
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true
+        },
+        {
+          "name": "policy"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "expected_nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "settle_buyback_lp_fees",
+      "discriminator": [
+        23,
+        119,
+        39,
+        187,
+        73,
+        114,
+        129,
+        146
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "fee_nft_account",
+          "writable": true
+        },
+        {
+          "name": "fee_lock",
+          "writable": true
+        },
+        {
+          "name": "lock_program"
+        },
+        {
+          "name": "lock_authority"
+        },
+        {
+          "name": "cpmm_program"
+        },
+        {
+          "name": "cpmm_authority"
+        },
+        {
+          "name": "raydium_pool",
+          "writable": true
+        },
+        {
+          "name": "raydium_amm_config"
+        },
+        {
+          "name": "lp_mint",
+          "writable": true
+        },
+        {
+          "name": "token_0_mint"
+        },
+        {
+          "name": "token_1_mint"
+        },
+        {
+          "name": "token_0_vault",
+          "writable": true
+        },
+        {
+          "name": "token_1_vault",
+          "writable": true
+        },
+        {
+          "name": "locked_lp_vault",
+          "writable": true
+        },
+        {
+          "name": "temporary_0",
+          "writable": true
+        },
+        {
+          "name": "temporary_1",
+          "writable": true
+        },
+        {
+          "name": "observation",
+          "writable": true
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "token_2022_program"
+        },
+        {
+          "name": "memo_program"
+        },
+        {
+          "name": "system_program"
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "min_sol_out",
+          "type": "u64"
+        },
+        {
+          "name": "nonce",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        },
+        {
+          "name": "max_claim_amount",
+          "type": "u64"
+        },
+        {
+          "name": "max_impact_bps",
+          "type": "u16"
+        },
+        {
+          "name": "max_slippage_bps",
+          "type": "u16"
+        }
+      ]
+    },
+    {
+      "name": "settle_buyback_creator_fees",
+      "discriminator": [
+        11,
+        177,
+        16,
+        140,
+        58,
+        163,
+        3,
+        44
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "virtual_pool"
+        },
+        {
+          "name": "config"
+        },
+        {
+          "name": "fee_authority"
+        },
+        {
+          "name": "ledger",
+          "writable": true
+        },
+        {
+          "name": "fee_nft_account",
+          "docs": [
+            "Current ownership, not the initial NFT recipient or a token delegate."
+          ]
+        },
+        {
+          "name": "fee_lock"
+        },
+        {
+          "name": "raydium_pool",
+          "writable": true
+        },
+        {
+          "name": "raydium_amm_config"
+        },
+        {
+          "name": "cpmm_program"
+        },
+        {
+          "name": "cpmm_authority"
+        },
+        {
+          "name": "token_0_mint"
+        },
+        {
+          "name": "token_1_mint"
+        },
+        {
+          "name": "token_0_vault",
+          "writable": true
+        },
+        {
+          "name": "token_1_vault",
+          "writable": true
+        },
+        {
+          "name": "collected_0",
+          "writable": true
+        },
+        {
+          "name": "collected_1",
+          "writable": true
+        },
+        {
+          "name": "destination_0",
+          "writable": true
+        },
+        {
+          "name": "destination_1",
+          "writable": true
+        },
+        {
+          "name": "creator_fee_share"
+        },
+        {
+          "name": "token_program"
+        },
+        {
+          "name": "associated_token_program"
+        },
+        {
+          "name": "system_program"
+        },
+        {
+          "name": "temporary_0",
+          "writable": true
+        },
+        {
+          "name": "temporary_1",
+          "writable": true
+        },
+        {
+          "name": "observation",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "min_sol_out",
+          "type": "u64"
+        },
+        {
+          "name": "nonce",
+          "type": {
+            "array": [
+              "u8",
+              16
+            ]
+          }
+        },
+        {
+          "name": "max_claim_amount",
+          "type": "u64"
+        },
+        {
+          "name": "max_impact_bps",
+          "type": "u16"
+        },
+        {
+          "name": "max_slippage_bps",
+          "type": "u16"
+        }
+      ]
+    },
+    {
       "name": "initialize_operational_authority",
       "discriminator": [
         38,
@@ -1649,7 +2471,10 @@
           "writable": true
         },
         {
-          "name": "partner"
+          "name": "partner",
+          "docs": [
+            "The mandatory canonical policy account determines this in the handler."
+          ]
         },
         {
           "name": "partner_fee_nft",
@@ -2110,6 +2935,32 @@
     }
   ],
   "accounts": [
+    {
+      "name": "BuybackLedger",
+      "discriminator": [
+        194,
+        112,
+        234,
+        89,
+        80,
+        103,
+        238,
+        147
+      ]
+    },
+    {
+      "name": "BuybackPolicy",
+      "discriminator": [
+        234,
+        149,
+        152,
+        241,
+        68,
+        236,
+        55,
+        102
+      ]
+    },
     {
       "name": "ClaimFeeOperator",
       "discriminator": [
@@ -2749,6 +3600,300 @@
           },
           {
             "name": "slot",
+            "type": "u64"
+          }
+        ],
+        "kind": "struct"
+      }
+    },
+    {
+      "name": "BuybackEpoch",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "stage",
+            "type": "u8"
+          },
+          {
+            "name": "event_hash",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "milestone_slot",
+            "type": "u64"
+          },
+          {
+            "name": "checkpoint_slot",
+            "type": "u64"
+          },
+          {
+            "name": "generation",
+            "type": "u64"
+          },
+          {
+            "name": "budget",
+            "type": {
+              "array": [
+                "u64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "remaining",
+            "type": {
+              "array": [
+                "u64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "burned",
+            "type": {
+              "array": [
+                "u128",
+                2
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuybackLedger",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "virtual_pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "source_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "raydium_pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "fee_nft",
+            "type": "pubkey"
+          },
+          {
+            "name": "is_evolving",
+            "type": "bool"
+          },
+          {
+            "name": "last_stage",
+            "type": "u8"
+          },
+          {
+            "name": "action_nonce",
+            "type": "u64"
+          },
+          {
+            "name": "generation",
+            "type": "u64"
+          },
+          {
+            "name": "total_net_sol",
+            "type": "u128"
+          },
+          {
+            "name": "eligible_net_sol",
+            "type": "u128"
+          },
+          {
+            "name": "allocated_total",
+            "type": "u128"
+          },
+          {
+            "name": "pending",
+            "docs": [
+              "[source coin, platform token], never arbitrary recipient addresses."
+            ],
+            "type": {
+              "array": [
+                "u64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "frozen",
+            "type": {
+              "array": [
+                "u64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "spent",
+            "type": {
+              "array": [
+                "u128",
+                2
+              ]
+            }
+          },
+          {
+            "name": "burned",
+            "type": {
+              "array": [
+                "u128",
+                2
+              ]
+            }
+          },
+          {
+            "name": "treasury_paid",
+            "type": "u128"
+          },
+          {
+            "name": "recovered",
+            "type": "u128"
+          },
+          {
+            "name": "last_collection_slot",
+            "type": {
+              "array": [
+                "u64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "last_collection_time",
+            "type": {
+              "array": [
+                "i64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "last_execution_time",
+            "type": {
+              "array": [
+                "i64",
+                2
+              ]
+            }
+          },
+          {
+            "name": "rent_reserve",
+            "docs": [
+              "Keeper-funded permanent system-account rent, never fee revenue/budget."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "epochs",
+            "type": {
+              "array": [
+                {
+                  "defined": {
+                    "name": "BuybackEpoch"
+                  }
+                },
+                7
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuybackPolicy",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "enabled",
+            "type": "bool"
+          },
+          {
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "name": "platform_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "platform_pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "platform_config",
+            "type": "pubkey"
+          },
+          {
+            "name": "max_batch_lamports",
+            "type": "u64"
+          },
+          {
+            "name": "max_impact_bps",
+            "type": "u16"
+          },
+          {
+            "name": "max_slippage_bps",
+            "type": "u16"
+          },
+          {
+            "name": "cooldown_seconds",
+            "type": "u32"
+          },
+          {
+            "name": "action_nonce",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuybackRecorded",
+      "type": {
+        "fields": [
+          {
+            "name": "virtual_pool",
+            "type": "pubkey"
+          },
+          {
+            "name": "action",
+            "type": "u8"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "stage",
+            "type": "u8"
+          },
+          {
+            "name": "leg",
+            "type": "u8"
+          },
+          {
+            "name": "sol",
+            "type": "u64"
+          },
+          {
+            "name": "tokens",
+            "type": "u64"
+          },
+          {
+            "name": "generation",
             "type": "u64"
           }
         ],
@@ -4466,6 +5611,19 @@
         93
       ],
       "name": "PoolGraduated"
+    },
+    {
+      "discriminator": [
+        61,
+        60,
+        230,
+        206,
+        221,
+        237,
+        1,
+        215
+      ],
+      "name": "BuybackRecorded"
     },
     {
       "discriminator": [

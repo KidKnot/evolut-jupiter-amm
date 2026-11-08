@@ -1,6 +1,6 @@
 {
-  "status": "program-deployed-verified-application-and-live-acceptance-pending",
-  "purpose": "Owner decision record, not a provisioning input or deployment authorization",
+  "status": "combined-mainnet-candidate-locally-tested-awaiting-owner-upgrade",
+  "purpose": "Historical owner economics decisions plus current upgrade provenance; not proof that this candidate is deployed or public activation authorization.",
   "network": "mainnet-beta",
   "bondingCurveFeeBps": 100,
   "bondingCurveCreatorShareBps": 5000,
@@ -66,7 +66,7 @@
       "100 bounded simulated purchases; one-lamport terminal quote surplus is tracked separately from graduation funds",
       "No reserved/team tokens or vesting; new mainnet policies use a zero minimum-supply floor and burn unused ledger inventory, not fees or unsolicited vault donations",
       "Mint starts at 1 billion; owner approved the graduation burn. Actual final supply depends on swap rounding and actual setup costs",
-      "Mainnet launch revenue remains a separate payment; zero legacy on-chain pool_creation_fee avoids double billing",
+      "Historical pre-atomic study assumption: launch revenue was separate. The deployed October 29 baseline and current candidate enforce 0.015 SOL during creation for both launch types; the legacy config pool_creation_fee stays zero to avoid double charging",
       "Production now deducts 800000000 lamports from raised SOL at graduation; the separate 0.5 SOL test deducts zero. Config version 2 stores the fixed charge in reserved bytes without changing account length; version 1 stays fee-free."
     ],
     "checksPassed": [
@@ -134,8 +134,14 @@
     "mainnetProgramId": "EVoLutQjaoK3fkQh1ULbQzqVruU4yYEdSsqZB5djTTQZ",
     "treasuryPublicKey": "ASemhYRLkceP777SAfYVShjdjt481bKw7xUJuaj8u7a4",
     "treasuryWalletType": "hardware",
-    "adminPublicKeyAndWalletType": { "publicKey": "5HF4Vno1pAdY8UdPMqrpAGtziNUX6kFTCH1qMokDPsBP", "walletType": "regular" },
-    "upgradeAuthorityPublicKeyAndWalletType": { "publicKey": "Ddu3yPxCZpfgc3h3cKTkbpv2W7WyNhc8eDf7gGZd6whY", "walletType": "regular" },
+    "adminPublicKeyAndWalletType": {
+      "publicKey": "5HF4Vno1pAdY8UdPMqrpAGtziNUX6kFTCH1qMokDPsBP",
+      "walletType": "regular"
+    },
+    "upgradeAuthorityPublicKeyAndWalletType": {
+      "publicKey": "Ddu3yPxCZpfgc3h3cKTkbpv2W7WyNhc8eDf7gGZd6whY",
+      "walletType": "regular"
+    },
     "restrictedWorkerPublicKey": "7WaaVC79omvWTXcV1HPTZ1ihQhLGtB6qVAV3DHoG7bRz",
     "curveAllocationAndCalculatedPriceReview": null,
     "graduationSetupCostCapLamports": 250000000
@@ -147,5 +153,214 @@
     "Actual SPL burn, graduation, swap, both fee-claim paths and rollback pass offline SBF tests; review final artifact and perform separately authorized live acceptance before activation",
     "Recheck live Raydium programs, permission and mutable rates; per-pool creator PDAs do not inherit a custom share override granted to the global pool authority",
     "Validate the deployed UI's active-phase fee and WSOL labels; fixed graduation revenue remains separate from setup costs"
-  ]
+  ],
+  "currentUpgrade": {
+    "preparedAt": "2026-11-08",
+    "status": "locally-tested-not-deployed",
+    "baseline": {
+      "sha256": "e9e70baeb58c545dae66b86f67c5ff44a79a77dc06a44a9a69654ae3a3dcf441",
+      "source": "atomic-launch-contract-20261029 authoritative deployed build"
+    },
+    "artifact": {
+      "path": "target/deploy-mainnet/dynamic_bonding_curve.so",
+      "sha256": "912f2209678bc42de04d2127745cb2321d0c828666a31a6b2cc527f987c77796",
+      "bytes": 1437320
+    },
+    "idl": {
+      "path": "idl/evolut_curve.mainnet.json",
+      "sha256": "0ee523f9105b07ab85fc901a1ed6454e1d9def8d75894548867a08a88f0da142"
+    },
+    "programData": {
+      "currentAllocationBytes": 1207949,
+      "requiredAllocationBytes": 1437365,
+      "additionalBytes": 229416
+    },
+    "tests": {
+      "rustMainnet": {
+        "passed": 44
+      },
+      "actualSbfVm": {
+        "passed": 105
+      },
+      "evidence": "output/mainnet-buyback-evidence-20261108",
+      "logs": [
+        "native-all-final.log",
+        "sbf-final.log",
+        "dust-guard-final.log",
+        "vm-full-final-verified.log"
+      ],
+      "note": "Exact candidate SBF; synthetic local accounts and hash-pinned Raydium/Metaplex programs. No live transactions. Owner loader rehearsal and backend rollout are recorded separately."
+    },
+    "abiCompatibility": {
+      "instructions": {
+        "preserved": 25,
+        "added": [
+          "initialize_buyback_policy",
+          "set_buyback_policy_status",
+          "set_buyback_platform",
+          "adopt_buyback_fee_key",
+          "initialize_buyback_pool",
+          "collect_buyback_fees",
+          "checkpoint_buyback",
+          "execute_buyback",
+          "recover_buyback",
+          "settle_buyback_lp_fees",
+          "settle_buyback_creator_fees",
+          "update_operational_metadata_uri",
+          "claim_curve_fees_sol",
+          "claim_raydium_lp_fees_sol",
+          "claim_raydium_creator_fees_sol"
+        ]
+      },
+      "accounts": {
+        "preserved": 7,
+        "added": [
+          "BuybackLedger",
+          "BuybackPolicy"
+        ]
+      },
+      "types": {
+        "preserved": 50,
+        "added": [
+          "BuybackEpoch",
+          "BuybackLedger",
+          "BuybackPolicy",
+          "BuybackRecorded",
+          "SolFeeClaimed"
+        ]
+      },
+      "mainnetGraduationRemainingAccounts": "The canonical buyback_policy PDA must be appended, including while absent/disabled: LP 39->40, creator route 41->42. Fixed instruction args and existing accounts are unchanged. Deploy matching backend before owner upgrade. Default devnet ABI is unchanged."
+    },
+    "sourceChanges": [
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/buyback.rs",
+        "sha256": "576ceb989aa906290322abda560bb18e0584c48b64c3fcaf10e945b5f2e57015"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_fees_sol.rs",
+        "sha256": "19ac38a64a944ff4a64fc74cdbbaed9d84a3472f0a540f535d257c72e06d5c9f"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
+        "sha256": "aabb1671fadd28708b20c64e6e83ba62bdfd93bea9d1a30dd42cabf917a56dde"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+        "sha256": "aea2f15e8945bf69bf20afd79d719f4fc76b0b611f2f98648b5f15febbf09a0c"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
+        "sha256": "b9a988032922dc6ea67bbd1ed166496fa368580baffbf2594e83f7b980b165d5"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/mod.rs",
+        "sha256": "e7894bdb2356f685f450737baf5e51b08c0a6a1b0ac47d346f7f96b3437bb42e"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
+        "sha256": "739683fa3d0b88b2e75f62196bc6266497ed75f904c6163529d0de6ece0a966e"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/lib.rs",
+        "sha256": "8ce1f19f89a2ba267e9f351162f2c904ea2a5dce1c736207d16cc155d5d32318"
+      },
+      {
+        "path": "programs/dynamic-bonding-curve/src/raydium.rs",
+        "sha256": "d0a370256d980b5fc736052455d608b1fae1b6a3dd543025c947d8093e1f5b17"
+      }
+    ],
+    "baselineReconciliation": {
+      "count": 34,
+      "files": [
+        "programs/dynamic-bonding-curve/Cargo.toml",
+        "programs/dynamic-bonding-curve/src/const_pda.rs",
+        "programs/dynamic-bonding-curve/src/error.rs",
+        "programs/dynamic-bonding-curve/src/lib.rs",
+        "programs/dynamic-bonding-curve/src/raydium.rs",
+        "programs/dynamic-bonding-curve/tests/graduation_burn_policy.rs",
+        "programs/dynamic-bonding-curve/tests/graduation_revenue_policy.rs",
+        "programs/dynamic-bonding-curve/tests/mainnet_candidate_economics.rs",
+        "programs/dynamic-bonding-curve/src/state/config.rs",
+        "programs/dynamic-bonding-curve/src/state/mod.rs",
+        "programs/dynamic-bonding-curve/src/state/operational_authority.rs",
+        "programs/dynamic-bonding-curve/src/state/raydium_creator_fees.rs",
+        "programs/dynamic-bonding-curve/src/utils/token.rs",
+        "programs/dynamic-bonding-curve/src/instructions/admin/auth.rs",
+        "programs/dynamic-bonding-curve/src/instructions/admin/ix_operational_authority.rs",
+        "programs/dynamic-bonding-curve/src/instructions/admin/mod.rs",
+        "programs/dynamic-bonding-curve/src/instructions/creator/ix_claim_raydium_creator_fees.rs",
+        "programs/dynamic-bonding-curve/src/instructions/creator/mod.rs",
+        "programs/dynamic-bonding-curve/src/instructions/initialize_pool/ix_initialize_virtual_pool_with_spl_token.rs",
+        "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_authorization.rs",
+        "programs/dynamic-bonding-curve/src/instructions/initialize_pool/launch_fee.rs",
+        "programs/dynamic-bonding-curve/src/instructions/initialize_pool/mod.rs",
+        "programs/dynamic-bonding-curve/src/instructions/initialize_pool/paid_launch.rs",
+        "programs/dynamic-bonding-curve/src/instructions/initialize_pool/process_create_token_metadata.rs",
+        "programs/dynamic-bonding-curve/src/instructions/migration/graduate.rs",
+        "programs/dynamic-bonding-curve/src/instructions/operator/ix_update_operational_metadata.rs",
+        "programs/dynamic-bonding-curve/src/instructions/operator/mod.rs",
+        "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_pool_creation_fee.rs",
+        "programs/dynamic-bonding-curve/src/instructions/partner/ix_claim_partner_trading_fee.rs",
+        "programs/dynamic-bonding-curve/src/instructions/partner/ix_create_config.rs",
+        "programs/dynamic-bonding-curve/src/instructions/partner/ix_withdraw_partner_surplus.rs",
+        "Cargo.toml",
+        "Cargo.lock",
+        "rust-toolchain.toml"
+      ],
+      "reason": "Repository contract folder was older devnet source missing already-deployed mainnet authority, fee, graduation and dependency updates; restored exact reviewed baseline before applying additive upgrade."
+    },
+    "preserved": "Existing instruction discriminators/arguments and saved account layouts, except documented mainnet graduation remaining-account requirement. Devnet unchanged. No live upgrade or activation.",
+    "limitations": {
+      "curve": "Native quote fees only; legacy nonzero base entitlement fails atomically without clearing either balance",
+      "lp": "Official Burn & Earn CollectCpFees only, then exact claimed token delta swapped through receipt-bound CPMM and unwrapped",
+      "creator": "Original ledger entitlement preserved; only new ATA deltas swapped; prior token and WSOL balances unchanged",
+      "slippage": "minimum total native SOL > 0; failing swap/min-output rolls back collection, ledger and rent",
+      "twoFeeKeys": "Same nonce/temp PDAs may close/reinitialize sequentially: LP1138bytes and creator1206bytes including compute price; both <1M CU",
+      "firstClaimRent": "Creator route retains existing persistent ledger/ATA initialization rent; sol_out excludes rent and network fees",
+      "legacyInstructions": "Legacy token fee claims remain callable by their FeeKey owner. A treasury-signed adoption permanently places only the Evolut FeeKey in program custody.",
+      "prefunding": "All new temporary token accounts must start at zero; excessive native prefunding rejects atomically and a fresh nonce remains usable.",
+      "keeper": "Existing operational signer attests the committed evolution milestone and quote. Contract enforces custody, budgets, nonce, allowed pool/mint, deadlines, reserve-derived output floor, impact, batch limits and atomic swap/burn. This is not a permissionless USD oracle.",
+      "recovery": "Cold admin can pause then recover unspent reserves only to fixed treasury, cancelling remaining budgets. FeeKey stays in custody; burned tokens cannot be recovered.",
+      "attribution": "Actual collected net fee SOL, not exact historical trade-slot attribution; bounded claims may defer remaining fees. Creator-fee dust remains owed until convertible.",
+      "platformToken": "Not launched; its 10% stays reserved until cold admin selects a verified graduated target once."
+    },
+    "metadata": {
+      "method": "update_operational_metadata_uri(name,uri)",
+      "uri": "https://gateway.irys.xyz/<canonical base58 32-byte data-item ID>",
+      "preserves": [
+        "ticker",
+        "update authority",
+        "mint authority",
+        "seller fee",
+        "creators",
+        "collection",
+        "uses",
+        "existing name-only ABI"
+      ]
+    },
+    "buybacks": {
+      "evolvingOnly": true,
+      "sourceShareOfPlatformNetBps": 1000,
+      "platformShareOfPlatformNetBps": 1000,
+      "stages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "firstMilestoneUsd": 250000,
+      "reserveNewFeesAfterFinal": false,
+      "defaults": {
+        "maxBatchLamports": "250000000",
+        "maxImpactBps": 100,
+        "maxSlippageBps": 50,
+        "cooldownSeconds": 60
+      },
+      "activation": "Disabled by default. Owner initializes, enables custody paused, then resumes after backend checks. Existing coins opt in through treasury signature."
+    }
+  },
+  "historicalSectionsNote": "All other dated study, permission, funding and acceptance fields retain their historical context. Current deployment status is determined by finalized bytecode verification, not these older decision notes."
 }

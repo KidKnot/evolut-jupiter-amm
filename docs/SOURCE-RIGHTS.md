@@ -69,3 +69,7 @@ remains `publish = false`; this setting itself is not a legal restriction or gra
 ## 8 November 2026 source refresh
 
 The owner requested the existing public contract repository be updated. The new candidate updates five previously published files and adds one Evolut-authored SOL-settlement helper, bringing the source manifest to 96 files. The October baseline manifest is retained in `evidence/irys-sol-20261108`. Existing attribution, rights limitations and publication scope remain unchanged; no new license grant is asserted.
+
+## Combined buyback source refresh — 8 November 2026
+
+The owner authorized updating this existing repository. This refresh aligns previously published Rust source and the mainnet IDL with the tested combined candidate, and adds one Evolut-authored buyback module. The vendor manifest now lists 97 files. Existing notices, unresolved rights and the publication scope remain unchanged; no license grant is added. The prior manifest is retained in `evidence/buybacks-20261108`.

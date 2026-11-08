@@ -3,7 +3,7 @@
 use anchor_lang::prelude::*;
 use anchor_spl::{associated_token::AssociatedToken, token::{self, Mint, Token, TokenAccount}};
 use crate::{const_pda, raydium::*, state::{PoolConfig, VirtualPool, RaydiumCreatorFees}, PoolError,
-    instructions::{ClaimRaydiumCreatorFeesCtx, claim_raydium_creator_fees_inner}};
+    instructions::{ClaimRaydiumCreatorFeesCtx, claim_raydium_creator_fees_inner_limited}};
 
 pub const FEE_SOL_0: &[u8] = b"fee_sol_0";
 pub const FEE_SOL_1: &[u8] = b"fee_sol_1";
@@ -135,7 +135,15 @@ pub struct ClaimRaydiumLpFeesSolCtx<'info> {
 }
 
 pub fn handle_claim_raydium_lp_fees_sol(ctx: Context<ClaimRaydiumLpFeesSolCtx>, side:u8, min_sol_out:u64, nonce:[u8;16]) -> Result<()> {
-    require!(side < 2 && min_sol_out > 0, PoolError::InvalidInput);
+    claim_lp_inner(ctx,side,min_sol_out,nonce,u64::MAX,None)
+}
+pub fn handle_settle_buyback_lp_fees(ctx:Context<ClaimRaydiumLpFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16],max_claim_amount:u64,max_impact_bps:u16,max_slippage_bps:u16)->Result<()>{
+    require_buyback_owner(ctx.accounts.owner.key(),ctx.accounts.virtual_pool.key(),side,max_impact_bps,max_slippage_bps)?;
+    require!(max_claim_amount>0,PoolError::InvalidInput);
+    claim_lp_inner(ctx,side,min_sol_out,nonce,max_claim_amount,Some((max_impact_bps,max_slippage_bps)))
+}
+fn claim_lp_inner(ctx:Context<ClaimRaydiumLpFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16],max_claim_amount:u64,buyback_guard:Option<(u16,u16)>)->Result<()>{
+    require!(side < 2 && (min_sol_out > 0||buyback_guard.is_some()), PoolError::InvalidInput);
     let a = &mut *ctx.accounts;
     require!(a.temporary_0.amount == 0 && a.temporary_1.amount == 0, PoolError::InvalidAccount);
     let pool = a.virtual_pool.load()?;
@@ -158,13 +166,27 @@ pub fn handle_claim_raydium_lp_fees_sol(ctx: Context<ClaimRaydiumLpFeesSolCtx>, 
         &a.token_0_vault, &a.token_1_vault, &a.observation, pool.base_mint, config.quote_mint)?;
     require_keys_eq!(cp.lp_mint,a.lp_mint.key(),PoolError::InvalidAccount);
     drop(pool); drop(config);
+    // The locker always CPIs CPMM Withdraw, even when accrued growth rounds to
+    // zero on one side; CPMM then rejects ZeroTradingTokens. A keeper still needs
+    // a fresh zero-fee observation before freezing a milestone. Only bypass the
+    // CPI when a conservative bound on ALL accrued LP fees cannot withdraw one
+    // whole unit of both assets. Never suppress a failed CPI or use the caller's
+    // partial-claim cap to manufacture a zero observation.
+    if buyback_guard.is_some() && min_sol_out == 0 && lp_fees_are_withdrawal_dust(
+        &locked, &cp, a.token_0_vault.amount, a.token_1_vault.amount)? {
+        close_token(&a.token_program,&a.temporary_0.to_account_info(),&a.owner)?;
+        close_token(&a.token_program,&a.temporary_1.to_account_info(),&a.owner)?;
+        emit!(SolFeeClaimed {claimant:a.owner.key(),virtual_pool:a.virtual_pool.key(),raydium_pool:a.raydium_pool.key(),
+            source_kind:2,side,claimed_base:0,claimed_quote:0,sol_out:0,nonce});
+        return Ok(());
+    }
     let infos = [a.lock_authority.to_account_info(), a.owner.to_account_info(), a.fee_nft_account.to_account_info(),
         a.fee_lock.to_account_info(), a.cpmm_program.to_account_info(), a.cpmm_authority.to_account_info(),
         a.raydium_pool.to_account_info(), a.lp_mint.to_account_info(), a.temporary_0.to_account_info(),a.temporary_1.to_account_info(),
         a.token_0_vault.to_account_info(),a.token_1_vault.to_account_info(),a.token_0_mint.to_account_info(),a.token_1_mint.to_account_info(),
         a.locked_lp_vault.to_account_info(),a.token_program.to_account_info(),a.token_2022_program.to_account_info(),a.memo_program.to_account_info()];
     let ordered:Vec<_>=infos.iter().enumerate().map(|(i,v)|(v,matches!(i,2|3|6|7|8|9|10|11|14),i==1)).collect();
-    let mut data=vec![8,30,51,199,209,184,247,133];data.extend_from_slice(&u64::MAX.to_le_bytes());
+    let mut data=vec![8,30,51,199,209,184,247,133];data.extend_from_slice(&max_claim_amount.to_le_bytes());
     invoke_abi(&a.lock_program,&ordered,data,&[])?;
     // Burn & Earn redeems only accrued growth by burning the corresponding LP
     // units. Its fixed official CollectCpFees path cannot withdraw principal;
@@ -180,11 +202,37 @@ pub fn handle_claim_raydium_lp_fees_sol(ctx: Context<ClaimRaydiumLpFeesSolCtx>, 
     let claimed=[a.temporary_0.amount,a.temporary_1.amount];
     let sol=convert_and_close(&a.owner,&a.cpmm_program,&a.cpmm_authority,&a.raydium_amm_config,&a.raydium_pool,
         &a.token_0_mint,&a.token_1_mint,&a.token_0_vault,&a.token_1_vault,&a.observation,&a.token_program,
-        &mut a.temporary_0,&mut a.temporary_1,min_sol_out)?;
+        &mut a.temporary_0,&mut a.temporary_1,min_sol_out,buyback_guard)?;
     let base_first=a.token_1_mint.key()==token::spl_token::native_mint::ID;
     emit!(SolFeeClaimed {claimant:a.owner.key(),virtual_pool:a.virtual_pool.key(),raydium_pool:a.raydium_pool.key(),
         source_kind:2,side,claimed_base:claimed[if base_first {0}else{1}],claimed_quote:claimed[if base_first {1}else{0}],sol_out:sol,nonce});
     Ok(())
+}
+
+/// Bound fee growth without reproducing the locker's payout rounding. LP value
+/// grows with sqrt(K)/LP supply. Using ceil(sqrt(current K)) and floor(sqrt(last
+/// K)) overstates that growth; charging it against all remaining locked units
+/// (including pending fees), then rounding up and adding two units, also exceeds
+/// the redeemable growth. Thus a zero reserve output under this bound proves
+/// that the official two-asset withdrawal cannot currently succeed. No lock
+/// state or fee entitlement is cleared: dust remains for the next collection.
+fn lp_fees_are_withdrawal_dust(lock:&LockedLiquidity,pool:&CpmmPool,amount0:u64,amount1:u64)->Result<bool>{
+    use ruint::aliases::U256;
+    use crate::math::{utils_math::sqrt_u256,u128x128_math::{mul_div_u256,Rounding}};
+    if pool.lp_supply==0 || lock.last_lp_amount==0 || lock.last_k==0 || lock.locked_lp_amount==0 {return Ok(false);}
+    let reserves=effective_reserves(pool,amount0,amount1)?;
+    let current_k=U256::from(reserves[0])*U256::from(reserves[1]);
+    let current_root=sqrt_u256(current_k).ok_or(PoolError::MathOverflow)?;
+    let last_root=sqrt_u256(U256::from(lock.last_k)).ok_or(PoolError::MathOverflow)?;
+    if last_root==U256::ZERO {return Ok(false);}
+    let upper_current=(current_root+U256::ONE)*U256::from(lock.last_lp_amount);
+    let lower_previous=last_root*U256::from(pool.lp_supply);
+    let growth=if upper_current>lower_previous {
+        mul_div_u256(U256::from(lock.locked_lp_amount),upper_current-lower_previous,lower_previous,Rounding::Up)
+            .ok_or(PoolError::MathOverflow)?
+    } else {U256::ZERO};
+    let bound=(growth+U256::from(lock.unclaimed_lp_amount)+U256::from(2u8)).min(U256::from(lock.locked_lp_amount));
+    Ok(reserves.iter().any(|reserve|bound*U256::from(*reserve)<U256::from(pool.lp_supply)))
 }
 
 #[derive(Accounts)]
@@ -253,7 +301,15 @@ pub struct ClaimRaydiumCreatorFeesSolCtx<'info> {
 }
 
 pub fn handle_claim_raydium_creator_fees_sol(ctx:Context<ClaimRaydiumCreatorFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16])->Result<()> {
-    require!(side<2 && min_sol_out>0,PoolError::InvalidInput);
+    claim_creator_inner(ctx,side,min_sol_out,nonce,u64::MAX,None)
+}
+pub fn handle_settle_buyback_creator_fees(ctx:Context<ClaimRaydiumCreatorFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16],max_claim_amount:u64,max_impact_bps:u16,max_slippage_bps:u16)->Result<()>{
+    require_buyback_owner(ctx.accounts.owner.key(),ctx.accounts.virtual_pool.key(),side,max_impact_bps,max_slippage_bps)?;
+    require!(max_claim_amount>0,PoolError::InvalidInput);
+    claim_creator_inner(ctx,side,min_sol_out,nonce,max_claim_amount,Some((max_impact_bps,max_slippage_bps)))
+}
+fn claim_creator_inner(ctx:Context<ClaimRaydiumCreatorFeesSolCtx>,side:u8,min_sol_out:u64,nonce:[u8;16],max_claim_amount:u64,buyback_guard:Option<(u16,u16)>)->Result<()>{
+    require!(side<2 && (min_sol_out>0||buyback_guard.is_some()),PoolError::InvalidInput);
     let a=&mut *ctx.accounts;
     require!(a.temporary_0.amount == 0 && a.temporary_1.amount == 0, PoolError::InvalidAccount);
     let cp=decode_pool(&a.raydium_pool)?;
@@ -287,7 +343,7 @@ pub fn handle_claim_raydium_creator_fees_sol(ctx:Context<ClaimRaydiumCreatorFees
         associated_token_program: a.associated_token_program.clone(),
         system_program: a.system_program.clone(),
     };
-    claim_raydium_creator_fees_inner(&mut claim,side,ctx.bumps.fee_authority)?;
+    claim_raydium_creator_fees_inner_limited(&mut claim,side,ctx.bumps.fee_authority,max_claim_amount,buyback_guard)?;
     // The legacy ledger is copied back so Anchor serializes its updated entitlement.
     a.ledger.set_inner(claim.ledger.into_inner());
     a.destination_0.reload()?;a.destination_1.reload()?;
@@ -300,7 +356,7 @@ pub fn handle_claim_raydium_creator_fees_sol(ctx:Context<ClaimRaydiumCreatorFees
     a.temporary_0.reload()?;a.temporary_1.reload()?;
     let sol=convert_and_close(&a.owner,&a.cpmm_program,&a.cpmm_authority,&a.raydium_amm_config,&a.raydium_pool,
         &a.token_0_mint,&a.token_1_mint,&a.token_0_vault,&a.token_1_vault,&a.observation,&a.token_program,
-        &mut a.temporary_0,&mut a.temporary_1,min_sol_out)?;
+        &mut a.temporary_0,&mut a.temporary_1,min_sol_out,buyback_guard)?;
     a.destination_0.reload()?;a.destination_1.reload()?;
     require!([a.destination_0.amount,a.destination_1.amount]==before,PoolError::InvalidAccount);
     let base_first=a.token_1_mint.key()==token::spl_token::native_mint::ID;
@@ -323,10 +379,24 @@ fn check_cpmm(cp:&CpmmPool,authority:&AccountInfo,config:&AccountInfo,m0:&Accoun
 #[allow(clippy::too_many_arguments)]
 fn convert_and_close<'info>(owner:&Signer<'info>,cpmm:&AccountInfo<'info>,authority:&AccountInfo<'info>,config:&AccountInfo<'info>,pool:&AccountInfo<'info>,
     m0:&Account<'info,Mint>,m1:&Account<'info,Mint>,v0:&Account<'info,TokenAccount>,v1:&Account<'info,TokenAccount>,observation:&AccountInfo<'info>,
-    token_program:&Program<'info,Token>,temp0:&mut Account<'info,TokenAccount>,temp1:&mut Account<'info,TokenAccount>,min_sol_out:u64)->Result<u64> {
+    token_program:&Program<'info,Token>,temp0:&mut Account<'info,TokenAccount>,temp1:&mut Account<'info,TokenAccount>,min_sol_out:u64,buyback_guard:Option<(u16,u16)>)->Result<u64> {
     let base_first=m1.key()==token::spl_token::native_mint::ID;
     let (base,quote,base_mint,quote_mint,base_vault,quote_vault)=if base_first {(&mut *temp0,&mut *temp1,m0,m1,v0,v1)} else {(&mut *temp1,&mut *temp0,m1,m0,v1,v0)};
     let base_amount=base.amount;
+    let mut min_sol_out=min_sol_out;
+    if let Some((impact,slippage))=buyback_guard {
+        if base_amount>0 {
+            let cp=decode_pool(pool)?;let fee=decode_trading_config(config)?;
+            // LP collection just changed the official vaults through CPI; the
+            // Anchor Account cache still contains their pre-collection amounts.
+            let amount0=TokenAccount::try_deserialize(&mut v0.to_account_info().try_borrow_data()?.as_ref())?.amount;
+            let amount1=TokenAccount::try_deserialize(&mut v1.to_account_info().try_borrow_data()?.as_ref())?.amount;
+            let reserves=effective_reserves(&cp,amount0,amount1)?;
+            let input=if base_first{0}else{1};
+            let floor=bounded_swap_floor(base_amount,reserves[input],reserves[1-input],&cp,&fee,impact,slippage)?;
+            min_sol_out=min_sol_out.max(quote.amount.checked_add(floor).ok_or(PoolError::MathOverflow)?);
+        }
+    }
     if base_amount>0 {
         let before=quote.amount;
         let infos=[owner.to_account_info(),authority.clone(),config.clone(),pool.clone(),base.to_account_info(),quote.to_account_info(),
@@ -346,6 +416,11 @@ fn convert_and_close<'info>(owner:&Signer<'info>,cpmm:&AccountInfo<'info>,author
     close_token(token_program,&base.to_account_info(),owner)?;
     close_token(token_program,&quote.to_account_info(),owner)?;
     Ok(output)
+}
+
+fn require_buyback_owner(owner:Pubkey,pool:Pubkey,side:u8,impact:u16,slippage:u16)->Result<()>{
+    require!(side==1&&impact>0&&impact<=100&&slippage>0&&slippage<=100,PoolError::InvalidInput);
+    require_keys_eq!(owner,Pubkey::find_program_address(&[crate::instructions::buyback::VAULT_SEED,pool.as_ref()],&crate::ID).0,PoolError::Unauthorized);Ok(())
 }
 
 fn close_token<'info>(program:&Program<'info,Token>,account:&AccountInfo<'info>,owner:&Signer<'info>)->Result<()> {

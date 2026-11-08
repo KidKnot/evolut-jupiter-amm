@@ -93,8 +93,8 @@ pub struct GraduateCtx<'info> {
     /// CHECK: canonical metadata PDA; no metadata is created.
     #[account(mut)]
     pub creator_metadata: UncheckedAccount<'info>, // 30
-    /// CHECK: immutable canonical Evolut beneficiary.
-    #[account(address = EVOLUT_AUTHORITY)]
+    /// CHECK: fixed treasury before activation, or the per-pool buyback vault.
+    /// The mandatory canonical policy account determines this in the handler.
     pub partner: UncheckedAccount<'info>, // 31
     /// CHECK: Evolut nonce-bound NFT mint PDA, fresh.
     #[account(mut)]
@@ -136,7 +136,7 @@ pub fn handle_graduate<'info>(ctx: Context<'_, '_, '_, 'info, GraduateCtx<'info>
     );
     require_keys_eq!(
         config.fee_claimer,
-        ctx.accounts.partner.key(),
+        crate::treasury::ID,
         PoolError::InvalidAccount
     );
     require!(
@@ -158,14 +158,23 @@ pub fn handle_graduate<'info>(ctx: Context<'_, '_, '_, 'info, GraduateCtx<'info>
     );
     let creator_route = creator_fee_route(&ctx.accounts.raydium_amm_config.key());
     let mut a = graduation_infos(ctx.accounts);
-    // Keep the existing 39-account ABI intact. Only #13 appends the per-pool
-    // collection authority and the permission for the authorized payer PDA.
-    require!(ctx.remaining_accounts.len() == if creator_route { 2 } else { 0 }, PoolError::InvalidAccount);
+    // Fixed 39 accounts remain in place. Upgraded mainnet clients append the
+    // policy PDA even while disabled, so omission cannot bypass activation.
+    // Devnet retains its existing ABI; buyback custody is a mainnet rollout.
+    let route_accounts=if creator_route{2}else{0};
+    let beneficiary = if cfg!(feature = "mainnet") {
+        require!(ctx.remaining_accounts.len()==route_accounts+1,PoolError::InvalidAccount);
+        crate::instructions::buyback::graduation_beneficiary(&ctx.remaining_accounts[route_accounts],ctx.accounts.virtual_pool.key(),&config)?
+    } else {
+        require!(ctx.remaining_accounts.len()==route_accounts,PoolError::InvalidAccount);
+        crate::treasury::ID
+    };
+    require_keys_eq!(ctx.accounts.partner.key(),beneficiary,PoolError::InvalidAccount);
     if creator_route {
         require_pda(&ctx.remaining_accounts[0], &crate::ID,
             &[CREATOR_AUTH_SEED, ctx.accounts.virtual_pool.key().as_ref()])?;
         validate_permission(&ctx.remaining_accounts[1], &ctx.accounts.pool_authority.key())?;
-        a.extend_from_slice(ctx.remaining_accounts);
+        a.extend_from_slice(&ctx.remaining_accounts[..2]);
     }
     let base_is_zero = ctx.accounts.base_mint.key() < ctx.accounts.quote_mint.key();
     let (mint0, mint1, source0, source1) = if base_is_zero {

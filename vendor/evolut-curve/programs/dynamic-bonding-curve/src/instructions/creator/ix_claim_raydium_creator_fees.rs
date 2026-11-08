@@ -63,6 +63,12 @@ pub fn handle_claim_raydium_creator_fees(ctx: Context<ClaimRaydiumCreatorFeesCtx
 }
 
 pub fn claim_raydium_creator_fees_inner(a: &mut ClaimRaydiumCreatorFeesCtx, side: u8, fee_authority_bump: u8) -> Result<()> {
+    claim_raydium_creator_fees_inner_limited(a,side,fee_authority_bump,u64::MAX,None)
+}
+
+/// Internal partial settlement leaves the other side and unconverted base-token
+/// entitlement in the original durable ledger/collection ATAs.
+pub fn claim_raydium_creator_fees_inner_limited(a: &mut ClaimRaydiumCreatorFeesCtx, side: u8, fee_authority_bump: u8, max_base:u64, buyback_guard:Option<(u16,u16)>) -> Result<()> {
     require!(cfg!(feature = "mainnet") && side < 2, PoolError::InvalidInput);
     let pool = a.virtual_pool.load()?;
     let config = a.config.load()?;
@@ -89,6 +95,7 @@ pub fn claim_raydium_creator_fees_inner(a: &mut ClaimRaydiumCreatorFeesCtx, side
     require_keys_eq!(cp.token_1_vault, a.token_1_vault.key(), PoolError::InvalidAccount);
     require_pda(&a.cpmm_authority, &CPMM_ID, &[b"vault_and_lp_mint_auth_seed"])?;
     // Borrow guards must be dropped before CPI; no account-data alias survives.
+    let base_mint=pool.base_mint;
     drop(config);
     drop(pool);
     if cp.creator_fees_token_0 != 0 || cp.creator_fees_token_1 != 0 {
@@ -108,7 +115,26 @@ pub fn claim_raydium_creator_fees_inner(a: &mut ClaimRaydiumCreatorFeesCtx, side
     }
     // Includes earlier permissionless collection into these same pool-specific
     // ATAs. Counting only this CPI's delta would strand/lose those fees.
-    let amounts = a.ledger.claimable([a.collected_0.amount, a.collected_1.amount], side)?;
+    let mut amounts = a.ledger.claimable([a.collected_0.amount, a.collected_1.amount], side)?;
+    let base_index=if a.token_0_mint.key()==base_mint{0}else{1};
+    let full_base_entitlement=amounts[base_index];
+    amounts[base_index]=amounts[base_index].min(max_base);
+    if let Some((impact,slippage))=buyback_guard {
+        if amounts[base_index]>0 {
+            // Creator collection subtracts the same liabilities from vaults and
+            // counters, so the pre-collection effective trading reserves remain
+            // valid. Keep sub-lamport fees in their durable entitlement instead
+            // of consuming them in an impossible zero-output conversion.
+            let reserves=effective_reserves(&cp,a.token_0_vault.amount,a.token_1_vault.amount)?;
+            let fee=decode_trading_config(&a.raydium_amm_config)?;
+            if bounded_swap_quote(amounts[base_index],reserves[base_index],reserves[1-base_index],&cp,&fee,impact,slippage)?==0 {
+                // A tiny caller cap cannot fabricate a zero observation while
+                // larger convertible fees remain owed in this same ledger.
+                require!(amounts[base_index]==full_base_entitlement,PoolError::InvalidInput);
+                amounts[base_index]=0;
+            }
+        }
+    }
     a.ledger.record(side, amounts)?;
     let pool_key = a.virtual_pool.key();
     let bump = [fee_authority_bump];

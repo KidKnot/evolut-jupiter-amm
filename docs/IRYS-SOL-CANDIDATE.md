@@ -1,5 +1,7 @@
 # Irys metadata and native SOL claims candidate — 8 November 2026
 
+This earlier candidate is superseded by the [combined buyback upgrade](BUYBACK-CANDIDATE.md). The evidence below remains historical.
+
 The vendored contract source and mainnet IDL now include the tested upgrade candidate. **It is not deployed.** The program ID, upgrade authority, existing swap instructions, fee split and account layouts are unchanged.
 
 | Artifact | SHA-256 |
